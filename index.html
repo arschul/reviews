@@ -10,12 +10,14 @@
     --bg:#0c0e12;--surface:#15171c;--text:#eef0f2;--muted:#8b929c;--border:#262932;
     --violet:#a78bfa;--violet-deep:#1c1433;--violet-line:rgba(167,139,250,0.35);
     --key-accent:#f0c75e;--key-deep:#2a2206;
+    --game-accent:#38bdf8;--game-deep:#082530;
     --radius:18px;
   }
   :root[data-theme="light"]{
     --bg:#f4f1ea;--surface:#ffffff;--text:#1a1815;--muted:#6b6660;--border:#e2ddd2;
     --violet:#7c3aed;--violet-deep:#ede9fe;--violet-line:rgba(124,58,237,0.3);
     --key-accent:#b8860b;--key-deep:#fbf2dc;
+    --game-accent:#0369a1;--game-deep:#e0f2fe;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{
@@ -95,6 +97,9 @@
   .pdf-card.key-card{border-color:rgba(240,199,94,0.25);}
   .pdf-card.key-card::before{background:var(--key-accent);}
   .pdf-card.key-card:hover{border-color:var(--key-accent);}
+  .pdf-card.game-card{border-color:rgba(56,189,248,0.25);}
+  .pdf-card.game-card::before{background:var(--game-accent);}
+  .pdf-card.game-card:hover{border-color:var(--game-accent);}
 
   .pdf-icon{font-size:1.6rem;line-height:1;}
   .pdf-name{
@@ -106,6 +111,12 @@
     display:inline-block;font-size:0.65rem;font-weight:600;letter-spacing:0.5px;
     text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:100px;
     background:var(--key-deep);color:var(--key-accent);border:1px solid rgba(240,199,94,0.25);
+    margin-top:0.1rem;
+  }
+  .game-badge{
+    display:inline-block;font-size:0.65rem;font-weight:600;letter-spacing:0.5px;
+    text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:100px;
+    background:var(--game-deep);color:var(--game-accent);border:1px solid rgba(56,189,248,0.25);
     margin-top:0.1rem;
   }
 
@@ -128,6 +139,10 @@
     background:var(--key-deep);color:var(--key-accent);border-color:rgba(240,199,94,0.25);
   }
   .key-card .btn-view:hover{background:var(--key-accent);color:#1a1815;}
+  .game-card .btn-view{
+    background:var(--game-deep);color:var(--game-accent);border-color:rgba(56,189,248,0.25);
+  }
+  .game-card .btn-view:hover{background:var(--game-accent);color:#08151a;}
 
   footer{
     padding:2.5rem 1.5rem;color:var(--muted);font-size:0.78rem;text-align:center;
@@ -226,7 +241,7 @@
     <div class="class-header">
       <span class="class-badge">Inter 1</span>
       <span class="class-title">Intermediate 1</span>
-      <span class="test-count">6 files</span>
+      <span class="test-count">7 files</span>
     </div>
     <div class="cards">
       <div class="pdf-card">
@@ -246,6 +261,15 @@
         <div class="pdf-actions">
           <a class="btn btn-view" href="inter-1/Inter_1_Test_1_Review_-_Key.pdf" target="_blank">Open</a>
           <a class="btn btn-dl" href="inter-1/Inter_1_Test_1_Review_-_Key.pdf" download>↓</a>
+        </div>
+      </div>
+      <div class="pdf-card game-card">
+        <div class="pdf-icon">🎮</div>
+        <div class="pdf-name">Test 1 Review</div>
+        <span class="game-badge">Game</span>
+        <div class="pdf-meta">Interactive &middot; 11 rounds &middot; timed mode, combos, stickers</div>
+        <div class="pdf-actions">
+          <a class="btn btn-view" href="inter-1/Inter_1_Test_1_Game.html" target="_blank">Play</a>
         </div>
       </div>
       <div class="pdf-card">
