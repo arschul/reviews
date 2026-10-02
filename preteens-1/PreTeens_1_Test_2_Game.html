@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- HUBGEN:leaf start -->
+<script>(function(){try{var k="arschul:theme",v=localStorage.getItem(k);
+if(!v){var o=["hub-theme","theme","gh-theme","adv-theme","reviews-theme","worksheets-theme",
+"vocab-theme","toefl-theme","stc-theme","wheelquest-theme","wba-theme","airtight-theme","efl-reader-theme"];
+for(var i=0;i<o.length;i++){var x=localStorage.getItem(o[i]);if(x==="light"||x==="dark"){v=x;break;}}
+v=v||"dark";localStorage.setItem(k,v);}
+var m=(v==="system")?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):v;
+document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script>
+<script defer src="https://arschul.github.io/assets/leaf.v1.js"></script>
+<!-- HUBGEN:leaf end -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Test 2 Game · PreTeens 1 — Phil Young's English School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1726;
+  --paper:#fdf3e7;
+  --tint:#fdf3e7;
+  --hue:#ff8a00;
+  --good:#12b76a;
+  --bad:#ff4d3d;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Inter',system-ui,-apple-system,sans-serif;
+  --shadow:5px 5px 0 var(--ink);
+  --shadow-sm:3px 3px 0 var(--ink);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--body);color:var(--ink);font-size:17px;line-height:1.45;
+  background:var(--tint);transition:background .35s ease;min-height:100vh;
+}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 60px}
+h1,h2,h3,.disp{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:1}
+button{font:inherit;color:inherit;cursor:pointer}
+.hidden{display:none!important}
+
+/* ---------- top bar ---------- */
+.top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.mark{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.02em;
+  background:var(--ink);color:#fff;padding:5px 10px;border-radius:999px;text-transform:uppercase}
+.sub{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b6779}
+.icon-btn{margin-left:auto;background:#fff;border:2.5px solid var(--ink);border-radius:12px;
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:17px;
+  box-shadow:var(--shadow-sm)}
+.icon-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--hue);border:3px solid var(--ink);border-radius:22px;
+  box-shadow:var(--shadow);padding:22px 18px;margin-bottom:18px;color:#fff;
+  position:relative;overflow:hidden}
+.hero h1{font-size:clamp(34px,11.5vw,52px);margin:0;text-transform:uppercase;color:#fff}
+.hero .kicker{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  opacity:.9;margin-bottom:8px}
+.hero p{margin:10px 0 0;font-size:15px;max-width:34ch;opacity:.97}
+.hero .blob{position:absolute;right:-26px;top:-26px;font-size:118px;opacity:.24;transform:rotate(-12deg);
+  pointer-events:none;user-select:none}
+
+/* ---------- blocks ---------- */
+.block{background:#fff;border:3px solid var(--ink);border-radius:20px;
+  box-shadow:var(--shadow);padding:16px;margin-bottom:16px}
+.label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:#6b6779;margin-bottom:9px}
+.big{background:var(--ink);color:#fff;border:3px solid var(--ink);border-radius:16px;
+  padding:16px 18px;width:100%;font-family:var(--display);font-weight:800;font-size:19px;
+  text-transform:uppercase;box-shadow:var(--shadow)}
+.big:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.big.hue{background:var(--hue)}
+.lite{background:#fff;border:2.5px solid var(--ink);border-radius:14px;padding:12px 14px;
+  width:100%;font-weight:600;font-size:15px;box-shadow:var(--shadow-sm);margin-top:9px}
+.lite:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+/* ---------- mode switch ---------- */
+.modes{display:flex;gap:9px}
+.mode{flex:1;background:#fff;border:2.5px solid var(--ink);border-radius:14px;padding:11px 8px;
+  text-align:center;box-shadow:var(--shadow-sm)}
+.mode b{display:block;font-family:var(--display);font-weight:800;font-size:15px}
+.mode span{font-size:11.5px;color:#6b6779}
+.mode.on{background:var(--hue);color:#fff}
+.mode.on span{color:rgba(255,255,255,.9)}
+
+/* ---------- round grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tile{border:3px solid var(--ink);border-radius:18px;padding:11px 10px 10px;text-align:left;
+  box-shadow:var(--shadow-sm);color:#fff;position:relative;min-height:98px;
+  display:flex;flex-direction:column;justify-content:space-between}
+.tile:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.tile .em{font-size:26px;line-height:1}
+.tile .ltr{position:absolute;top:8px;right:11px;font-family:var(--display);font-weight:800;
+  font-size:21px;opacity:.55}
+.tile .nm{font-family:var(--display);font-weight:800;font-size:15px;line-height:1.1;margin-top:6px}
+.tile .sc{font-size:11.5px;font-weight:600;opacity:.9;margin-top:3px}
+.tile.cleared{box-shadow:var(--shadow-sm),inset 0 0 0 3px rgba(255,255,255,.6)}
+
+/* ---------- stickers ---------- */
+.stickers{display:flex;flex-wrap:wrap;gap:8px}
+.st{width:42px;height:42px;border:2.5px solid var(--ink);border-radius:13px;background:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:21px}
+.st.locked{background:#eae5f0;filter:grayscale(1);opacity:.55;font-size:16px}
+
+/* ---------- HUD ---------- */
+.hud{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.chip{background:#fff;border:2.5px solid var(--ink);border-radius:999px;padding:5px 11px;
+  font-family:var(--display);font-weight:800;font-size:14px;box-shadow:var(--shadow-sm);
+  display:flex;align-items:center;gap:5px}
+.chip.round{background:var(--hue);color:#fff}
+.hearts{margin-left:auto;font-size:16px;letter-spacing:2px}
+.heart.gone{opacity:.25;filter:grayscale(1)}
+.timerbar{height:10px;background:#fff;border:2.5px solid var(--ink);border-radius:999px;
+  overflow:hidden;margin-bottom:14px}
+.timerbar i{display:block;height:100%;background:var(--hue);width:100%}
+.timerbar.low i{background:var(--bad)}
+.segs{display:flex;gap:4px;margin-bottom:14px}
+.seg{height:8px;flex:1;border:2px solid var(--ink);border-radius:4px;background:#fff}
+.seg.hit{background:var(--good)}
+.seg.miss{background:var(--bad)}
+.seg.now{background:var(--hue)}
+
+/* ---------- question ---------- */
+.qcard{background:#fff;border:3px solid var(--ink);border-radius:20px;box-shadow:var(--shadow);
+  padding:16px;margin-bottom:14px;text-align:center}
+.tip{background:var(--hue);color:#fff;border:3px solid var(--ink);border-radius:14px;
+  padding:10px 13px;font-size:13.5px;font-weight:500;margin-bottom:13px;box-shadow:var(--shadow-sm)}
+.cue{font-size:64px;line-height:1.1;display:block;margin-bottom:6px}
+.q{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.3;margin:0}
+.q .gap{display:inline-block;min-width:56px;border-bottom:3px solid var(--hue)}
+.eraser{display:inline-block;width:70px;height:32px;border-radius:8px;background:#c9c4d4;
+  border:3px solid var(--ink);position:relative;vertical-align:middle}
+.eraser::after{content:"";position:absolute;right:0;top:0;bottom:0;width:22px;background:#8b8598;
+  border-left:3px solid var(--ink);border-radius:0 4px 4px 0}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:2.5px solid var(--ink);
+  border-radius:15px;padding:14px 15px;margin-bottom:9px;font-weight:600;font-size:17px;
+  box-shadow:var(--shadow-sm);min-height:54px}
+.opt:active:enabled{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.opt .k{display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;
+  border:2px solid var(--ink);border-radius:7px;font-size:11px;margin-right:10px;
+  font-family:var(--display);font-weight:800;vertical-align:-4px}
+.opt.right{background:var(--good);color:#fff}
+.opt.wrong{background:var(--bad);color:#fff}
+.opt.fade:disabled{opacity:.4}
+.opt:disabled{cursor:default}
+.opts.pairs .opt,.opts.yn .opt{text-align:center;font-size:18px}
+.opts.yn{display:flex;gap:9px}
+.opts.yn .opt{font-family:var(--display);font-weight:800}
+.pw{font-style:italic}
+
+/* ---------- word order ---------- */
+.build{background:#fff;border:3px dashed var(--ink);border-radius:16px;min-height:64px;
+  padding:10px;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start}
+.build.right{border-style:solid;background:#e7f8ef}
+.build.wrong{border-style:solid;background:#ffeeec}
+.build .ph{color:#9b96a8;font-size:14px;padding:6px 2px}
+.bank{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:10px}
+.word{background:#fff;border:2.5px solid var(--ink);border-radius:12px;padding:10px 13px;
+  font-weight:600;font-size:17px;box-shadow:var(--shadow-sm);min-height:46px}
+.word:active:enabled{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.word.used{opacity:.25;box-shadow:none}
+.word.slot{background:var(--hue);color:#fff}
+
+/* ---------- feedback ---------- */
+.fb{border:3px solid var(--ink);border-radius:18px;padding:14px;box-shadow:var(--shadow);background:#fff}
+.fb.y{background:#e7f8ef}
+.fb.n{background:#ffeeec}
+.fb h3{font-size:19px;margin:0 0 5px;display:flex;align-items:center;gap:7px}
+.fb p{margin:0 0 12px;font-size:14.5px}
+.say{background:#fff;border:2.5px solid var(--ink);border-radius:12px;padding:8px 12px;
+  font-weight:600;font-size:14px;box-shadow:var(--shadow-sm);margin:0 0 11px}
+.say:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.pop{font-family:var(--display);font-weight:800;font-size:13px;background:var(--ink);color:#fff;
+  border-radius:999px;padding:2px 9px;margin-left:auto}
+
+/* ---------- results ---------- */
+.xp{font-family:var(--display);font-weight:800;font-size:64px;line-height:1}
+.rank{font-family:var(--display);font-weight:800;font-size:27px;margin:2px 0 4px;text-transform:uppercase}
+.row{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:2px solid #eae5f0;font-size:14.5px}
+.row:last-child{border-bottom:none}
+.rl{font-family:var(--display);font-weight:800;width:22px}
+.bar{margin-left:auto;width:70px;height:10px;border:2px solid var(--ink);border-radius:5px;
+  background:#fff;overflow:hidden}
+.bar i{display:block;height:100%}
+footer{margin-top:26px;font-size:12px;color:#6b6779;text-align:center}
+footer a{color:#6b6779}
+
+/* ---------- motion ---------- */
+@keyframes shake{10%,90%{transform:translateX(-2px)}30%,70%{transform:translateX(4px)}50%{transform:translateX(-4px)}}
+@keyframes pop{0%{transform:scale(.7)}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+.shake{animation:shake .35s}
+.popin{animation:pop .28s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ---------- listening ---------- */
+.play{width:96px;height:96px;border-radius:50%;background:var(--hue);color:#fff;border:3px solid var(--ink);
+  box-shadow:var(--shadow);font-size:42px;display:inline-flex;align-items:center;justify-content:center;margin:2px 0 10px}
+.play:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.play.on{animation:pop .5s infinite alternate}
+.reveal{background:none;border:none;color:#6b6779;font-size:13px;font-weight:600;text-decoration:underline;padding:4px;margin-top:4px}
+.script{font-family:var(--display);font-weight:600;font-size:18px;margin:8px 0 0;color:var(--ink);
+  background:#f6f2fb;border:2px dashed #c9c4d4;border-radius:12px;padding:8px 10px}
+.opt .ico{font-size:24px;margin-right:8px;vertical-align:-4px}
+
+/* ---------- spelling ---------- */
+.bank.letters .word,.build.letters .word{min-width:46px;text-align:center;font-family:var(--display);font-weight:800;font-size:20px}
+
+/* ---------- where is it? ---------- */
+.scn{position:relative;display:inline-block;width:170px;height:128px;margin-bottom:4px}
+.scn .pl,.scn .ob{position:absolute;left:50%;transform:translateX(-50%);line-height:1}
+.scn .pl{bottom:4px;font-size:92px;z-index:2}
+.scn .ob{font-size:42px;z-index:3}
+.scn.on .ob{bottom:82px}
+.scn.on .pl{bottom:0}
+.scn.under .pl{bottom:26px;font-size:96px}
+.scn.under .ob{bottom:2px;font-size:34px}
+.scn.in .ob{bottom:58px;z-index:1}
+.scn.behind .ob{bottom:6px;left:26%;z-index:1;font-size:60px}
+.scn.sofa.on .ob{left:40%;bottom:40px;font-size:38px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="mark">Phil Young's</span>
+    <span class="sub">PreTeens 1 · Units 4–6</span>
+    <button class="icon-btn" id="snd" title="Sound">🔇</button>
+  </div>
+  <main id="app"></main>
+  <footer>PreTeens 1 · Test 2 · <a href="../index.html">Review Hub</a></footer>
+</div>
+
+<script>
+"use strict";
+
+/* ================================================================= content */
+const HUES = ["#ff8a00","#2d7df6","#12b76a","#8b5cf6","#ff5fa2","#00b8c4","#ff4d3d","#7a5cff"];
+const sc = (obj, place, where) => `<span class="scn ${where}"><span class="pl">${place}</span><span class="ob">${obj}</span></span>`;
+
+const STAGES = [
+{ letter:"A", name:"House Detective", sub:"Listen · rooms", em:"🏠", sticker:"🛋️", type:"listen", ask:"Where are they?",
+  tip:"Tap 🔊 and listen. Where is the person?",
+  qs:[
+    {say:"We're watching a movie on the sofa.", o:[["🛁","bathroom"],["🛋️","living room"],["🚗","garage"]], a:1,
+     why:"There's a sofa and a TV in the <b>living room</b>."},
+    {say:"I'm taking a bath. The water is hot!", o:[["🛁","bathroom"],["🍳","kitchen"],["🌳","garden"]], a:0,
+     why:"You take a bath in the <b>bathroom</b>."},
+    {say:"Grandpa is making dinner for the family.", o:[["🛏️","bedroom"],["🚗","garage"],["🍳","kitchen"]], a:2,
+     why:"We cook food in the <b>kitchen</b>."},
+    {say:"The dog is playing with a ball under the tree.", o:[["🌳","garden"],["🛏️","bedroom"],["🛋️","living room"]], a:0,
+     why:"The tree is outside, in the <b>garden</b>."},
+    {say:"Shh! My little sister is sleeping in her bed.", o:[["🍳","kitchen"],["🛏️","bedroom"],["🛁","bathroom"]], a:1,
+     why:"We sleep in a bed in the <b>bedroom</b>."}
+  ]},
+
+{ letter:"B", name:"Town Tour", sub:"Listen · places", em:"🗺️", sticker:"🎬", type:"listen", ask:"Which place is it?",
+  tip:"Tap 🔊 and listen. Which place do you hear?",
+  qs:[
+    {say:"I want a hot chocolate and a cake. Let's go to the café.", o:[["☕","café"],["🏥","hospital"],["🐘","zoo"]], a:0,
+     why:"You eat cake and drink hot chocolate at a <b>café</b>."},
+    {say:"Look! There are lions and monkeys at the zoo.", o:[["🌳","park"],["🐘","zoo"],["🎬","movie theater"]], a:1,
+     why:"Lions and monkeys live at the <b>zoo</b>."},
+    {say:"We're watching a new film at the movie theater.", o:[["📚","library"],["🛍️","shopping center"],["🎬","movie theater"]], a:2,
+     why:"You watch films at the <b>movie theater</b>."},
+    {say:"Shh! People are reading books in the library.", o:[["📚","library"],["🏊","swimming pool"],["☕","café"]], a:0,
+     why:"You read and borrow books at the <b>library</b>."},
+    {say:"My grandma is sick. She's in the hospital.", o:[["🏨","hotel"],["🏥","hospital"],["🌳","park"]], a:1,
+     why:"Sick people go to the <b>hospital</b>. A <i>hotel</i> is for visitors."}
+  ]},
+
+{ letter:"C", name:"Is There?", sub:"there is / there are", em:"🏨", sticker:"🏙️", type:"mc",
+  tip:"One thing → Is there? / there is. Two or more → Are there? / there are.",
+  qs:[
+    {cue:"🌳", q:"<span class='gap'></span> a park in your town? — Yes, there is.", o:["Is there","Are there","There is"], a:0,
+     why:"One park → <b>Is there</b> a park? Questions start with <i>Is</i>."},
+    {cue:"🏨🏨🏨", q:"How many hotels <span class='gap'></span>? — There are three.", o:["is there","are there","there are"], a:1,
+     why:"<i>Hotels</i> is plural → How many hotels <b>are there</b>?"},
+    {cue:"🐘❌", q:"Is there a zoo? — No, <span class='gap'></span>.", o:["there is","there isn't","there aren't"], a:1,
+     why:"No zoo, and <i>zoo</i> is one thing → <b>No, there isn't.</b>"},
+    {cue:"☕☕☕☕☕", q:"How many cafés are there? — <span class='gap'></span> five.", o:["There is","There are","Are there"], a:1,
+     why:"Five cafés → <b>There are</b> five."},
+    {cue:"🏊🏊", q:"<span class='gap'></span> swimming pools are there? — There are two.", o:["How many","Is there","Are there"], a:0,
+     why:"The answer is a number → the question starts with <b>How many</b>."}
+  ]},
+
+{ letter:"D", name:"Spell It", sub:"Animals", em:"🐸", sticker:"🐢", type:"spell", say:true,
+  tip:"Tap the letters in the right order to spell the animal.",
+  qs:[
+    {cue:"🐸", q:"What animal is it?", w:["O","G","F","R"], a:"FROG", word:"frog",
+     why:"<b>FROG</b> — F, R, O, G. Frogs can jump!"},
+    {cue:"🐢", q:"What animal is it?", w:["T","L","U","E","R","T"], a:"TURTLE", word:"turtle",
+     why:"<b>TURTLE</b> — T, U, R, T, L, E. Two T's!"},
+    {cue:"🐒", q:"What animal is it?", w:["K","O","Y","M","E","N"], a:"MONKEY", word:"monkey",
+     why:"<b>MONKEY</b> — M, O, N, K, E, Y."},
+    {cue:"🐰", q:"What animal is it?", w:["B","I","R","T","A","B"], a:"RABBIT", word:"rabbit",
+     why:"<b>RABBIT</b> — R, A, B, B, I, T. Two B's!"},
+    {cue:"🐟", q:"What animal is it?", w:["S","H","I","F"], a:"FISH", word:"fish",
+     why:"<b>FISH</b> — F, I, S, H. One fish, two fish — the same word!"}
+  ]},
+
+{ letter:"E", name:"Family Faces", sub:"Family", em:"👨‍👩‍👧", sticker:"👵", type:"mc", say:true,
+  tip:"Who is it? Choose the family word.",
+  qs:[
+    {cue:"👵", q:"This is my <span class='gap'></span>.", o:["grandma","grandpa","sister"], a:0, word:"grandma",
+     why:"An old woman in your family is your <b>grandma</b>."},
+    {cue:"👦", q:"This is my <span class='gap'></span>.", o:["sister","brother","mom"], a:1, word:"brother",
+     why:"A boy in your family is your <b>brother</b>."},
+    {cue:"🧔", q:"My dad's brother is my <span class='gap'></span>.", o:["aunt","cousin","uncle"], a:2, word:"uncle",
+     why:"Your mom's or dad's brother is your <b>uncle</b>."},
+    {cue:"👴", q:"This is my <span class='gap'></span>.", o:["grandpa","grandma","uncle"], a:0, word:"grandpa",
+     why:"An old man in your family is your <b>grandpa</b>."},
+    {cue:"👩", q:"My mom's sister is my <span class='gap'></span>.", o:["aunt","uncle","grandma"], a:0, word:"aunt",
+     why:"Your mom's or dad's sister is your <b>aunt</b>."}
+  ]},
+
+{ letter:"F", name:"Mix-Up", sub:"Do you have any…?", em:"🔀", sticker:"🧩", type:"order",
+  tip:"Tap the words in the right order. Watch the capital letter and the question mark.",
+  qs:[
+    {q:"Put the question in order:", w:["any","Do","dogs?","you","have"], a:"Do you have any dogs?",
+     why:"<b>Do you have any dogs?</b> The order is <i>Do + you + have + any + …?</i>"},
+    {q:"Put the answer in order:", w:["do.","I","Yes,"], a:"Yes, I do.",
+     why:"<b>Yes, I do.</b> Short answers use <i>I do</i>, not <i>I have</i>."},
+    {q:"Put the question in order:", w:["have","you","Do","any","sisters?"], a:"Do you have any sisters?",
+     why:"<b>Do you have any sisters?</b> <i>Any</i> goes before the plural word."},
+    {q:"Put the answer in order:", w:["don't.","No,","I"], a:"No, I don't.",
+     why:"<b>No, I don't.</b> <i>Don't</i> = <i>do not</i>."},
+    {q:"Put the question in order:", w:["you","cousins?","any","Do","have"], a:"Do you have any cousins?",
+     why:"<b>Do you have any cousins?</b> Start with <i>Do</i>."}
+  ]},
+
+{ letter:"G", name:"Where Is It?", sub:"in / on / under / behind", em:"🧺", sticker:"🧸", type:"mc",
+  tip:"Look at the picture. Where is it?",
+  qs:[
+    {cue:sc("🐱","🛏️","under"), q:"Where's the cat? It's <span class='gap'></span> the bed.", o:["on","under","behind"], a:1,
+     why:"The cat is below the bed → <b>under</b> the bed."},
+    {cue:sc("⚽","🧺","in"), q:"Where's the ball? It's <span class='gap'></span> the basket.", o:["in","under","on"], a:0,
+     why:"The ball is inside the basket → <b>in</b> the basket."},
+    {cue:sc("🧸","🛋️","on sofa"), q:"Where's the teddy bear? It's <span class='gap'></span> the sofa.", o:["behind","on","in"], a:1,
+     why:"The teddy bear is sitting on top of the sofa → <b>on</b> the sofa."},
+    {cue:sc("🐕","🛋️","behind"), q:"Where's the dog? It's <span class='gap'></span> the sofa.", o:["under","in","behind"], a:2,
+     why:"You can only see half of the dog. The sofa is in front of it → it's <b>behind</b> the sofa."},
+    {cue:sc("🎒","🪑","on"), q:"Where's the bag? It's <span class='gap'></span> the chair.", o:["on","under","in"], a:0,
+     why:"The bag is on top of the chair → <b>on</b> the chair."}
+  ]},
+
+{ letter:"H", name:"Yes, I Do!", sub:"Short answers", em:"✅", sticker:"🐶", type:"yn",
+  tip:"These are YOUR things. Answer the question about you.",
+  qs:[
+    {cue:"🐶🐶", q:"Do you have any dogs?", o:["Yes, I do.","No, I don't."], a:0,
+     why:"You have two dogs → <b>Yes, I do.</b>"},
+    {cue:"🐱", q:"Do you have any rabbits?", o:["Yes, I do.","No, I don't."], a:1,
+     why:"You have a cat, not rabbits → <b>No, I don't.</b>"},
+    {cue:"🐢🐢🐢", q:"Do you have any turtles?", o:["Yes, I do.","No, I don't."], a:0,
+     why:"You have three turtles → <b>Yes, I do.</b>"},
+    {cue:"🐟🐟", q:"Do you have any birds?", o:["Yes, I do.","No, I don't."], a:1,
+     why:"You have fish, not birds → <b>No, I don't.</b>"},
+    {cue:"🚗🚗", q:"Do you have any toy cars?", o:["Yes, I do.","No, I don't."], a:0,
+     why:"You have two toy cars → <b>Yes, I do.</b>"}
+  ]}
+];
+
+const RANKS = [
+  [90,"Mayor","Boss of Units 4, 5 and 6."],
+  [75,"Tour Guide","Great score. Look at the short bars."],
+  [60,"Explorer","Good. One more go and you're a Tour Guide."],
+  [40,"Visitor","Play again the rounds with short bars."],
+  [0,"New in Town","Read the review sheet, then come back."]
+];
+
+/* =================================================================== state */
+const app = document.getElementById("app");
+const R = STAGES.map(s => ({correct:0, total:s.qs.length, xp:0, done:false}));
+let si=0, qi=0, combo=0, bestCombo=0, xp=0, lives=3, timed=false, sound=false;
+let answered=false, tick=null, tLeft=0, tStart=0, built=[];
+const LIMIT = 20;
+
+const hue = i => HUES[i % HUES.length];
+const setHue = (c, tintOn) => {
+  document.documentElement.style.setProperty("--hue", c);
+  document.body.style.setProperty("--tint", tintOn ? c + "1c" : "#fdf3e7");
+};
+
+/* --------------------------------------------------------------- sound fx */
+let AC = null;
+function blip(freq, dur, type){
+  if (!sound) return;
+  try{
+    AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+    const o = AC.createOscillator(), g = AC.createGain();
+    o.type = type || "square"; o.frequency.value = freq;
+    g.gain.setValueAtTime(.06, AC.currentTime);
+    g.gain.exponentialRampToValueAtTime(.0001, AC.currentTime + dur);
+    o.connect(g); g.connect(AC.destination); o.start(); o.stop(AC.currentTime + dur);
+  }catch(e){}
+}
+document.getElementById("snd").onclick = e => {
+  sound = !sound;
+  e.currentTarget.textContent = sound ? "🔊" : "🔇";
+  blip(660, .08);
+};
+
+/* ------------------------------------------------------------ text to speech */
+const canSpeak = typeof window.speechSynthesis !== "undefined"
+  && typeof window.SpeechSynthesisUtterance !== "undefined";
+function speak(t){
+  if (!canSpeak) return;
+  try{
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(t);
+    u.lang = "en-US"; u.rate = .8;
+    window.speechSynthesis.speak(u);
+  }catch(e){}
+}
+
+/* ==================================================================== home */
+function home(){
+  document.onkeydown = null; stopTimer(); setHue("#ff8a00", false);
+  const cleared = R.filter(r=>r.done).length;
+  app.innerHTML = `
+    <div class="hero">
+      <span class="blob">🏠</span>
+      <div class="kicker">Test 2 Review · Units 4, 5 &amp; 6</div>
+      <h1>Home &amp;<br>Town</h1>
+      <p>Eight rounds, forty questions. Rounds A and B are listening — turn the sound on! Get three right in a row and your points start to multiply.</p>
+    </div>
+
+    <div class="block">
+      <div class="label">How do you want to play?</div>
+      <div class="modes">
+        <button class="mode ${timed?'':'on'}" data-m="0"><b>Calm</b><span>No clock, no lives</span></button>
+        <button class="mode ${timed?'on':''}" data-m="1"><b>Fast</b><span>20s · 3 lives</span></button>
+      </div>
+      <button class="big hue" id="go" style="margin-top:13px">
+        ${cleared===STAGES.length ? "See my results" : (cleared ? "Keep going" : "Start round A")}
+      </button>
+    </div>
+
+    <div class="block">
+      <div class="label">Rounds · ${cleared} of ${STAGES.length} finished</div>
+      <div class="grid">
+        ${STAGES.map((s,i)=>`
+          <button class="tile ${R[i].done?'cleared':''}" data-i="${i}" style="background:${hue(i)}">
+            <span class="ltr">${s.letter}</span>
+            <span class="em">${s.em}</span>
+            <span>
+              <span class="nm">${s.name}</span>
+              <span class="sc">${R[i].done ? R[i].correct+"/"+R[i].total : s.sub}</span>
+            </span>
+          </button>`).join("")}
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="label">Sticker book · ${R.filter(r=>r.done && r.correct>=r.total-1).length} of ${STAGES.length}</div>
+      <div class="stickers">
+        ${STAGES.map((s,i)=>{
+          const got = R[i].done && R[i].correct >= R[i].total - 1;
+          return `<span class="st ${got?'':'locked'}" title="${s.name}">${got?s.sticker:'🔒'}</span>`;
+        }).join("")}
+      </div>
+      <p style="font-size:13px;color:#6b6779;margin:10px 0 0">Finish a round with 4 or 5 correct to win its sticker.</p>
+      ${cleared ? `<button class="lite" id="reset">Start everything again</button>` : ""}
+    </div>
+  `;
+  app.querySelectorAll(".mode").forEach(b => b.onclick = () => { timed = b.dataset.m === "1"; blip(520,.06); home(); });
+  app.querySelectorAll(".tile").forEach(b => b.onclick = () => start(+b.dataset.i));
+  document.getElementById("go").onclick = () => {
+    if (R.every(r=>r.done)) return finish();
+    const n = R.findIndex(r=>!r.done); start(n < 0 ? 0 : n);
+  };
+  const rs = document.getElementById("reset");
+  if (rs) rs.onclick = () => { R.forEach(r=>{r.correct=0;r.xp=0;r.done=false;}); xp=0; bestCombo=0; home(); };
+}
+
+/* ==================================================================== play */
+function start(i){ si=i; qi=0; combo=0; lives=3; R[i].correct=0; R[i].xp=0; render(); }
+function mult(){ return Math.min(5, 1 + Math.floor(combo/3)); }
+
+function hud(s){
+  return `
+    <div class="hud">
+      <span class="chip round">${s.letter}<span style="font-size:11px;opacity:.9">${qi+1}/${s.qs.length}</span></span>
+      <span class="chip" id="combochip">⚡ ×${mult()}</span>
+      <span class="chip">${xp}</span>
+      ${timed ? `<span class="hearts">${[0,1,2].map(n=>`<span class="heart ${n<lives?'':'gone'}">❤️</span>`).join("")}</span>` : ""}
+    </div>
+    ${timed ? `<div class="timerbar" id="tb"><i></i></div>` : ""}
+    <div class="segs">${s.qs.map((_,i)=>`<span class="seg ${i<qi?'hit':i===qi?'now':''}"></span>`).join("")}</div>
+    ${qi===0 && s.tip ? `<div class="tip">${s.tip}</div>` : ""}`;
+}
+
+function render(){
+  const s = STAGES[si], q = s.qs[qi];
+  answered = false; built = []; setHue(hue(si), true);
+
+  if (s.type === "order" || s.type === "spell"){
+    const lt = s.type === "spell" ? "letters" : "";
+    app.innerHTML = `
+      ${hud(s)}
+      <div class="qcard">${q.cue ? `<span class="cue">${q.cue}</span>` : ""}<p class="q">${q.q}</p></div>
+      <div class="build ${lt}" id="build"></div>
+      <div class="bank ${lt}" id="bank">
+        ${q.w.map((w,i)=>`<button class="word" data-w="${i}">${w}</button>`).join("")}
+      </div>
+      <button class="lite" id="undo" style="margin-top:0">↩ Take one ${s.type==="spell" ? "letter" : "word"} back</button>
+      <div id="fb"></div>`;
+    paintBuild();
+    app.querySelectorAll("[data-w]").forEach(b => b.onclick = () => {
+      if (answered || b.classList.contains("used")) return;
+      built.push(+b.dataset.w); blip(560,.05); paintBuild();
+      if (built.length === q.w.length) checkOrder();
+    });
+    document.getElementById("undo").onclick = () => { if (!answered && built.length){ built.pop(); paintBuild(); } };
+    document.onkeydown = e => { if (answered && (e.key==="Enter"||e.key===" ")){ e.preventDefault(); nextOrDie(); } };
+    tStart = Date.now();
+    if (timed) startTimer();
+    return;
+  }
+
+  const keys = s.type==="yn" ? ["Y","N"] : ["1","2","3","4"];
+  const cls  = s.type==="pair" ? "pairs" : s.type==="yn" ? "yn" : "";
+  const listen = s.type === "listen";
+  const card = listen ? `
+      <button class="play" id="play" title="Listen">🔊</button>
+      <p class="q">${canSpeak ? "Listen." : "Your teacher reads."} ${s.ask}</p>
+      ${canSpeak ? `<button class="reveal" id="rev">Can't hear it? Show the sentence</button>` : ""}
+      <p class="script ${canSpeak ? "hidden" : ""}" id="scr">“${q.say}”</p>`
+    : `${q.cue ? `<span class="cue">${q.cue}</span>` : ""}
+      <p class="q">${q.q}</p>`;
+  const label = o => Array.isArray(o) ? `<span class="ico">${o[0]}</span>${o[1]}` : o;
+  app.innerHTML = `
+    ${hud(s)}
+    <div class="qcard">${card}</div>
+    <div class="opts ${cls}" id="opts">
+      ${q.o.map((o,i)=>`<button class="opt" data-o="${i}"><span class="k">${keys[i]}</span><span class="${s.type==="pair"?"pw":""}">${label(o)}</span></button>`).join("")}
+    </div>
+    <div id="fb"></div>`;
+  app.querySelectorAll("[data-o]").forEach(b => b.onclick = () => answer(+b.dataset.o));
+  if (listen){
+    const play = () => { speak(q.say); const p = document.getElementById("play"); if (p){ p.classList.add("on"); setTimeout(()=>p.classList.remove("on"), 2200); } };
+    document.getElementById("play").onclick = play;
+    const rv = document.getElementById("rev");
+    if (rv) rv.onclick = () => { document.getElementById("scr").classList.remove("hidden"); rv.remove(); };
+    setTimeout(play, 350);
+  }
+  document.onkeydown = e => {
+    if (answered){ if (e.key==="Enter"||e.key===" "){ e.preventDefault(); nextOrDie(); } return; }
+    if (listen && e.key.toLowerCase()==="r"){ speak(q.say); return; }
+    let idx = -1;
+    if (s.type==="yn"){ const k=e.key.toLowerCase(); if(k==="y")idx=0; if(k==="n")idx=1; }
+    if (idx<0 && /^[1-4]$/.test(e.key)) idx = +e.key-1;
+    if (idx>=0 && idx<q.o.length) answer(idx);
+  };
+  tStart = Date.now();
+  if (timed) startTimer();
+}
+
+function paintBuild(){
+  const q = STAGES[si].qs[qi];
+  const b = document.getElementById("build");
+  b.innerHTML = built.length
+    ? built.map(i=>`<span class="word slot">${q.w[i]}</span>`).join("")
+    : `<span class="ph">${STAGES[si].type==="spell" ? "Tap the letters below to spell the word." : "Tap the words below to build the sentence."}</span>`;
+  document.querySelectorAll("[data-w]").forEach((el,i)=>el.classList.toggle("used", built.includes(i)));
+}
+
+/* -------------------------------------------------------------- timer */
+function startTimer(){
+  tLeft = LIMIT;
+  const bar = document.querySelector("#tb i"), box = document.getElementById("tb");
+  tick = setInterval(()=>{
+    tLeft -= .1;
+    if (bar) bar.style.width = Math.max(0, tLeft/LIMIT*100) + "%";
+    if (box) box.classList.toggle("low", tLeft <= 6);
+    if (tLeft <= 0){ (STAGES[si].type==="order" || STAGES[si].type==="spell") ? timeoutOrder() : answer(-1); }
+  }, 100);
+}
+function stopTimer(){ if (tick){ clearInterval(tick); tick = null; } }
+
+/* -------------------------------------------------------------- grading */
+function grade(right, out, paint){
+  if (answered) return;
+  answered = true; stopTimer();
+  const s = STAGES[si], q = s.qs[qi];
+  const secs = (Date.now()-tStart)/1000;
+  let gain = 0;
+  if (right){
+    const speed = timed ? Math.max(0, Math.round((LIMIT-secs)*3)) : 0;
+    gain = (100 + speed) * mult();
+    combo++; bestCombo = Math.max(bestCombo, combo); R[si].correct++;
+    blip(mult()>2 ? 880 : 700, .1);
+  } else {
+    combo = 0;
+    if (timed) lives--;
+    blip(150, .18, "sawtooth");
+  }
+  xp += gain; R[si].xp += gain;
+  paint();
+
+  document.querySelectorAll(".seg")[qi].className = "seg " + (right ? "hit" : "miss");
+  const cc = document.getElementById("combochip");
+  if (cc){ cc.textContent = "⚡ ×" + mult(); cc.classList.add("popin"); }
+
+  const dead = timed && lives <= 0;
+  const last = qi === s.qs.length - 1;
+  const sayText = s.type==="listen" ? q.say : (s.say && q.word ? q.word : null);
+  const sayWord = sayText && canSpeak;
+  document.getElementById("fb").innerHTML = `
+    <div class="fb ${right?'y':'n'}">
+      <h3>${right ? (mult()>2 ? "On fire!" : "Correct!") : out ? "Time's up." : "Not this one."}
+        ${gain ? `<span class="pop">+${gain}</span>` : ""}</h3>
+      <p>${s.type==="listen" ? `You heard: <i>“${q.say}”</i><br>` : ""}${q.why}</p>
+      ${sayWord ? `<button class="say" id="say">🔊 ${s.type==="listen" ? "Hear it again" : "Hear the word"}</button>` : ""}
+      <button class="big" id="next">${dead ? "Round over" : last ? "Finish round "+s.letter : "Next"}</button>
+    </div>`;
+  const sb = document.getElementById("say");
+  if (sb) sb.onclick = () => speak(sayText);
+  const nb = document.getElementById("next");
+  nb.onclick = () => dead ? dead_screen() : next();
+  nb.focus({preventScroll:true});
+}
+
+function answer(pick){
+  if (answered) return;
+  const s = STAGES[si], q = s.qs[qi], right = pick === q.a;
+  grade(right, pick === -1, () => {
+    app.querySelectorAll("[data-o]").forEach((b,i)=>{
+      b.disabled = true;
+      if (i === q.a) b.classList.add("right");
+      else if (i === pick) b.classList.add("wrong");
+      else b.classList.add("fade");
+    });
+    if (!right){ const o = document.getElementById("opts"); if (o) o.classList.add("shake"); }
+  });
+}
+
+function checkOrder(){
+  const q = STAGES[si].qs[qi];
+  const given = built.map(i=>q.w[i]).join(STAGES[si].type==="spell" ? "" : " ");
+  const right = given === q.a;
+  grade(right, false, () => {
+    const b = document.getElementById("build");
+    b.classList.add(right ? "right" : "wrong");
+    if (!right){
+      b.classList.add("shake");
+      b.innerHTML += `<div style="flex-basis:100%;font-size:14px;font-weight:600;margin-top:6px">✔ ${q.a}</div>`;
+    }
+    document.querySelectorAll("[data-w]").forEach(el => el.disabled = true);
+    const u = document.getElementById("undo"); if (u) u.remove();
+  });
+}
+
+function timeoutOrder(){
+  const q = STAGES[si].qs[qi];
+  grade(false, true, () => {
+    const b = document.getElementById("build");
+    b.classList.add("wrong");
+    b.innerHTML += `<div style="flex-basis:100%;font-size:14px;font-weight:600;margin-top:6px">✔ ${q.a}</div>`;
+    document.querySelectorAll("[data-w]").forEach(el => el.disabled = true);
+    const u = document.getElementById("undo"); if (u) u.remove();
+  });
+}
+
+function nextOrDie(){ (timed && lives <= 0) ? dead_screen() : next(); }
+
+function next(){
+  if (qi < STAGES[si].qs.length - 1){ qi++; render(); return; }
+  R[si].done = true; roundEnd();
+}
+
+function dead_screen(){
+  document.onkeydown = null;
+  const s = STAGES[si];
+  app.innerHTML = `
+    <div class="hero"><span class="blob">💔</span>
+      <div class="kicker">Round ${s.letter} · ${s.name}</div>
+      <h1>No hearts<br>left</h1>
+      <p>You got ${R[si].correct} of ${s.qs.length}. Nothing is lost — the round just starts again.</p>
+    </div>
+    <button class="big hue" id="again">Try round ${s.letter} again</button>
+    <button class="lite" id="calm">Play it in Calm mode</button>
+    <button class="lite" id="map">Back to the rounds</button>`;
+  document.getElementById("again").onclick = () => start(si);
+  document.getElementById("calm").onclick = () => { timed = false; start(si); };
+  document.getElementById("map").onclick = home;
+}
+
+function roundEnd(){
+  document.onkeydown = null; stopTimer();
+  const s = STAGES[si], r = R[si];
+  const perfect = r.correct === r.total, sticker = r.correct >= r.total - 1;
+  const allDone = R.every(x=>x.done), n = R.findIndex(x=>!x.done);
+  app.innerHTML = `
+    <div class="hero"><span class="blob">${s.em}</span>
+      <div class="kicker">Round ${s.letter} finished</div>
+      <h1>${r.correct} / ${r.total}</h1>
+      <p>${perfect ? "Perfect — no mistakes at all!" : sticker ? "One mistake. You still win the sticker." : "You need 4 correct to win the sticker. Try again!"}</p>
+    </div>
+    <div class="block">
+      <div class="label">This round</div>
+      <div class="row"><span>Points</span><b style="margin-left:auto">${r.xp}</b></div>
+      <div class="row"><span>Total points</span><b style="margin-left:auto">${xp}</b></div>
+      <div class="row"><span>Best streak</span><b style="margin-left:auto">${bestCombo}</b></div>
+      ${sticker ? `<div class="row"><span>New sticker</span><span class="st" style="margin-left:auto">${s.sticker}</span></div>` : ""}
+    </div>
+    <button class="big hue" id="on">${allDone ? "See my results" : "Round "+STAGES[n].letter+" · "+STAGES[n].name}</button>
+    <button class="lite" id="again">Play round ${s.letter} again</button>
+    <button class="lite" id="map">Back to the rounds</button>`;
+  document.getElementById("on").onclick = () => allDone ? finish() : start(n);
+  document.getElementById("again").onclick = () => start(si);
+  document.getElementById("map").onclick = home;
+}
+
+function finish(){
+  document.onkeydown = null; stopTimer(); setHue("#8b5cf6", false);
+  const c = R.reduce((a,r)=>a+r.correct,0), t = R.reduce((a,r)=>a+r.total,0);
+  const p = Math.round(c/t*100), rk = RANKS.find(x => p >= x[0]);
+  const weak = R.map((r,i)=>({i, ratio:r.correct/r.total})).sort((a,b)=>a.ratio-b.ratio)[0];
+  app.innerHTML = `
+    <div class="hero"><span class="blob">🏆</span>
+      <div class="kicker">All eight rounds</div>
+      <h1 class="xp">${xp}</h1>
+      <div class="rank" style="color:#fff">${rk[1]}</div>
+      <p>${c} of ${t} correct · ${p}% · best streak ${bestCombo}. ${rk[2]}</p>
+    </div>
+    <div class="block">
+      <div class="label">Round by round</div>
+      ${R.map((r,i)=>`
+        <div class="row">
+          <span class="rl" style="color:${hue(i)}">${STAGES[i].letter}</span>
+          <span>${STAGES[i].name}</span>
+          <span style="margin-left:auto;font-weight:600">${r.correct}/${r.total}</span>
+          <span class="bar"><i style="width:${r.correct/r.total*100}%;background:${hue(i)}"></i></span>
+        </div>`).join("")}
+    </div>
+    <div class="block">
+      <div class="label">Sticker book</div>
+      <div class="stickers">
+        ${STAGES.map((s,i)=>{const g=R[i].correct>=R[i].total-1;return `<span class="st ${g?'':'locked'}">${g?s.sticker:'🔒'}</span>`;}).join("")}
+      </div>
+    </div>
+    ${weak.ratio<1 ? `<button class="big hue" id="weak">Play ${STAGES[weak.i].letter} · ${STAGES[weak.i].name} again</button>` : ""}
+    <button class="lite" id="map">Back to the rounds</button>`;
+  const w = document.getElementById("weak");
+  if (w) w.onclick = () => start(weak.i);
+  document.getElementById("map").onclick = home;
+}
+
+home();
+</script>
+</body>
+</html>
