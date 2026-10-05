@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- HUBGEN:leaf start -->
+<script>(function(){try{var k="arschul:theme",v=localStorage.getItem(k);
+if(!v){var o=["hub-theme","theme","gh-theme","adv-theme","reviews-theme","worksheets-theme",
+"vocab-theme","toefl-theme","stc-theme","wheelquest-theme","wba-theme","airtight-theme","efl-reader-theme"];
+for(var i=0;i<o.length;i++){var x=localStorage.getItem(o[i]);if(x==="light"||x==="dark"){v=x;break;}}
+v=v||"dark";localStorage.setItem(k,v);}
+var m=(v==="system")?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):v;
+document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script>
+<script defer src="https://arschul.github.io/assets/leaf.v1.js"></script>
+<!-- HUBGEN:leaf end -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Test 2 Arcade · Intermediate 1 — Phil Young's English School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17151f;
+  --paper:#f0eef6;
+  --tint:#f0eef6;
+  --hue:#2d7df6;
+  --good:#12b76a;
+  --bad:#ff4d3d;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Inter',system-ui,-apple-system,sans-serif;
+  --shadow:5px 5px 0 var(--ink);
+  --shadow-sm:3px 3px 0 var(--ink);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--body);color:var(--ink);font-size:16px;line-height:1.45;
+  background:var(--tint);transition:background .35s ease;
+  min-height:100vh;
+}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 60px}
+h1,h2,h3,.disp{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:1}
+button{font:inherit;color:inherit;cursor:pointer}
+.hidden{display:none!important}
+
+/* ---------- top bar ---------- */
+.top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.mark{
+  font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.02em;
+  background:var(--ink);color:#fff;padding:5px 10px;border-radius:999px;text-transform:uppercase;
+}
+.sub{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b6779}
+.icon-btn{
+  margin-left:auto;background:#fff;border:2.5px solid var(--ink);border-radius:10px;
+  width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:16px;
+  box-shadow:var(--shadow-sm);
+}
+.icon-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{
+  background:var(--hue);border:3px solid var(--ink);border-radius:18px;
+  box-shadow:var(--shadow);padding:22px 18px;margin-bottom:18px;color:#fff;
+  position:relative;overflow:hidden;
+}
+.hero h1{font-size:clamp(34px,11vw,50px);margin:0;text-transform:uppercase;color:#fff}
+.hero .kicker{
+  font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  opacity:.85;margin-bottom:8px;
+}
+.hero p{margin:10px 0 0;font-size:14.5px;max-width:34ch;opacity:.95}
+.hero .blob{
+  position:absolute;right:-30px;top:-30px;font-size:120px;opacity:.22;transform:rotate(14deg);
+  pointer-events:none;user-select:none;
+}
+
+/* ---------- generic blocks ---------- */
+.block{
+  background:#fff;border:3px solid var(--ink);border-radius:16px;
+  box-shadow:var(--shadow);padding:16px;margin-bottom:16px;
+}
+.label{
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:#6b6779;margin-bottom:9px;
+}
+.big{background:var(--ink);color:#fff;border:3px solid var(--ink);border-radius:14px;
+  padding:15px 18px;width:100%;font-family:var(--display);font-weight:800;font-size:18px;
+  text-transform:uppercase;letter-spacing:.01em;box-shadow:var(--shadow);}
+.big:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.big.hue{background:var(--hue)}
+.lite{background:#fff;border:2.5px solid var(--ink);border-radius:12px;padding:11px 14px;
+  width:100%;font-weight:600;font-size:14.5px;box-shadow:var(--shadow-sm);margin-top:9px}
+.lite:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+/* ---------- mode switch ---------- */
+.modes{display:flex;gap:9px}
+.mode{
+  flex:1;background:#fff;border:2.5px solid var(--ink);border-radius:12px;padding:11px 8px;
+  text-align:center;box-shadow:var(--shadow-sm);
+}
+.mode b{display:block;font-family:var(--display);font-weight:800;font-size:15px}
+.mode span{font-size:11.5px;color:#6b6779}
+.mode.on{background:var(--hue);color:#fff}
+.mode.on span{color:rgba(255,255,255,.85)}
+
+/* ---------- round grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{
+  border:3px solid var(--ink);border-radius:14px;padding:10px 8px 9px;text-align:left;
+  box-shadow:var(--shadow-sm);color:#fff;position:relative;min-height:92px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.tile:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.tile .em{font-size:22px;line-height:1}
+.tile .ltr{
+  position:absolute;top:7px;right:9px;font-family:var(--display);font-weight:800;
+  font-size:19px;opacity:.55;
+}
+.tile .nm{font-family:var(--display);font-weight:800;font-size:13.5px;line-height:1.1;margin-top:6px}
+.tile .sc{font-size:11px;font-weight:600;opacity:.85;margin-top:3px}
+.tile.cleared{box-shadow:var(--shadow-sm),inset 0 0 0 3px rgba(255,255,255,.55)}
+
+/* ---------- stickers ---------- */
+.stickers{display:flex;flex-wrap:wrap;gap:7px}
+.st{
+  width:38px;height:38px;border:2.5px solid var(--ink);border-radius:11px;background:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:19px;
+}
+.st.locked{background:#e4e1ec;filter:grayscale(1);opacity:.55;font-size:15px}
+
+/* ---------- HUD ---------- */
+.hud{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.chip{
+  background:#fff;border:2.5px solid var(--ink);border-radius:999px;padding:5px 11px;
+  font-family:var(--display);font-weight:800;font-size:14px;box-shadow:var(--shadow-sm);
+  display:flex;align-items:center;gap:5px;
+}
+.chip.round{background:var(--hue);color:#fff}
+.hearts{margin-left:auto;font-size:15px;letter-spacing:2px}
+.heart.gone{opacity:.25;filter:grayscale(1)}
+.timerbar{height:9px;background:#fff;border:2.5px solid var(--ink);border-radius:999px;overflow:hidden;margin-bottom:14px}
+.timerbar i{display:block;height:100%;background:var(--hue);width:100%}
+.timerbar.low i{background:var(--bad)}
+.segs{display:flex;gap:4px;margin-bottom:14px}
+.seg{height:7px;flex:1;border:2px solid var(--ink);border-radius:4px;background:#fff}
+.seg.hit{background:var(--good)}
+.seg.miss{background:var(--bad)}
+.seg.now{background:var(--hue)}
+
+/* ---------- question ---------- */
+.qcard{
+  background:#fff;border:3px solid var(--ink);border-radius:16px;box-shadow:var(--shadow);
+  padding:16px;margin-bottom:14px;
+}
+.tip{
+  background:var(--hue);color:#fff;border:3px solid var(--ink);border-radius:12px;
+  padding:9px 12px;font-size:13px;font-weight:500;margin-bottom:13px;box-shadow:var(--shadow-sm);
+}
+.q{font-family:var(--display);font-weight:600;font-size:20px;line-height:1.3;margin:0}
+.q .gap{display:inline-block;min-width:52px;border-bottom:3px solid var(--hue)}
+.opt{
+  display:block;width:100%;text-align:left;background:#fff;border:2.5px solid var(--ink);
+  border-radius:13px;padding:13px 14px;margin-bottom:9px;font-weight:600;font-size:16px;
+  box-shadow:var(--shadow-sm);min-height:50px;
+}
+.opt:active:enabled{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.opt .k{
+  display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border:2px solid var(--ink);border-radius:6px;font-size:11px;margin-right:10px;
+  font-family:var(--display);font-weight:800;vertical-align:-4px;
+}
+.opt.right{background:var(--good);color:#fff}
+.opt.wrong{background:var(--bad);color:#fff}
+.opt.fade:disabled{opacity:.4}
+.opt:disabled{cursor:default}
+.opts.pairs .opt,.opts.tf .opt{text-align:center;font-size:17px}
+.opts.tf{display:flex;gap:9px}
+.opts.tf .opt{text-transform:uppercase;font-family:var(--display);font-weight:800}
+.opts.chips{display:flex;flex-wrap:wrap;gap:9px}
+.opts.chips .opt{width:auto;flex:1 1 calc(50% - 5px);text-align:center;font-size:17px;margin:0}
+.pw{font-style:italic}
+
+/* ---------- feedback ---------- */
+.fb{
+  border:3px solid var(--ink);border-radius:14px;padding:13px 14px;box-shadow:var(--shadow);
+  background:#fff;
+}
+.fb.y{background:#e7f8ef}
+.fb.n{background:#ffeeec}
+.fb h3{font-size:18px;margin:0 0 5px;display:flex;align-items:center;gap:7px}
+.fb p{margin:0 0 12px;font-size:14px}
+.pop{
+  font-family:var(--display);font-weight:800;font-size:13px;background:var(--ink);color:#fff;
+  border-radius:999px;padding:2px 9px;margin-left:auto;
+}
+.passage{
+  background:#fff;border:3px solid var(--ink);border-left-width:10px;border-radius:14px;
+  padding:14px 15px;margin-bottom:14px;box-shadow:var(--shadow);
+}
+.passage h3{font-size:19px;text-align:center;margin:0 0 9px}
+.passage p{font-size:15px;line-height:1.55;margin:0 0 8px}
+.passage p:last-child{margin-bottom:0}
+
+/* ---------- results ---------- */
+.xp{font-family:var(--display);font-weight:800;font-size:64px;line-height:1}
+.rank{font-family:var(--display);font-weight:800;font-size:26px;margin:2px 0 4px;text-transform:uppercase}
+.row{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:2px solid #e4e1ec;font-size:14px}
+.row:last-child{border-bottom:none}
+.rl{font-family:var(--display);font-weight:800;width:22px}
+.bar{margin-left:auto;width:70px;height:9px;border:2px solid var(--ink);border-radius:5px;background:#fff;overflow:hidden}
+.bar i{display:block;height:100%}
+footer{margin-top:26px;font-size:11.5px;color:#6b6779;text-align:center}
+footer a{color:#6b6779}
+
+/* ---------- motion ---------- */
+@keyframes shake{10%,90%{transform:translateX(-2px)}30%,70%{transform:translateX(4px)}50%{transform:translateX(-4px)}}
+@keyframes pop{0%{transform:scale(.7)}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+.shake{animation:shake .35s}
+.popin{animation:pop .28s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:360px){.grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="mark">Phil Young's</span>
+    <span class="sub">Inter 1 · Units 3&amp;4</span>
+    <button class="icon-btn" id="snd" title="Sound">🔇</button>
+  </div>
+  <main id="app"></main>
+  <footer>Intermediate 1 · Test 2 · <a href="../index.html">Review Hub</a></footer>
+</div>
+
+<script>
+"use strict";
+
+/* ================================================================= content */
+const HUES = ["#ff4d3d","#2d7df6","#12b76a","#8b5cf6","#ff8a00","#00b8c4","#ff5fa2"];
+
+const STAGES = [
+{ letter:"A", name:"Busy Lately", sub:"Present perfect progressive", em:"⏳", sticker:"⌛", type:"mc",
+  tip:"have / has + <b>been</b> + verb-ing — for actions that started in the past and are still going on.",
+  qs:[
+    {q:"Lucas looks exhausted. He <span class='gap'></span> for the exam all night.", o:["have been studying","has been studying","has being studying"], a:1,
+     why:"<i>He</i> takes <b>has</b>, and the form is always <b>been</b> + verb-ing: <b>has been studying</b>."},
+    {q:"How long <span class='gap'></span> for the bus?", o:["have you been waiting","you have been waiting","have you been wait"], a:0,
+     why:"In questions the auxiliary comes first: <b>have you been waiting</b>."},
+    {q:"Sara <span class='gap'></span> well lately — she keeps waking up at 3 a.m.", o:["isn't been sleeping","hasn't been sleep","hasn't been sleeping"], a:2,
+     why:"Negative: <b>hasn't been</b> + verb-ing → <b>hasn't been sleeping</b>."},
+    {q:"My parents <span class='gap'></span> the garden since eight o'clock.", o:["has been planting","have been planting","have planting"], a:1,
+     why:"<i>My parents</i> is plural → <b>have been planting</b>."},
+    {q:"Your shoes are soaking wet. <span class='gap'></span> in the rain?", o:["Are you been walking","Has you been walking","Have you been walking"], a:2,
+     why:"<i>You</i> takes <b>have</b>: <b>Have you been walking…?</b>"}
+  ]},
+
+{ letter:"B", name:"Straight Talk", sub:"Communication words", em:"💬", sticker:"🗣️", type:"mc",
+  tip:"honest · persuade · independent · connection · in common",
+  qs:[
+    {q:"We have a lot in <span class='gap'></span>: we both love cooking and old movies.", o:["connection","common","honest"], a:1,
+     why:"<b>have something in common</b> = share interests or qualities."},
+    {q:"I'll be <span class='gap'></span> with you — I don't like the new design.", o:["honest","independent","common"], a:0,
+     why:"<b>be honest with someone</b> = tell them the truth."},
+    {q:"Can you <span class='gap'></span> Dad to let us stay out later?", o:["connection","honest","persuade"], a:2,
+     why:"<b>persuade someone to do something</b> = make them agree to it."},
+    {q:"Most teenagers want to be more <span class='gap'></span> from their parents.", o:["independent","honest","common"], a:0,
+     why:"<b>independent from</b> = able to do things without help."},
+    {q:"Scientists have found a strong <span class='gap'></span> between sleep and good grades.", o:["common","connection","persuade"], a:1,
+     why:"A <b>connection</b> is a link between two things."}
+  ]},
+
+{ letter:"C", name:"Word Order", sub:"Phrasal verbs", em:"🔀", sticker:"🧩", type:"mc",
+  tip:"Pick the correct sentence. With a pronoun (it, him, me), separable verbs split: <b>call me back</b>. Some verbs never split: <b>rely on</b>, <b>run into</b>.",
+  qs:[
+    {q:"Which sentence is correct?", o:["I'll call you back after dinner.","I'll call back you after dinner."], a:0,
+     why:"A pronoun goes <b>between</b> the verb and the particle: <b>call you back</b>."},
+    {q:"Which sentence is correct?", o:["Nobody believes that story. Leo made up it.","Nobody believes that story. Leo made it up."], a:1,
+     why:"With a pronoun, <b>make up</b> splits: <b>made it up</b>."},
+    {q:"Which sentence is correct?", o:["You can always rely on your grandma.","You can always rely your grandma on."], a:0,
+     why:"<b>rely on</b> is inseparable: the object always comes after <b>on</b>."},
+    {q:"Which sentence is correct?", o:["I ran Paula into at the mall.","I ran into Paula at the mall."], a:1,
+     why:"<b>run into</b> (meet by chance) never splits: <b>ran into Paula</b>."},
+    {q:"Which sentence is correct?", o:["Surfing looked fun, so I took it up.","Surfing looked fun, so I took up it."], a:0,
+     why:"With a pronoun, <b>take up</b> splits: <b>took it up</b>."}
+  ]},
+
+{ letter:"D", name:"Body Talk", sub:"Voice & body language", em:"🧍", sticker:"🎚️", type:"pair",
+  tip:"tone · volume · speed · space · distance · touch",
+  qs:[
+    {q:"She said “I'm fine,” but her … of voice was cold.", o:["speed","tone"], a:1,
+     why:"<b>Tone</b> is the feeling in your voice."},
+    {q:"The music is too loud. Please turn down the …", o:["tone","volume"], a:1,
+     why:"<b>Volume</b> = how loud something is."},
+    {q:"In a crowded elevator, nobody has much personal …", o:["space","touch"], a:0,
+     why:"<b>Personal space</b> is the area around your body."},
+    {q:"Slow down! You're talking at a crazy …", o:["speed","distance"], a:0,
+     why:"<b>Speed</b> = how fast you talk."},
+    {q:"A hand on the shoulder is a kind of … that shows support.", o:["volume","touch"], a:1,
+     why:"<b>Touch</b> is physical contact."}
+  ]},
+
+{ letter:"E", name:"To Do", sub:"Infinitives", em:"🎯", sticker:"🏹", type:"mc",
+  tip:"Purpose, verb + infinitive, adjective + infinitive: always <b>to</b> + verb.",
+  qs:[
+    {q:"I went to the pharmacy <span class='gap'></span> some medicine.", o:["for buy","to buy","buying"], a:1,
+     why:"Purpose → <b>to</b> + verb: <b>to buy</b>."},
+    {q:"My sister offered <span class='gap'></span> me with my homework.", o:["to help","helping","help"], a:0,
+     why:"<b>offer</b> + <b>to</b> + verb."},
+    {q:"It's important <span class='gap'></span> water when you exercise.", o:["drinking","drink","to drink"], a:2,
+     why:"<i>It's</i> + adjective + <b>to</b> + verb."},
+    {q:"The teacher asked us <span class='gap'></span> our phones away.", o:["put","to put","putting"], a:1,
+     why:"<b>ask someone to</b> + verb."},
+    {q:"He refused <span class='gap'></span> for the broken window.", o:["to pay","paying","pay"], a:0,
+     why:"<b>refuse</b> + <b>to</b> + verb."}
+  ]},
+
+{ letter:"F", name:"Word Family", sub:"power · solve · employ · create", em:"🧬", sticker:"🌳", type:"mc",
+  tip:"Same family, different job in the sentence. Noun, adjective or person?",
+  qs:[
+    {q:"This laptop is small but really <span class='gap'></span>.", o:["power","powerful","powerfully"], a:1,
+     why:"After <i>really</i> + <i>is</i> you need an adjective: <b>powerful</b>."},
+    {q:"We need a <span class='gap'></span> to this problem before Friday.", o:["solve","solver","solution"], a:2,
+     why:"A <b>solution</b> is the answer to a problem. A <i>solver</i> is a person."},
+    {q:"The company has 200 <span class='gap'></span> in three countries.", o:["employers","employees","employ"], a:1,
+     why:"<b>Employees</b> are the people who work for a company."},
+    {q:"Kids are so <span class='gap'></span> — they invent games out of nothing.", o:["creation","create","creative"], a:2,
+     why:"Adjective after <i>are so</i> → <b>creative</b>."},
+    {q:"My boss is a fair <span class='gap'></span>: she pays well and listens to us.", o:["employer","employee","employment"], a:0,
+     why:"The person who gives the jobs is the <b>employer</b>."}
+  ]},
+
+{ letter:"G", name:"Right on Time", sub:"Time clauses", em:"⏰", sticker:"📅", type:"mc",
+  tip:"After <b>when, as soon as, until, before, after</b> → present simple, even about the future.",
+  qs:[
+    {q:"I'll text you as soon as I <span class='gap'></span> home.", o:["will get","get","got"], a:1,
+     why:"Future meaning, but after <i>as soon as</i> → present: <b>get</b>."},
+    {q:"Please wait here <span class='gap'></span> the teacher comes back.", o:["until","after","as soon as"], a:0,
+     why:"<b>until</b> = up to that moment, and then stop waiting."},
+    {q:"I promise I <span class='gap'></span> on time tomorrow.", o:["arrive","will arrive","arrived"], a:1,
+     why:"Not a time clause — a promise about the future → <b>will arrive</b>."},
+    {q:"Let's go for pizza <span class='gap'></span> the movie. We'll be hungry by then.", o:["after","until","as soon as"], a:0,
+     why:"<b>after</b> + noun works. <i>As soon as</i> needs a full clause."},
+    {q:"Call me when you <span class='gap'></span> at the airport.", o:["will arrive","arrive","are arrive"], a:1,
+     why:"After <i>when</i> → present simple: <b>arrive</b>."}
+  ]},
+
+{ letter:"H", name:"Silent Signals", sub:"Gestures & emoji", em:"👋", sticker:"👍", type:"mc",
+  tip:"wave · thumbs up · shake hands · clap · point · punch · smile",
+  qs:[
+    {q:"You see a friend across the street and want to say hi. You …", o:["wave","punch","clap"], a:0,
+     why:"A <b>wave</b> is the hand gesture for hello and goodbye."},
+    {q:"Two business partners agree on a deal. They …", o:["point","shake hands","wave"], a:1,
+     why:"People <b>shake hands</b> to close a deal."},
+    {q:"The show was amazing! At the end, the whole audience started to …", o:["smile","punch","clap"], a:2,
+     why:"People <b>clap</b> to show they liked a performance."},
+    {q:"It's rude to … at strangers with your finger.", o:["point","clap","shake hands"], a:0,
+     why:"To <b>point</b> is to show something with your finger."},
+    {q:"Your friend has a great idea. Reply with a … emoji.", o:["punch","thumbs up","point"], a:1,
+     why:"<b>Thumbs up</b> 👍 = yes, good, I agree."}
+  ]},
+
+{ letter:"I", name:"Focus Mode", sub:"Attention & effort", em:"🧠", sticker:"🔍", type:"mc",
+  tip:"Read the definition. Which word or phrase matches?",
+  qs:[
+    {q:"to try hard, even when something isn't easy", o:["ignore","make an effort","rarely"], a:1,
+     why:"<b>make an effort</b> = try hard."},
+    {q:"to keep your mind on one activity", o:["concentrate on","rely on","ignore"], a:0,
+     why:"<b>concentrate on</b> = focus on one thing."},
+    {q:"almost never", o:["make an effort","pay attention to","rarely"], a:2,
+     why:"<b>rarely</b> = not often."},
+    {q:"to act as if you don't see or hear someone, on purpose", o:["pay attention to","ignore","concentrate on"], a:1,
+     why:"<b>ignore</b> = pretend not to notice."},
+    {q:"to listen to or watch something carefully", o:["pay attention to","rely on","ignore"], a:0,
+     why:"<b>pay attention to</b> = listen or watch carefully."}
+  ]},
+
+{ letter:"J", name:"Level Up", sub:"Phrasal verbs with up", em:"⬆️", sticker:"🚀", type:"chip",
+  tip:"look up · take up · set up · give up · come up with · make up",
+  qs:[
+    {q:"My phone is new. Can you help me <span class='gap'></span> it up?", o:["set","give","come","take"], a:0,
+     why:"<b>set up</b> = prepare something so it's ready to use."},
+    {q:"Don't <span class='gap'></span> up! You're almost at the top.", o:["make","give","look","set"], a:1,
+     why:"<b>give up</b> = stop trying."},
+    {q:"We need to <span class='gap'></span> up with an idea for the school party.", o:["take","set","come","look"], a:2,
+     why:"<b>come up with</b> = think of an idea."},
+    {q:"I don't know this word. I'll <span class='gap'></span> it up.", o:["make","take","come","look"], a:3,
+     why:"<b>look up</b> = search for information."},
+    {q:"My dad wants to <span class='gap'></span> up yoga to relax.", o:["take","make","give","set"], a:0,
+     why:"<b>take up</b> = start a new hobby."}
+  ]},
+
+{ letter:"K", name:"Boss Level", sub:"Reading", em:"📖", sticker:"🏆", type:"mc",
+  tip:"Read the text, then choose. You can bring it back at any time.",
+  passage:{
+    title:"The Feelings Class",
+    paras:[
+      "At Riverside High School, Thursday afternoons are different. Instead of math or geography, students have a class called “Understanding Feelings.” The idea came from the school director, Mrs. Okafor, who noticed that many arguments between students started with small misunderstandings.",
+      "In the class, students practice recognizing emotions in themselves and in others. They watch short videos and try to guess how people feel from their faces, their tone of voice and their body language. They also learn simple ways to calm down when they get angry, such as counting slowly or leaving the room for a minute.",
+      "At first, some parents were not happy. They thought the school should spend more time on traditional subjects. But after one year, the results surprised everyone. There were fewer fights during breaks, and teachers said group projects ran more smoothly. Students' grades also went up a little, although Mrs. Okafor admits this could have other causes.",
+      "Not every student enjoys the class. Daniel, 15, says some of the activities feel a bit silly. Still, he agrees that he now thinks twice before shouting at his younger brother.",
+      "Mrs. Okafor believes emotional intelligence works like a muscle: some people are born with more of it, but anyone can make it stronger with practice. Next year, she hopes to offer a similar course for teachers and parents."
+    ]
+  },
+  qs:[
+    {q:"Mrs. Okafor started the class because …", o:["students' grades were getting worse.","parents asked the school for it.","small misunderstandings caused arguments."], a:2,
+     why:"Paragraph 1: arguments often started with <b>small misunderstandings</b>."},
+    {q:"In the class, students learn to …", o:["read faces, voices and body language.","never show other people that they are angry.","guess what people feel from their words only."], a:0,
+     why:"Paragraph 2: faces, <b>tone of voice</b> and <b>body language</b> — not words only."},
+    {q:"In paragraph 3, the word <i>They</i> refers to …", o:["teachers.","some parents.","students."], a:1,
+     why:"The sentence before is about <b>some parents</b> who were not happy."},
+    {q:"About the students' grades, we can say that …", o:["the class was the only reason they went up.","they went down during the first year.","the class may have helped, but no one is sure."], a:2,
+     why:"Mrs. Okafor admits the better grades <b>could have other causes</b>."},
+    {q:"The text suggests that Daniel …", o:["is the only student who doesn't like the class.","now behaves better at home.","is going to stop taking the class."], a:1,
+     why:"He <b>thinks twice before shouting at his brother</b> — and the text says <i>not every</i> student enjoys it, so he isn't the only one."}
+  ]}
+];
+
+const RANKS = [
+  [90,"Master Communicator","You could teach this unit."],
+  [75,"Persuader","Strong run. Check the short bars below."],
+  [60,"Good Listener","Solid. One more run gets you past 75%."],
+  [40,"Getting the Signal","Replay the rounds with the shortest bars."],
+  [0,"Mixed Signals","Read the review sheet again, then come back."]
+];
+
+/* =================================================================== state */
+const app = document.getElementById("app");
+const R = STAGES.map(s => ({correct:0, total:s.qs.length, xp:0, done:false}));
+let si=0, qi=0, combo=0, bestCombo=0, xp=0, lives=3, timed=false, sound=false;
+let answered=false, tick=null, tLeft=0, tStart=0;
+const LIMIT = 15;
+
+const hue = i => HUES[i % HUES.length];
+const setHue = (c, tintOn) => {
+  document.documentElement.style.setProperty("--hue", c);
+  document.body.style.setProperty("--tint", tintOn ? c + "1f" : "#f0eef6");
+};
+
+/* --------------------------------------------------------------- sound fx */
+let AC = null;
+function blip(freq, dur, type){
+  if (!sound) return;
+  try{
+    AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+    const o = AC.createOscillator(), g = AC.createGain();
+    o.type = type || "square"; o.frequency.value = freq;
+    g.gain.setValueAtTime(.06, AC.currentTime);
+    g.gain.exponentialRampToValueAtTime(.0001, AC.currentTime + dur);
+    o.connect(g); g.connect(AC.destination); o.start(); o.stop(AC.currentTime + dur);
+  }catch(e){}
+}
+document.getElementById("snd").onclick = e => {
+  sound = !sound;
+  e.currentTarget.textContent = sound ? "🔊" : "🔇";
+  blip(660, .08);
+};
+
+/* ==================================================================== home */
+function home(){
+  document.onkeydown = null; stopTimer(); setHue("#2d7df6", false);
+  const cleared = R.filter(r=>r.done).length;
+  app.innerHTML = `
+    <div class="hero">
+      <span class="blob">👋</span>
+      <div class="kicker">Test 2 Review · Units 3 &amp; 4</div>
+      <h1>Mixed<br>Signals</h1>
+      <p>Eleven rounds. Chain correct answers to build a combo — every third one raises your multiplier.</p>
+    </div>
+
+    <div class="block">
+      <div class="label">Choose how you play</div>
+      <div class="modes">
+        <button class="mode ${timed?'':'on'}" data-m="0"><b>Chill</b><span>No clock, no lives</span></button>
+        <button class="mode ${timed?'on':''}" data-m="1"><b>Timed</b><span>15s · 3 lives</span></button>
+      </div>
+      <button class="big hue" id="go" style="margin-top:13px">
+        ${cleared===STAGES.length ? "See final results" : (cleared ? "Continue" : "Start round A")}
+      </button>
+    </div>
+
+    <div class="block">
+      <div class="label">Rounds · ${cleared} of ${STAGES.length} cleared</div>
+      <div class="grid">
+        ${STAGES.map((s,i)=>`
+          <button class="tile ${R[i].done?'cleared':''}" data-i="${i}" style="background:${hue(i)}">
+            <span class="ltr">${s.letter}</span>
+            <span class="em">${s.em}</span>
+            <span>
+              <span class="nm">${s.name}</span>
+              <span class="sc">${R[i].done ? R[i].correct+"/"+R[i].total : s.qs.length+" questions"}</span>
+            </span>
+          </button>`).join("")}
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="label">Sticker book · ${R.filter((r,i)=>r.done && r.correct>=r.total-1).length} of ${STAGES.length}</div>
+      <div class="stickers">
+        ${STAGES.map((s,i)=>{
+          const got = R[i].done && R[i].correct >= R[i].total - 1;
+          return `<span class="st ${got?'':'locked'}" title="${s.name}">${got?s.sticker:'🔒'}</span>`;
+        }).join("")}
+      </div>
+      <p style="font-size:12.5px;color:#6b6779;margin:10px 0 0">Clear a round with no more than one mistake to unlock its sticker.</p>
+      ${cleared ? `<button class="lite" id="reset">Wipe everything and start over</button>` : ""}
+    </div>
+  `;
+  app.querySelectorAll(".mode").forEach(b => b.onclick = () => { timed = b.dataset.m === "1"; blip(520,.06); home(); });
+  app.querySelectorAll(".tile").forEach(b => b.onclick = () => start(+b.dataset.i));
+  document.getElementById("go").onclick = () => {
+    if (R.every(r=>r.done)) return finish();
+    const n = R.findIndex(r=>!r.done); start(n < 0 ? 0 : n);
+  };
+  const rs = document.getElementById("reset");
+  if (rs) rs.onclick = () => { R.forEach(r=>{r.correct=0;r.xp=0;r.done=false;}); xp=0; bestCombo=0; home(); };
+}
+
+/* ==================================================================== play */
+function start(i){ si=i; qi=0; combo=0; lives=3; R[i].correct=0; R[i].xp=0; render(); }
+
+function render(){
+  const s = STAGES[si], q = s.qs[qi];
+  answered = false; setHue(hue(si), true);
+  const keys = s.type==="tf" ? ["T","F"] : ["1","2","3","4"];
+  const cls = s.type==="pair" ? "pairs" : s.type==="chip" ? "chips" : s.type==="tf" ? "tf" : "";
+
+  app.innerHTML = `
+    <div class="hud">
+      <span class="chip round">${s.letter}<span style="font-size:11px;opacity:.9">${qi+1}/${s.qs.length}</span></span>
+      <span class="chip" id="combochip">⚡ ×${mult()}</span>
+      <span class="chip">${xp}</span>
+      ${timed ? `<span class="hearts">${[0,1,2].map(n=>`<span class="heart ${n<lives?'':'gone'}">❤️</span>`).join("")}</span>` : ""}
+    </div>
+    ${timed ? `<div class="timerbar" id="tb"><i></i></div>` : ""}
+    <div class="segs">${s.qs.map((_,i)=>`<span class="seg ${i<qi?'hit':i===qi?'now':''}"></span>`).join("")}</div>
+    ${qi===0 && s.tip ? `<div class="tip">${s.tip}</div>` : ""}
+    ${s.passage && qi===0 ? passage(s.passage) : ""}
+    ${s.passage && qi>0 ? `<button class="lite" id="re" style="margin:0 0 12px">📖 Show the text again</button><div id="reslot"></div>` : ""}
+    <div class="qcard"><p class="q">${q.q}</p></div>
+    <div class="opts ${cls}" id="opts">
+      ${q.o.map((o,i)=>`<button class="opt" data-o="${i}">${s.type==="chip"?"":`<span class="k">${keys[i]}</span>`}<span class="${s.type==="pair"?"pw":""}">${o}</span></button>`).join("")}
+    </div>
+    <div id="fb"></div>
+  `;
+  const re = document.getElementById("re");
+  if (re) re.onclick = () => { document.getElementById("reslot").innerHTML = passage(s.passage); re.remove(); };
+  app.querySelectorAll("[data-o]").forEach(b => b.onclick = () => answer(+b.dataset.o));
+
+  document.onkeydown = e => {
+    if (answered){ if (e.key==="Enter"||e.key===" "){ e.preventDefault(); next(); } return; }
+    let idx = -1;
+    if (s.type==="tf"){ const k=e.key.toLowerCase(); if(k==="t")idx=0; if(k==="f")idx=1; }
+    if (idx<0 && /^[1-4]$/.test(e.key)) idx = +e.key-1;
+    if (idx>=0 && idx<q.o.length) answer(idx);
+  };
+
+  tStart = Date.now();
+  if (timed) startTimer();
+}
+
+function passage(p){ return `<div class="passage"><h3>${p.title}</h3>${p.paras.map(x=>`<p>${x}</p>`).join("")}</div>`; }
+function mult(){ return Math.min(5, 1 + Math.floor(combo/3)); }
+
+function startTimer(){
+  tLeft = LIMIT;
+  const bar = document.querySelector("#tb i"), box = document.getElementById("tb");
+  tick = setInterval(()=>{
+    tLeft -= .1;
+    if (bar) bar.style.width = Math.max(0, tLeft/LIMIT*100) + "%";
+    if (box) box.classList.toggle("low", tLeft <= 5);
+    if (tLeft <= 0) answer(-1);
+  }, 100);
+}
+function stopTimer(){ if (tick){ clearInterval(tick); tick = null; } }
+
+function answer(pick){
+  if (answered) return;
+  answered = true; stopTimer();
+  const s = STAGES[si], q = s.qs[qi], right = pick === q.a, out = pick === -1;
+  const secs = (Date.now()-tStart)/1000;
+  let gain = 0;
+
+  if (right){
+    const speed = timed ? Math.max(0, Math.round((LIMIT-secs)*4)) : 0;
+    gain = (100 + speed) * mult();
+    combo++; bestCombo = Math.max(bestCombo, combo); R[si].correct++;
+    blip(mult()>2 ? 880 : 700, .1);
+  } else {
+    combo = 0;
+    if (timed) lives--;
+    blip(150, .18, "sawtooth");
+  }
+  xp += gain; R[si].xp += gain;
+
+  app.querySelectorAll("[data-o]").forEach((b,i)=>{
+    b.disabled = true;
+    if (i === q.a) b.classList.add("right");
+    else if (i === pick) b.classList.add("wrong");
+    else b.classList.add("fade");
+  });
+  document.querySelectorAll(".seg")[qi].className = "seg " + (right ? "hit" : "miss");
+  const cc = document.getElementById("combochip");
+  if (cc){ cc.textContent = "⚡ ×" + mult(); cc.classList.add("popin"); }
+  if (!right){ const o = document.getElementById("opts"); if (o) o.classList.add("shake"); }
+
+  const dead = timed && lives <= 0;
+  const last = qi === s.qs.length - 1;
+  document.getElementById("fb").innerHTML = `
+    <div class="fb ${right?'y':'n'}">
+      <h3>${right ? (mult()>2 ? "On fire." : "Correct.") : out ? "Out of time." : "Nope."}
+        ${gain ? `<span class="pop">+${gain}</span>` : ""}</h3>
+      <p>${q.why}</p>
+      <button class="big" id="next">${dead ? "Round over" : last ? "Finish round "+s.letter : "Next"}</button>
+    </div>`;
+  const nb = document.getElementById("next");
+  nb.onclick = () => dead ? dead_screen() : next();
+  nb.focus({preventScroll:true});
+}
+
+function next(){
+  if (qi < STAGES[si].qs.length - 1){ qi++; render(); return; }
+  R[si].done = true; roundEnd();
+}
+
+function dead_screen(){
+  document.onkeydown = null;
+  const s = STAGES[si];
+  app.innerHTML = `
+    <div class="hero"><span class="blob">💀</span>
+      <div class="kicker">Round ${s.letter} · ${s.name}</div>
+      <h1>Out of<br>lives</h1>
+      <p>You got ${R[si].correct} of ${s.qs.length} before the hearts ran out. Nothing is lost — the round just restarts.</p>
+    </div>
+    <button class="big hue" id="again">Try round ${s.letter} again</button>
+    <button class="lite" id="chill">Switch to Chill mode and retry</button>
+    <button class="lite" id="map">Back to the rounds</button>`;
+  document.getElementById("again").onclick = () => start(si);
+  document.getElementById("chill").onclick = () => { timed = false; start(si); };
+  document.getElementById("map").onclick = home;
+}
+
+function roundEnd(){
+  document.onkeydown = null; stopTimer();
+  const s = STAGES[si], r = R[si];
+  const perfect = r.correct === r.total, sticker = r.correct >= r.total - 1;
+  const allDone = R.every(x=>x.done), n = R.findIndex(x=>!x.done);
+  app.innerHTML = `
+    <div class="hero"><span class="blob">${s.em}</span>
+      <div class="kicker">Round ${s.letter} cleared</div>
+      <h1>${r.correct} / ${r.total}</h1>
+      <p>${perfect ? "Clean sweep — not one mistake." : sticker ? "One slip. Sticker unlocked anyway." : "Sticker still locked: you need four out of five."}</p>
+    </div>
+    <div class="block">
+      <div class="label">This round</div>
+      <div class="row"><span>Points earned</span><b class="rl" style="margin-left:auto;width:auto">${r.xp}</b></div>
+      <div class="row"><span>Total points</span><b class="rl" style="margin-left:auto;width:auto">${xp}</b></div>
+      <div class="row"><span>Best combo</span><b class="rl" style="margin-left:auto;width:auto">${bestCombo}</b></div>
+      ${sticker ? `<div class="row"><span>Sticker</span><span class="st" style="margin-left:auto">${s.sticker}</span></div>` : ""}
+    </div>
+    <button class="big hue" id="on">${allDone ? "See final results" : "Round "+STAGES[n].letter+" · "+STAGES[n].name}</button>
+    <button class="lite" id="again">Replay round ${s.letter}</button>
+    <button class="lite" id="map">Back to the rounds</button>`;
+  document.getElementById("on").onclick = () => allDone ? finish() : start(n);
+  document.getElementById("again").onclick = () => start(si);
+  document.getElementById("map").onclick = home;
+}
+
+function finish(){
+  document.onkeydown = null; stopTimer(); setHue("#8b5cf6", false);
+  const c = R.reduce((a,r)=>a+r.correct,0), t = R.reduce((a,r)=>a+r.total,0);
+  const p = Math.round(c/t*100), rk = RANKS.find(x => p >= x[0]);
+  const weak = R.map((r,i)=>({i, ratio:r.correct/r.total})).sort((a,b)=>a.ratio-b.ratio)[0];
+  app.innerHTML = `
+    <div class="hero"><span class="blob">🏆</span>
+      <div class="kicker">All eleven rounds</div>
+      <h1 class="xp">${xp}</h1>
+      <div class="rank" style="color:#fff">${rk[1]}</div>
+      <p>${c} of ${t} correct · ${p}% · best combo ${bestCombo}. ${rk[2]}</p>
+    </div>
+    <div class="block">
+      <div class="label">Round by round</div>
+      ${R.map((r,i)=>`
+        <div class="row">
+          <span class="rl" style="color:${hue(i)}">${STAGES[i].letter}</span>
+          <span>${STAGES[i].name}</span>
+          <span style="margin-left:auto;font-weight:600">${r.correct}/${r.total}</span>
+          <span class="bar"><i style="width:${r.correct/r.total*100}%;background:${hue(i)}"></i></span>
+        </div>`).join("")}
+    </div>
+    <div class="block">
+      <div class="label">Sticker book</div>
+      <div class="stickers">
+        ${STAGES.map((s,i)=>{const g=R[i].correct>=R[i].total-1;return `<span class="st ${g?'':'locked'}">${g?s.sticker:'🔒'}</span>`;}).join("")}
+      </div>
+    </div>
+    ${weak.ratio<1 ? `<button class="big hue" id="weak">Replay ${STAGES[weak.i].letter} · ${STAGES[weak.i].name}</button>` : ""}
+    <button class="lite" id="map">Back to the rounds</button>`;
+  const w = document.getElementById("weak");
+  if (w) w.onclick = () => start(weak.i);
+  document.getElementById("map").onclick = home;
+}
+
+home();
+</script>
+</body>
+</html>
