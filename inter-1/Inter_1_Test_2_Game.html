@@ -424,6 +424,31 @@ const RANKS = [
 
 /* =================================================================== state */
 const app = document.getElementById("app");
+/* ============================================================ replay shuffle */
+// Every time a round starts: new question order, new option order, scrambled tiles.
+// True/False, Yes/No and the article set (a / an / the / —) keep their fixed order.
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const ARTICLES = /^(a|an|the|—)$/i;
+STAGES.forEach(s => { s.bank = s.qs; });
+function deal(i){
+  const s = STAGES[i];
+  s.qs = shuffle(s.bank).map(q => {
+    if (Array.isArray(q.w) && typeof q.a === "string"){
+      const sep = s.type === "spell" ? "" : " ";
+      let w = q.w, n = 0;
+      do { w = shuffle(q.w); } while (w.join(sep) === q.a && ++n < 30);
+      return Object.assign({}, q, {w});
+    }
+    if (Array.isArray(q.o) && typeof q.a === "number"){
+      if (s.type === "tf" || s.type === "yn") return q;
+      if (q.o.every(x => typeof x === "string" && ARTICLES.test(x))) return q;
+      const idx = shuffle(q.o.map((_, k) => k));
+      return Object.assign({}, q, {o: idx.map(k => q.o[k]), a: idx.indexOf(q.a)});
+    }
+    return q;
+  });
+}
+
 const R = STAGES.map(s => ({correct:0, total:s.qs.length, xp:0, done:false}));
 let si=0, qi=0, combo=0, bestCombo=0, xp=0, lives=3, timed=false, sound=false;
 let answered=false, tick=null, tLeft=0, tStart=0;
@@ -515,7 +540,7 @@ function home(){
 }
 
 /* ==================================================================== play */
-function start(i){ si=i; qi=0; combo=0; lives=3; R[i].correct=0; R[i].xp=0; render(); }
+function start(i){ deal(i); si=i; qi=0; combo=0; lives=3; R[i].correct=0; R[i].xp=0; render(); }
 
 function render(){
   const s = STAGES[si], q = s.qs[qi];
