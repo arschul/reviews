@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- HUBGEN:leaf start -->
+<script>(function(){try{var k="arschul:theme",v=localStorage.getItem(k);
+if(!v){var o=["hub-theme","theme","gh-theme","adv-theme","reviews-theme","worksheets-theme",
+"vocab-theme","toefl-theme","stc-theme","wheelquest-theme","wba-theme","airtight-theme","efl-reader-theme"];
+for(var i=0;i<o.length;i++){var x=localStorage.getItem(o[i]);if(x==="light"||x==="dark"){v=x;break;}}
+v=v||"dark";localStorage.setItem(k,v);}
+var m=(v==="system")?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):v;
+document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script>
+<script defer src="https://arschul.github.io/assets/leaf.v1.js"></script>
+<!-- HUBGEN:leaf end -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Test 3 Game · PreTeens 1 — Phil Young's English School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1726;
+  --paper:#fdf3e7;
+  --tint:#fdf3e7;
+  --hue:#ff8a00;
+  --good:#12b76a;
+  --bad:#ff4d3d;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Inter',system-ui,-apple-system,sans-serif;
+  --shadow:5px 5px 0 var(--ink);
+  --shadow-sm:3px 3px 0 var(--ink);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--body);color:var(--ink);font-size:17px;line-height:1.45;
+  background:var(--tint);transition:background .35s ease;min-height:100vh;
+}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 60px}
+h1,h2,h3,.disp{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:1}
+button{font:inherit;color:inherit;cursor:pointer}
+.hidden{display:none!important}
+
+/* ---------- top bar ---------- */
+.top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.mark{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.02em;
+  background:var(--ink);color:#fff;padding:5px 10px;border-radius:999px;text-transform:uppercase}
+.sub{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b6779}
+.icon-btn{margin-left:auto;background:#fff;border:2.5px solid var(--ink);border-radius:12px;
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:17px;
+  box-shadow:var(--shadow-sm)}
+.icon-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--hue);border:3px solid var(--ink);border-radius:22px;
+  box-shadow:var(--shadow);padding:22px 18px;margin-bottom:18px;color:#fff;
+  position:relative;overflow:hidden}
+.hero h1{font-size:clamp(34px,11.5vw,52px);margin:0;text-transform:uppercase;color:#fff}
+.hero .kicker{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  opacity:.9;margin-bottom:8px}
+.hero p{margin:10px 0 0;font-size:15px;max-width:34ch;opacity:.97}
+.hero .blob{position:absolute;right:-26px;top:-26px;font-size:118px;opacity:.24;transform:rotate(-12deg);
+  pointer-events:none;user-select:none}
+
+/* ---------- blocks ---------- */
+.block{background:#fff;border:3px solid var(--ink);border-radius:20px;
+  box-shadow:var(--shadow);padding:16px;margin-bottom:16px}
+.label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:#6b6779;margin-bottom:9px}
+.big{background:var(--ink);color:#fff;border:3px solid var(--ink);border-radius:16px;
+  padding:16px 18px;width:100%;font-family:var(--display);font-weight:800;font-size:19px;
+  text-transform:uppercase;box-shadow:var(--shadow)}
+.big:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.big.hue{background:var(--hue)}
+.lite{background:#fff;border:2.5px solid var(--ink);border-radius:14px;padding:12px 14px;
+  width:100%;font-weight:600;font-size:15px;box-shadow:var(--shadow-sm);margin-top:9px}
+.lite:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+/* ---------- mode switch ---------- */
+.modes{display:flex;gap:9px}
+.mode{flex:1;background:#fff;border:2.5px solid var(--ink);border-radius:14px;padding:11px 8px;
+  text-align:center;box-shadow:var(--shadow-sm)}
+.mode b{display:block;font-family:var(--display);font-weight:800;font-size:15px}
+.mode span{font-size:11.5px;color:#6b6779}
+.mode.on{background:var(--hue);color:#fff}
+.mode.on span{color:rgba(255,255,255,.9)}
+
+/* ---------- round grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tile{border:3px solid var(--ink);border-radius:18px;padding:11px 10px 10px;text-align:left;
+  box-shadow:var(--shadow-sm);color:#fff;position:relative;min-height:98px;
+  display:flex;flex-direction:column;justify-content:space-between}
+.tile:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.tile .em{font-size:26px;line-height:1}
+.tile .ltr{position:absolute;top:8px;right:11px;font-family:var(--display);font-weight:800;
+  font-size:21px;opacity:.55}
+.tile .nm{font-family:var(--display);font-weight:800;font-size:15px;line-height:1.1;margin-top:6px}
+.tile .sc{font-size:11.5px;font-weight:600;opacity:.9;margin-top:3px}
+.tile.cleared{box-shadow:var(--shadow-sm),inset 0 0 0 3px rgba(255,255,255,.6)}
+
+/* ---------- stickers ---------- */
+.stickers{display:flex;flex-wrap:wrap;gap:8px}
+.st{width:42px;height:42px;border:2.5px solid var(--ink);border-radius:13px;background:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:21px}
+.st.locked{background:#eae5f0;filter:grayscale(1);opacity:.55;font-size:16px}
+
+/* ---------- HUD ---------- */
+.hud{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.chip{background:#fff;border:2.5px solid var(--ink);border-radius:999px;padding:5px 11px;
+  font-family:var(--display);font-weight:800;font-size:14px;box-shadow:var(--shadow-sm);
+  display:flex;align-items:center;gap:5px}
+.chip.round{background:var(--hue);color:#fff}
+.hearts{margin-left:auto;font-size:16px;letter-spacing:2px}
+.heart.gone{opacity:.25;filter:grayscale(1)}
+.timerbar{height:10px;background:#fff;border:2.5px solid var(--ink);border-radius:999px;
+  overflow:hidden;margin-bottom:14px}
+.timerbar i{display:block;height:100%;background:var(--hue);width:100%}
+.timerbar.low i{background:var(--bad)}
+.segs{display:flex;gap:4px;margin-bottom:14px}
+.seg{height:8px;flex:1;border:2px solid var(--ink);border-radius:4px;background:#fff}
+.seg.hit{background:var(--good)}
+.seg.miss{background:var(--bad)}
+.seg.now{background:var(--hue)}
+
+/* ---------- question ---------- */
+.qcard{background:#fff;border:3px solid var(--ink);border-radius:20px;box-shadow:var(--shadow);
+  padding:16px;margin-bottom:14px;text-align:center}
+.tip{background:var(--hue);color:#fff;border:3px solid var(--ink);border-radius:14px;
+  padding:10px 13px;font-size:13.5px;font-weight:500;margin-bottom:13px;box-shadow:var(--shadow-sm)}
+.cue{font-size:64px;line-height:1.1;display:block;margin-bottom:6px}
+.pic{display:inline-flex;flex-direction:column;align-items:center;background:#fff;border-radius:18px;padding:8px 14px 6px}
+.pic img{height:150px;width:auto;display:block}
+.pic .pn{font:800 14px/1.2 var(--display);color:#1a1a1a;letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+.q{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.3;margin:0}
+.q .gap{display:inline-block;min-width:56px;border-bottom:3px solid var(--hue)}
+.eraser{display:inline-block;width:70px;height:32px;border-radius:8px;background:#c9c4d4;
+  border:3px solid var(--ink);position:relative;vertical-align:middle}
+.eraser::after{content:"";position:absolute;right:0;top:0;bottom:0;width:22px;background:#8b8598;
+  border-left:3px solid var(--ink);border-radius:0 4px 4px 0}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:2.5px solid var(--ink);
+  border-radius:15px;padding:14px 15px;margin-bottom:9px;font-weight:600;font-size:17px;
+  box-shadow:var(--shadow-sm);min-height:54px}
+.opt:active:enabled{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.opt .k{display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;
+  border:2px solid var(--ink);border-radius:7px;font-size:11px;margin-right:10px;
+  font-family:var(--display);font-weight:800;vertical-align:-4px}
+.opt.right{background:var(--good);color:#fff}
+.opt.wrong{background:var(--bad);color:#fff}
+.opt.fade:disabled{opacity:.4}
+.opt:disabled{cursor:default}
+.opts.pairs .opt,.opts.yn .opt{text-align:center;font-size:18px}
+.opts.yn{display:flex;gap:9px}
+.opts.yn .opt{font-family:var(--display);font-weight:800}
+.pw{font-style:italic}
+
+/* ---------- word order ---------- */
+.build{background:#fff;border:3px dashed var(--ink);border-radius:16px;min-height:64px;
+  padding:10px;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start}
+.build.right{border-style:solid;background:#e7f8ef}
+.build.wrong{border-style:solid;background:#ffeeec}
+.build .ph{color:#9b96a8;font-size:14px;padding:6px 2px}
+.bank{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:10px}
+.word{background:#fff;border:2.5px solid var(--ink);border-radius:12px;padding:10px 13px;
+  font-weight:600;font-size:17px;box-shadow:var(--shadow-sm);min-height:46px}
+.word:active:enabled{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.word.used{opacity:.25;box-shadow:none}
+.word.slot{background:var(--hue);color:#fff}
+
+/* ---------- feedback ---------- */
+.fb{border:3px solid var(--ink);border-radius:18px;padding:14px;box-shadow:var(--shadow);background:#fff}
+.fb.y{background:#e7f8ef}
+.fb.n{background:#ffeeec}
+.fb h3{font-size:19px;margin:0 0 5px;display:flex;align-items:center;gap:7px}
+.fb p{margin:0 0 12px;font-size:14.5px}
+.say{background:#fff;border:2.5px solid var(--ink);border-radius:12px;padding:8px 12px;
+  font-weight:600;font-size:14px;box-shadow:var(--shadow-sm);margin:0 0 11px}
+.say:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.pop{font-family:var(--display);font-weight:800;font-size:13px;background:var(--ink);color:#fff;
+  border-radius:999px;padding:2px 9px;margin-left:auto}
+
+/* ---------- results ---------- */
+.xp{font-family:var(--display);font-weight:800;font-size:64px;line-height:1}
+.rank{font-family:var(--display);font-weight:800;font-size:27px;margin:2px 0 4px;text-transform:uppercase}
+.row{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:2px solid #eae5f0;font-size:14.5px}
+.row:last-child{border-bottom:none}
+.rl{font-family:var(--display);font-weight:800;width:22px}
+.bar{margin-left:auto;width:70px;height:10px;border:2px solid var(--ink);border-radius:5px;
+  background:#fff;overflow:hidden}
+.bar i{display:block;height:100%}
+footer{margin-top:26px;font-size:12px;color:#6b6779;text-align:center}
+footer a{color:#6b6779}
+
+/* ---------- motion ---------- */
+@keyframes shake{10%,90%{transform:translateX(-2px)}30%,70%{transform:translateX(4px)}50%{transform:translateX(-4px)}}
+@keyframes pop{0%{transform:scale(.7)}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+.shake{animation:shake .35s}
+.popin{animation:pop .28s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ---------- listening ---------- */
+.play{width:96px;height:96px;border-radius:50%;background:var(--hue);color:#fff;border:3px solid var(--ink);
+  box-shadow:var(--shadow);font-size:42px;display:inline-flex;align-items:center;justify-content:center;margin:2px 0 10px}
+.play:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.play.on{animation:pop .5s infinite alternate}
+.reveal{background:none;border:none;color:#6b6779;font-size:13px;font-weight:600;text-decoration:underline;padding:4px;margin-top:4px}
+.script{font-family:var(--display);font-weight:600;font-size:18px;margin:8px 0 0;color:var(--ink);
+  background:#f6f2fb;border:2px dashed #c9c4d4;border-radius:12px;padding:8px 10px}
+.opt .ico{font-size:24px;margin-right:8px;vertical-align:-4px}
+
+/* ---------- spelling ---------- */
+.bank.letters .word,.build.letters .word{min-width:46px;text-align:center;font-family:var(--display);font-weight:800;font-size:20px}
+
+/* ---------- where is it? ---------- */
+.scn{position:relative;display:inline-block;width:170px;height:128px;margin-bottom:4px}
+.scn .pl,.scn .ob{position:absolute;left:50%;transform:translateX(-50%);line-height:1}
+.scn .pl{bottom:4px;font-size:92px;z-index:2}
+.scn .ob{font-size:42px;z-index:3}
+.scn.on .ob{bottom:82px}
+.scn.on .pl{bottom:0}
+.scn.under .pl{bottom:26px;font-size:96px}
+.scn.under .ob{bottom:2px;font-size:34px}
+.scn.in .ob{bottom:58px;z-index:1}
+.scn.behind .ob{bottom:6px;left:26%;z-index:1;font-size:60px}
+.scn.sofa.on .ob{left:40%;bottom:40px;font-size:38px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="mark">Phil Young's</span>
+    <span class="sub">PreTeens 1 · Units 7–9</span>
+    <button class="icon-btn" id="snd" title="Sound">🔇</button>
+  </div>
+  <main id="app"></main>
+  <footer>PreTeens 1 · Test 3 · <a href="../index.html">Review Hub</a></footer>
+</div>
+
+<script>
+"use strict";
+
+/* ================================================================= content */
+const HUES = ["#ff8a00","#2d7df6","#12b76a","#8b5cf6","#ff5fa2","#00b8c4","#ff4d3d","#7a5cff"];
+const IMG = {zog:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAgMTY4IiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjE2OCI+PHBhdGggZD0iTTM4LDExOCBxLTE2LDIgLTIwLC0xMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zOCwxMTggcS0xNiwyIC0yMCwtMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q5ZDlkZSIgc3Ryb2tlLXdpZHRoPSI0LjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik00MSwxMjggTDQxLDE0MiBNNTEsMTI4IEw1MSwxNDIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxyZWN0IHg9IjQwIiB5PSIxMjYiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2Q5ZDlkZSIgc3Ryb2tlPSJub25lIi8+PHBhdGggZD0iTTQwLDEyOCBMNDAsMTQyIE01MiwxMjggTDUyLDE0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGVsbGlwc2UgY3g9IjQ4IiBjeT0iMTQ1IiByeD0iOCIgcnk9IjQuNSIgZmlsbD0iI2EyYTJhOSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTYzLDEyOCBMNjMsMTQyIE03MywxMjggTDczLDE0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHJlY3QgeD0iNjIiIHk9IjEyNiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjE2IiBmaWxsPSIjZDlkOWRlIiBzdHJva2U9Im5vbmUiLz48cGF0aCBkPSJNNjIsMTI4IEw2MiwxNDIgTTc0LDEyOCBMNzQsMTQyIiBmaWxsPSJub25lIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48ZWxsaXBzZSBjeD0iNzAiIGN5PSIxNDUiIHJ4PSI4IiByeT0iNC41IiBmaWxsPSIjYTJhMmE5IiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNODcsMTI4IEw4NywxNDIgTTk3LDEyOCBMOTcsMTQyIiBmaWxsPSJub25lIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cmVjdCB4PSI4NiIgeT0iMTI2IiB3aWR0aD0iMTIiIGhlaWdodD0iMTYiIGZpbGw9IiNkOWQ5ZGUiIHN0cm9rZT0ibm9uZSIvPjxwYXRoIGQ9Ik04NiwxMjggTDg2LDE0MiBNOTgsMTI4IEw5OCwxNDIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxlbGxpcHNlIGN4PSI5NCIgY3k9IjE0NSIgcng9IjgiIHJ5PSI0LjUiIGZpbGw9IiNhMmEyYTkiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xMDksMTI4IEwxMDksMTQyIE0xMTksMTI4IEwxMTksMTQyIiBmaWxsPSJub25lIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cmVjdCB4PSIxMDgiIHk9IjEyNiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjE2IiBmaWxsPSIjZDlkOWRlIiBzdHJva2U9Im5vbmUiLz48cGF0aCBkPSJNMTA4LDEyOCBMMTA4LDE0MiBNMTIwLDEyOCBMMTIwLDE0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGVsbGlwc2UgY3g9IjExNiIgY3k9IjE0NSIgcng9IjgiIHJ5PSI0LjUiIGZpbGw9IiNhMmEyYTkiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zNiw4NCBRMjQuMCw4My4yIDE2LDc2IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTM2LDg0IFEyNC4wLDgzLjIgMTYsNzYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q5ZDlkZSIgc3Ryb2tlLXdpZHRoPSIzLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjE2IiBjeT0iNzYiIHI9IjQuNiIgZmlsbD0iI2EyYTJhOSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTEyNCw4NCBRMTM2LjAsODMuMiAxNDQsNzYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTI0LDg0IFExMzYuMCw4My4yIDE0NCw3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDlkOWRlIiBzdHJva2Utd2lkdGg9IjMuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMTQ0IiBjeT0iNzYiIHI9IjQuNiIgZmlsbD0iI2EyYTJhOSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTczLDQ4IHEtMTAsLTM0IDcsLTQwIHExNSw2IDcsNDAgeiIgZmlsbD0iI2Q5ZDlkZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTc3LDQwIHEtNSwtMjAgMywtMjQgcTcsNCAzLDI0IHoiIGZpbGw9IiNhMmEyYTkiLz48ZWxsaXBzZSBjeD0iODAiIGN5PSI4OCIgcng9IjQ4IiByeT0iNDgiIGZpbGw9IiNkOWQ5ZGUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjU4IiBjeT0iNzAiIHI9IjgiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjU5IiBjeT0iNzEiIHI9IjMuNiIgZmlsbD0iIzFhMWExYSIvPjxjaXJjbGUgY3g9IjYwLjIiIGN5PSI2OS40IiByPSIxLjIiIGZpbGw9IiNmZmYiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjcwIiByPSI4IiBmaWxsPSIjZmZmIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSI4MSIgY3k9IjcxIiByPSIzLjYiIGZpbGw9IiMxYTFhMWEiLz48Y2lyY2xlIGN4PSI4Mi4yIiBjeT0iNjkuNCIgcj0iMS4yIiBmaWxsPSIjZmZmIi8+PGNpcmNsZSBjeD0iMTAyIiBjeT0iNzAiIHI9IjgiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEwMyIgY3k9IjcxIiByPSIzLjYiIGZpbGw9IiMxYTFhMWEiLz48Y2lyY2xlIGN4PSIxMDQuMiIgY3k9IjY5LjQiIHI9IjEuMiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik02NCw5NiBxMTYsMTIgMzIsMCIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTY4LDExNCBxMTIsOSAyNCwwIHoiIGZpbGw9IiMxYTFhMWEiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==", mimi:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAgMTc2IiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjE3NiI+PHBhdGggZD0iTTExMiwxNDAgQzE1MiwxNDggMTU4LDExOCAxNDIsMTE0IEMxMzAsMTEyIDEzMCwxMjggMTQxLDEyNyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xMTIsMTQwIEMxNTIsMTQ4IDE1OCwxMTggMTQyLDExNCBDMTMwLDExMiAxMzAsMTI4IDE0MSwxMjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q5ZDlkZSIgc3Ryb2tlLXdpZHRoPSI0LjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik02MSwxMzggTDYxLDE1NCBNNzEsMTM4IEw3MSwxNTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxyZWN0IHg9IjYwIiB5PSIxMzYiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxOCIgZmlsbD0iI2Q5ZDlkZSIgc3Ryb2tlPSJub25lIi8+PHBhdGggZD0iTTYwLDEzOCBMNjAsMTU0IE03MiwxMzggTDcyLDE1NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGVsbGlwc2UgY3g9IjY4IiBjeT0iMTU3IiByeD0iOCIgcnk9IjQuNSIgZmlsbD0iI2EyYTJhOSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTg5LDEzOCBMODksMTU0IE05OSwxMzggTDk5LDE1NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHJlY3QgeD0iODgiIHk9IjEzNiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjE4IiBmaWxsPSIjZDlkOWRlIiBzdHJva2U9Im5vbmUiLz48cGF0aCBkPSJNODgsMTM4IEw4OCwxNTQgTTEwMCwxMzggTDEwMCwxNTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxlbGxpcHNlIGN4PSI5NiIgY3k9IjE1NyIgcng9IjgiIHJ5PSI0LjUiIGZpbGw9IiNhMmEyYTkiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik00NiwxMDggUTM4LjgsMTEwLjAgMzQsMTI4IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTQ2LDEwOCBRMzguOCwxMTAuMCAzNCwxMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q5ZDlkZSIgc3Ryb2tlLXdpZHRoPSIzLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjM0IiBjeT0iMTI4IiByPSI0LjYiIGZpbGw9IiNhMmEyYTkiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xMTQsMTA4IFExMjAuMCwxMTAuMCAxMjQsMTI4IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTExNCwxMDggUTEyMC4wLDExMC4wIDEyNCwxMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q5ZDlkZSIgc3Ryb2tlLXdpZHRoPSIzLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEyNCIgY3k9IjEyOCIgcj0iNC42IiBmaWxsPSIjYTJhMmE5IiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48ZWxsaXBzZSBjeD0iMzgiIGN5PSI0NCIgcng9IjkiIHJ5PSI2IiB0cmFuc2Zvcm09InJvdGF0ZSgtMjAgMzggNDQpIiBmaWxsPSIjZDlkOWRlIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48ZWxsaXBzZSBjeD0iMTIyIiBjeT0iNDQiIHJ4PSI5IiByeT0iNiIgdHJhbnNmb3JtPSJyb3RhdGUoMjAgMTIyIDQ0KSIgZmlsbD0iI2Q5ZDlkZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGVsbGlwc2UgY3g9IjM3IiBjeT0iNjQiIHJ4PSI5IiByeT0iNiIgdHJhbnNmb3JtPSJyb3RhdGUoLTIwIDM3IDY0KSIgZmlsbD0iI2Q5ZDlkZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGVsbGlwc2UgY3g9IjEyMyIgY3k9IjY0IiByeD0iOSIgcnk9IjYiIHRyYW5zZm9ybT0icm90YXRlKDIwIDEyMyA2NCkiIGZpbGw9IiNkOWQ5ZGUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxlbGxpcHNlIGN4PSIzNiIgY3k9Ijg0IiByeD0iOSIgcnk9IjYiIHRyYW5zZm9ybT0icm90YXRlKC0yMCAzNiA4NCkiIGZpbGw9IiNkOWQ5ZGUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxlbGxpcHNlIGN4PSIxMjQiIGN5PSI4NCIgcng9IjkiIHJ5PSI2IiB0cmFuc2Zvcm09InJvdGF0ZSgyMCAxMjQgODQpIiBmaWxsPSIjZDlkOWRlIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cmVjdCB4PSI0NCIgeT0iMjAiIHdpZHRoPSI3MiIgaGVpZ2h0PSIxMjQiIHJ4PSIzNiIgZmlsbD0iI2Q5ZDlkZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iNjIiIGN5PSI0NCIgcj0iNi41IiBmaWxsPSIjZmZmIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSI2MyIgY3k9IjQ1IiByPSIyLjkiIGZpbGw9IiMxYTFhMWEiLz48Y2lyY2xlIGN4PSI2NC4yIiBjeT0iNDMuNCIgcj0iMS4yIiBmaWxsPSIjZmZmIi8+PGNpcmNsZSBjeD0iODAiIGN5PSIzOCIgcj0iNi41IiBmaWxsPSIjZmZmIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSI4MSIgY3k9IjM5IiByPSIyLjkiIGZpbGw9IiMxYTFhMWEiLz48Y2lyY2xlIGN4PSI4Mi4yIiBjeT0iMzcuNCIgcj0iMS4yIiBmaWxsPSIjZmZmIi8+PGNpcmNsZSBjeD0iOTgiIGN5PSI0NCIgcj0iNi41IiBmaWxsPSIjZmZmIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSI5OSIgY3k9IjQ1IiByPSIyLjkiIGZpbGw9IiMxYTFhMWEiLz48Y2lyY2xlIGN4PSIxMDAuMiIgY3k9IjQzLjQiIHI9IjEuMiIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjY4IiBjeT0iNjAiIHI9IjYuNSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iNjkiIGN5PSI2MSIgcj0iMi45IiBmaWxsPSIjMWExYTFhIi8+PGNpcmNsZSBjeD0iNzAuMiIgY3k9IjU5LjQiIHI9IjEuMiIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjkyIiBjeT0iNjAiIHI9IjYuNSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iOTMiIGN5PSI2MSIgcj0iMi45IiBmaWxsPSIjMWExYTFhIi8+PGNpcmNsZSBjeD0iOTQuMiIgY3k9IjU5LjQiIHI9IjEuMiIgZmlsbD0iI2ZmZiIvPjxlbGxpcHNlIGN4PSI4MCIgY3k9Ijc4IiByeD0iNSIgcnk9IjQiIGZpbGw9IiNhMmEyYTkiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik02Niw5NCBxMTQsMTQgMjgsMCIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+", bobo:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAgMTY4IiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjE2OCI+PGVsbGlwc2UgY3g9IjgwIiBjeT0iMTYwIiByeD0iMzQiIHJ5PSI1IiBmaWxsPSIjZDlkOWRlIi8+PHBhdGggZD0iTTQyLDgyIFEyOC44LDgwLjIgMjAsNjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNNDIsODIgUTI4LjgsODAuMiAyMCw2NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDlkOWRlIiBzdHJva2Utd2lkdGg9IjMuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMjAiIGN5PSI2NCIgcj0iNC42IiBmaWxsPSIjYTJhMmE5IiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTE4LDgyIFExMzEuMiw4MC4yIDE0MCw2NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xMTgsODIgUTEzMS4yLDgwLjIgMTQwLDY0IiBmaWxsPSJub25lIiBzdHJva2U9IiNkOWQ5ZGUiIHN0cm9rZS13aWR0aD0iMy42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSIxNDAiIGN5PSI2NCIgcj0iNC42IiBmaWxsPSIjYTJhMmE5IiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNNDIsMTAwIFEyNi40LDEwMC4yIDE2LDEwMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik00MiwxMDAgUTI2LjQsMTAwLjIgMTYsMTAyIiBmaWxsPSJub25lIiBzdHJva2U9IiNkOWQ5ZGUiIHN0cm9rZS13aWR0aD0iMy42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSIxNiIgY3k9IjEwMiIgcj0iNC42IiBmaWxsPSIjYTJhMmE5IiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTE4LDEwMCBRMTMzLjYsMTAwLjIgMTQ0LDEwMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xMTgsMTAwIFExMzMuNiwxMDAuMiAxNDQsMTAyIiBmaWxsPSJub25lIiBzdHJva2U9IiNkOWQ5ZGUiIHN0cm9rZS13aWR0aD0iMy42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSIxNDQiIGN5PSIxMDIiIHI9IjQuNiIgZmlsbD0iI2EyYTJhOSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTQyLDExOCBRMjguOCwxMjAuMCAyMCwxMzgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNNDIsMTE4IFEyOC44LDEyMC4wIDIwLDEzOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDlkOWRlIiBzdHJva2Utd2lkdGg9IjMuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMzgiIHI9IjQuNiIgZmlsbD0iI2EyYTJhOSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTExOCwxMTggUTEzMS4yLDEyMC4wIDE0MCwxMzgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTE4LDExOCBRMTMxLjIsMTIwLjAgMTQwLDEzOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDlkOWRlIiBzdHJva2Utd2lkdGg9IjMuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMTQwIiBjeT0iMTM4IiByPSI0LjYiIGZpbGw9IiNhMmEyYTkiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjUyIiBjeT0iNDgiIHI9IjEwIiBmaWxsPSIjZDlkOWRlIiBzdHJva2U9IiMxYTFhMWEiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSI1MiIgY3k9IjQ4IiByPSI0IiBmaWxsPSIjYTJhMmE5Ii8+PGNpcmNsZSBjeD0iODAiIGN5PSI0MiIgcj0iMTAiIGZpbGw9IiNkOWQ5ZGUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjgwIiBjeT0iNDIiIHI9IjQiIGZpbGw9IiNhMmEyYTkiLz48Y2lyY2xlIGN4PSIxMDgiIGN5PSI0OCIgcj0iMTAiIGZpbGw9IiNkOWQ5ZGUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEwOCIgY3k9IjQ4IiByPSI0IiBmaWxsPSIjYTJhMmE5Ii8+PGNpcmNsZSBjeD0iODAiIGN5PSI5OCIgcj0iNDgiIGZpbGw9IiNkOWQ5ZGUiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjU4IiBjeT0iODAiIHI9IjYuNSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iNTkiIGN5PSI4MSIgcj0iMi45IiBmaWxsPSIjMWExYTFhIi8+PGNpcmNsZSBjeD0iNjAuMiIgY3k9Ijc5LjQiIHI9IjEuMiIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9Ijc2IiBjeT0iNzQiIHI9IjYuNSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iNzciIGN5PSI3NSIgcj0iMi45IiBmaWxsPSIjMWExYTFhIi8+PGNpcmNsZSBjeD0iNzguMiIgY3k9IjczLjQiIHI9IjEuMiIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9Ijk0IiBjeT0iNzQiIHI9IjYuNSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iOTUiIGN5PSI3NSIgcj0iMi45IiBmaWxsPSIjMWExYTFhIi8+PGNpcmNsZSBjeD0iOTYuMiIgY3k9IjczLjQiIHI9IjEuMiIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjEwOCIgY3k9IjgyIiByPSI2LjUiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzFhMWExYSIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEwOSIgY3k9IjgzIiByPSIyLjkiIGZpbGw9IiMxYTFhMWEiLz48Y2lyY2xlIGN4PSIxMTAuMiIgY3k9IjgxLjQiIHI9IjEuMiIgZmlsbD0iI2ZmZiIvPjxlbGxpcHNlIGN4PSI4MiIgY3k9IjEwMCIgcng9IjEyIiByeT0iOSIgZmlsbD0iI2EyYTJhOSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTY2LDEyMCBxMTYsMTAgMzIsMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWExYTFhIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+", tamb:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij4KPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMjYiIGZpbGw9IiNmNGY0ZjUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+CjxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjE4IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtZGFzaGFycmF5PSIyIDMiLz4KPGcgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIuNiI+CjxlbGxpcHNlIGN4PSIzMiIgY3k9IjYiIHJ4PSI2IiByeT0iMy42Ii8+PGVsbGlwc2UgY3g9IjMyIiBjeT0iNTgiIHJ4PSI2IiByeT0iMy42Ii8+CjxlbGxpcHNlIGN4PSI2IiBjeT0iMzIiIHJ4PSIzLjYiIHJ5PSI2Ii8+PGVsbGlwc2UgY3g9IjU4IiBjeT0iMzIiIHJ4PSIzLjYiIHJ5PSI2Ii8+CjxlbGxpcHNlIGN4PSIxMy42IiBjeT0iMTMuNiIgcng9IjUuNSIgcnk9IjMuNCIgdHJhbnNmb3JtPSJyb3RhdGUoLTQ1IDEzLjYgMTMuNikiLz4KPGVsbGlwc2UgY3g9IjUwLjQiIGN5PSI1MC40IiByeD0iNS41IiByeT0iMy40IiB0cmFuc2Zvcm09InJvdGF0ZSgtNDUgNTAuNCA1MC40KSIvPgo8ZWxsaXBzZSBjeD0iNTAuNCIgY3k9IjEzLjYiIHJ4PSI1LjUiIHJ5PSIzLjQiIHRyYW5zZm9ybT0icm90YXRlKDQ1IDUwLjQgMTMuNikiLz4KPGVsbGlwc2UgY3g9IjEzLjYiIGN5PSI1MC40IiByeD0iNS41IiByeT0iMy40IiB0cmFuc2Zvcm09InJvdGF0ZSg0NSAxMy42IDUwLjQpIi8+CjwvZz48L3N2Zz4K"};
+const pic = (k, name) => `<span class="pic"><img src="${IMG[k]}" alt="${name||''}">${name ? `<span class="pn">${name}</span>` : ""}</span>`;
+
+const STAGES = [
+{ letter:"A", name:"Gear Check", sub:"Listen · sports gear", em:"⚽", sticker:"🛼", type:"listen", ask:"What is it?",
+  tip:"Tap 🔊 and listen. Which thing do you hear?",
+  qs:[
+    {say:"I can swim fast with my goggles.", o:[["🥽","goggles"],["⛑️","helmet"],["👟","sneakers"]], a:0,
+     why:"You wear <b>goggles</b> in the swimming pool."},
+    {say:"My helmet is on my head. Let's ride!", o:[["⚽","ball"],["⛑️","helmet"],["🛼","roller skates"]], a:1,
+     why:"A <b>helmet</b> goes on your head."},
+    {say:"I can dance in my new ballet shoes.", o:[["👟","sneakers"],["🥽","goggles"],["🩰","ballet shoes"]], a:2,
+     why:"You dance ballet in <b>ballet shoes</b>."},
+    {say:"Kick the ball! Goal!", o:[["⚽","ball"],["🩰","ballet shoes"],["⛑️","helmet"]], a:0,
+     why:"You kick a <b>ball</b> in soccer."},
+    {say:"Look at my new roller skates!", o:[["👟","sneakers"],["🛼","roller skates"],["⚽","ball"]], a:1,
+     why:"<b>Roller skates</b> have wheels."}
+  ]},
+
+{ letter:"B", name:"Lunch Order", sub:"Listen · food", em:"🍔", sticker:"🍟", type:"listen", ask:"What do they want?",
+  tip:"Tap 🔊 and listen to the order. Listen for both foods!",
+  qs:[
+    {say:"Pizza and fries, please.", o:[["🍕🍟","pizza and fries"],["🍕🥗","pizza and salad"],["🍔🍟","burger and fries"]], a:0,
+     why:"<b>Pizza</b> and <b>fries</b>."},
+    {say:"Fish and broccoli, please.", o:[["🐟🍟","fish and fries"],["🍗🥦","chicken and broccoli"],["🐟🥦","fish and broccoli"]], a:2,
+     why:"<b>Fish</b> and <b>broccoli</b>."},
+    {say:"A burger and peas, please.", o:[["🍔🫛","burger and peas"],["🍗🫛","chicken and peas"],["🍔🍟","burger and fries"]], a:0,
+     why:"A <b>burger</b> and <b>peas</b>."},
+    {say:"Pasta and salad, please.", o:[["🍕🥗","pizza and salad"],["🍝🥗","pasta and salad"],["🍝🫛","pasta and peas"]], a:1,
+     why:"<b>Pasta</b> and <b>salad</b>. <i>Pizza</i> and <i>pasta</i> both start with P — listen carefully!"},
+    {say:"Chicken and fries, please.", o:[["🐟🍟","fish and fries"],["🍗🥗","chicken and salad"],["🍗🍟","chicken and fries"]], a:2,
+     why:"<b>Chicken</b> and <b>fries</b>."}
+  ]},
+
+{ letter:"C", name:"Monster Check", sub:"have / has · does", em:"👾", sticker:"👹", type:"mc",
+  tip:"Look at the monster. He / she → <b>does</b>, <b>doesn't</b>, <b>has</b>.",
+  qs:[
+    {cue:pic("zog","Zog"), q:"How many legs <span class='gap'></span> Zog have?", o:["does","do","has"], a:0,
+     why:"He / she → How many legs <b>does</b> Zog have? After <i>does</i>, use <i>have</i>."},
+    {cue:pic("mimi","Mimi"), q:"Mimi <span class='gap'></span> six ears.", o:["has","have","does"], a:0,
+     why:"He / she → Mimi <b>has</b> six ears."},
+    {cue:pic("zog","Zog"), q:"Zog <span class='gap'></span> have a nose.", o:["doesn't","don't","isn't"], a:0,
+     why:"Zog has no nose → he <b>doesn't</b> have a nose."},
+    {cue:pic("mimi","Mimi"), q:"Does Mimi have a long tail?", o:["Yes, she does.","No, she doesn't.","Yes, she has."], a:0,
+     why:"Look — her tail is long and curly. <b>Yes, she does.</b>"},
+    {cue:pic("zog","Zog"), q:"How <span class='gap'></span> mouths does Zog have? — Two.", o:["many","old","does"], a:0,
+     why:"Count → <b>How many</b>. (<i>How old</i> is for age.)"}
+  ]},
+
+{ letter:"D", name:"Spell It", sub:"Musical instruments", em:"🎸", sticker:"🎻", type:"spell", say:true,
+  tip:"Tap the letters in the right order to spell the instrument.",
+  qs:[
+    {cue:"🎻", q:"What instrument is it?", w:["I","V","N","O","L","I"], a:"VIOLIN", word:"violin",
+     why:"<b>VIOLIN</b> — V, I, O, L, I, N."},
+    {cue:"🎸", q:"What instrument is it?", w:["U","G","T","A","I","R"], a:"GUITAR", word:"guitar",
+     why:"<b>GUITAR</b> — G, U, I, T, A, R. The U is silent!"},
+    {cue:"🎹", q:"What instrument is it?", w:["A","P","O","I","N"], a:"PIANO", word:"piano",
+     why:"<b>PIANO</b> — P, I, A, N, O."},
+    {cue:"🪈", q:"What instrument is it?", w:["E","R","C","O","D","R","E","R"], a:"RECORDER", word:"recorder",
+     why:"<b>RECORDER</b> — R, E, C, O, R, D, E, R."},
+    {cue:pic("tamb"), q:"What instrument is it?", w:["M","T","B","A","U","O","R","I","N","E"], a:"TAMBOURINE", word:"tambourine",
+     why:"<b>TAMBOURINE</b> — T, A, M, B, O, U, R, I, N, E."}
+  ]},
+
+{ letter:"E", name:"Ask Leo", sub:"Do you like…?", em:"🍕", sticker:"🍰", type:"mc",
+  tip:"You ask Leo questions. ✔ = Leo likes it. ✖ = Leo doesn't like it.",
+  qs:[
+    {cue:"🐟✖️", q:"Do you like fish? — No, I <span class='gap'></span>.", o:["don't","doesn't","do"], a:0,
+     why:"Leo doesn't like fish → <b>No, I don't.</b>"},
+    {cue:"🍕✔️", q:"<span class='gap'></span> you like pizza? — Yes, I do.", o:["Do","Does","Are"], a:0,
+     why:"With <i>you</i> → <b>Do</b> you like…?"},
+    {cue:"🍰✔️", q:"Do you like cake?", o:["Yes, I do.","No, I don't.","Yes, I like."], a:0,
+     why:"Leo likes cake → <b>Yes, I do.</b> Short answers use <i>do</i>, not <i>like</i>."},
+    {cue:"🥦✖️", q:"Do you like broccoli?", o:["No, I don't.","Yes, I do.","No, I not."], a:0,
+     why:"Leo doesn't like broccoli → <b>No, I don't.</b>"},
+    {cue:"🍝✔️", q:"Do you <span class='gap'></span> pasta? — Yes, I do.", o:["like","likes","do"], a:0,
+     why:"Do you <b>like</b> pasta? After <i>Do you</i>, use <i>like</i> (no s)."}
+  ]},
+
+{ letter:"F", name:"Count Bobo", sub:"How many…?", em:"🐙", sticker:"🎈", type:"mc",
+  tip:"Look at Bobo and count. Bobo is a <b>she</b>.",
+  qs:[
+    {cue:pic("bobo","Bobo"), q:"How many arms does Bobo have? — She has <span class='gap'></span> arms.", o:["six","four","three"], a:0,
+     why:"Count them: three on each side → <b>six</b> arms."},
+    {cue:pic("bobo","Bobo"), q:"<span class='gap'></span> many ears does she have?", o:["How","What","Do"], a:0,
+     why:"Count → <b>How</b> many ears…?"},
+    {cue:pic("bobo","Bobo"), q:"She <span class='gap'></span> have any legs.", o:["doesn't","don't","has"], a:0,
+     why:"Bobo floats! She <b>doesn't</b> have any legs."},
+    {cue:pic("bobo","Bobo"), q:"How many eyes does she have? — She <span class='gap'></span> four eyes.", o:["has","have","is"], a:0,
+     why:"She → She <b>has</b> four eyes."},
+    {cue:pic("bobo","Bobo"), q:"Does Bobo have a tail?", o:["No, she doesn't.","Yes, she does.","No, she don't."], a:0,
+     why:"No tail → <b>No, she doesn't.</b>"}
+  ]},
+
+{ letter:"G", name:"Yum or Yuck", sub:"like / don't like", em:"😋", sticker:"🍗", type:"mc",
+  tip:"✔ = I like it. ✖ = I don't like it.",
+  qs:[
+    {cue:"🍔✔️", q:"I <span class='gap'></span> burgers.", o:["like","don't like","likes"], a:0,
+     why:"✔ → I <b>like</b> burgers. With <i>I</i>, no s."},
+    {cue:"🫛✖️", q:"I <span class='gap'></span> peas.", o:["don't like","like","doesn't like"], a:0,
+     why:"✖ → I <b>don't like</b> peas."},
+    {cue:"🍟✔️ 🍗✔️", q:"I like fries <span class='gap'></span> I like chicken.", o:["and","but","or"], a:0,
+     why:"✔ and ✔ → the same → <b>and</b>."},
+    {cue:"🍕✔️ 🥗✖️", q:"I like pizza, <span class='gap'></span> I don't like salad.", o:["but","and","or"], a:0,
+     why:"✔ and ✖ → different → <b>but</b>."},
+    {cue:"🧀✖️", q:"I <span class='gap'></span> cheese.", o:["don't like","like","am like"], a:0,
+     why:"✖ → I <b>don't like</b> cheese."}
+  ]},
+
+{ letter:"H", name:"Band Practice", sub:"can / can't", em:"🥁", sticker:"🎹", type:"yn",
+  tip:"✔ = they can play it. ✖ = they can't.",
+  qs:[
+    {cue:"👧🎻✔️", q:"Can she play the violin?", o:["Yes, she can.","No, she can't."], a:0,
+     why:"✔ → <b>Yes, she can.</b>"},
+    {cue:"👦🥁✖️", q:"Can he play the drums?", o:["Yes, he can.","No, he can't."], a:1,
+     why:"✖ → <b>No, he can't.</b>"},
+    {cue:"👵🎹✔️", q:"Can Grandma play the piano?", o:["Yes, she can.","No, she can't."], a:0,
+     why:"✔ → <b>Yes, she can.</b>"},
+    {cue:"👨🎸✖️", q:"Can Dad play the guitar?", o:["Yes, he can.","No, he can't."], a:1,
+     why:"✖ → <b>No, he can't.</b>"},
+    {cue:"🧒🪈✔️", q:"Can he play the recorder?", o:["Yes, he can.","No, he can't."], a:0,
+     why:"✔ → <b>Yes, he can.</b>"}
+  ]}
+];
+
+const RANKS = [
+  [90,"Rock Star","Boss of Units 7, 8 and 9."],
+  [75,"Band Leader","Great score. Look at the short bars."],
+  [60,"Drummer","Good. One more go and you're a Band Leader."],
+  [40,"Fan","Play again the rounds with short bars."],
+  [0,"Warming Up","Read the review sheet, then come back."]
+];
+
+/* =================================================================== state */
+const app = document.getElementById("app");
+/* ============================================================ replay shuffle */
+// Every time a round starts: new question order, new option order, scrambled tiles.
+// True/False, Yes/No and the article set (a / an / the / —) keep their fixed order.
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const ARTICLES = /^(a|an|the|—)$/i;
+STAGES.forEach(s => { s.bank = s.qs; });
+function deal(i){
+  const s = STAGES[i];
+  s.qs = shuffle(s.bank).map(q => {
+    if (Array.isArray(q.w) && typeof q.a === "string"){
+      const sep = s.type === "spell" ? "" : " ";
+      let w = q.w, n = 0;
+      do { w = shuffle(q.w); } while (w.join(sep) === q.a && ++n < 30);
+      return Object.assign({}, q, {w});
+    }
+    if (Array.isArray(q.o) && typeof q.a === "number"){
+      if (s.type === "tf" || s.type === "yn") return q;
+      if (q.o.every(x => typeof x === "string" && ARTICLES.test(x))) return q;
+      const idx = shuffle(q.o.map((_, k) => k));
+      return Object.assign({}, q, {o: idx.map(k => q.o[k]), a: idx.indexOf(q.a)});
+    }
+    return q;
+  });
+}
+
+const R = STAGES.map(s => ({correct:0, total:s.qs.length, xp:0, done:false}));
+let si=0, qi=0, combo=0, bestCombo=0, xp=0, lives=3, timed=false, sound=false;
+let answered=false, tick=null, tLeft=0, tStart=0, built=[];
+const LIMIT = 20;
+
+const hue = i => HUES[i % HUES.length];
+const setHue = (c, tintOn) => {
+  document.documentElement.style.setProperty("--hue", c);
+  document.body.style.setProperty("--tint", tintOn ? c + "1c" : "#fdf3e7");
+};
+
+/* --------------------------------------------------------------- sound fx */
+let AC = null;
+function blip(freq, dur, type){
+  if (!sound) return;
+  try{
+    AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+    const o = AC.createOscillator(), g = AC.createGain();
+    o.type = type || "square"; o.frequency.value = freq;
+    g.gain.setValueAtTime(.06, AC.currentTime);
+    g.gain.exponentialRampToValueAtTime(.0001, AC.currentTime + dur);
+    o.connect(g); g.connect(AC.destination); o.start(); o.stop(AC.currentTime + dur);
+  }catch(e){}
+}
+document.getElementById("snd").onclick = e => {
+  sound = !sound;
+  e.currentTarget.textContent = sound ? "🔊" : "🔇";
+  blip(660, .08);
+};
+
+/* ------------------------------------------------------------ text to speech */
+const canSpeak = typeof window.speechSynthesis !== "undefined"
+  && typeof window.SpeechSynthesisUtterance !== "undefined";
+function speak(t){
+  if (!canSpeak) return;
+  try{
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(t);
+    u.lang = "en-US"; u.rate = .8;
+    window.speechSynthesis.speak(u);
+  }catch(e){}
+}
+
+/* ==================================================================== home */
+function home(){
+  document.onkeydown = null; stopTimer(); setHue("#ff8a00", false);
+  const cleared = R.filter(r=>r.done).length;
+  app.innerHTML = `
+    <div class="hero">
+      <span class="blob">👾</span>
+      <div class="kicker">Test 3 Review · Units 7, 8 &amp; 9</div>
+      <h1>Food, Monsters<br>&amp; Music</h1>
+      <p>Eight rounds, forty questions. Rounds A and B are listening — turn the sound on! Get three right in a row and your points start to multiply.</p>
+    </div>
+
+    <div class="block">
+      <div class="label">How do you want to play?</div>
+      <div class="modes">
+        <button class="mode ${timed?'':'on'}" data-m="0"><b>Calm</b><span>No clock, no lives</span></button>
+        <button class="mode ${timed?'on':''}" data-m="1"><b>Fast</b><span>20s · 3 lives</span></button>
+      </div>
+      <button class="big hue" id="go" style="margin-top:13px">
+        ${cleared===STAGES.length ? "See my results" : (cleared ? "Keep going" : "Start round A")}
+      </button>
+    </div>
+
+    <div class="block">
+      <div class="label">Rounds · ${cleared} of ${STAGES.length} finished</div>
+      <div class="grid">
+        ${STAGES.map((s,i)=>`
+          <button class="tile ${R[i].done?'cleared':''}" data-i="${i}" style="background:${hue(i)}">
+            <span class="ltr">${s.letter}</span>
+            <span class="em">${s.em}</span>
+            <span>
+              <span class="nm">${s.name}</span>
+              <span class="sc">${R[i].done ? R[i].correct+"/"+R[i].total : s.sub}</span>
+            </span>
+          </button>`).join("")}
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="label">Sticker book · ${R.filter(r=>r.done && r.correct>=r.total-1).length} of ${STAGES.length}</div>
+      <div class="stickers">
+        ${STAGES.map((s,i)=>{
+          const got = R[i].done && R[i].correct >= R[i].total - 1;
+          return `<span class="st ${got?'':'locked'}" title="${s.name}">${got?s.sticker:'🔒'}</span>`;
+        }).join("")}
+      </div>
+      <p style="font-size:13px;color:#6b6779;margin:10px 0 0">Finish a round with 4 or 5 correct to win its sticker.</p>
+      ${cleared ? `<button class="lite" id="reset">Start everything again</button>` : ""}
+    </div>
+  `;
+  app.querySelectorAll(".mode").forEach(b => b.onclick = () => { timed = b.dataset.m === "1"; blip(520,.06); home(); });
+  app.querySelectorAll(".tile").forEach(b => b.onclick = () => start(+b.dataset.i));
+  document.getElementById("go").onclick = () => {
+    if (R.every(r=>r.done)) return finish();
+    const n = R.findIndex(r=>!r.done); start(n < 0 ? 0 : n);
+  };
+  const rs = document.getElementById("reset");
+  if (rs) rs.onclick = () => { R.forEach(r=>{r.correct=0;r.xp=0;r.done=false;}); xp=0; bestCombo=0; home(); };
+}
+
+/* ==================================================================== play */
+function start(i){ deal(i); si=i; qi=0; combo=0; lives=3; R[i].correct=0; R[i].xp=0; render(); }
+function mult(){ return Math.min(5, 1 + Math.floor(combo/3)); }
+
+function hud(s){
+  return `
+    <div class="hud">
+      <span class="chip round">${s.letter}<span style="font-size:11px;opacity:.9">${qi+1}/${s.qs.length}</span></span>
+      <span class="chip" id="combochip">⚡ ×${mult()}</span>
+      <span class="chip">${xp}</span>
+      ${timed ? `<span class="hearts">${[0,1,2].map(n=>`<span class="heart ${n<lives?'':'gone'}">❤️</span>`).join("")}</span>` : ""}
+    </div>
+    ${timed ? `<div class="timerbar" id="tb"><i></i></div>` : ""}
+    <div class="segs">${s.qs.map((_,i)=>`<span class="seg ${i<qi?'hit':i===qi?'now':''}"></span>`).join("")}</div>
+    ${qi===0 && s.tip ? `<div class="tip">${s.tip}</div>` : ""}`;
+}
+
+function render(){
+  const s = STAGES[si], q = s.qs[qi];
+  answered = false; built = []; setHue(hue(si), true);
+
+  if (s.type === "order" || s.type === "spell"){
+    const lt = s.type === "spell" ? "letters" : "";
+    app.innerHTML = `
+      ${hud(s)}
+      <div class="qcard">${q.cue ? `<span class="cue">${q.cue}</span>` : ""}<p class="q">${q.q}</p></div>
+      <div class="build ${lt}" id="build"></div>
+      <div class="bank ${lt}" id="bank">
+        ${q.w.map((w,i)=>`<button class="word" data-w="${i}">${w}</button>`).join("")}
+      </div>
+      <button class="lite" id="undo" style="margin-top:0">↩ Take one ${s.type==="spell" ? "letter" : "word"} back</button>
+      <div id="fb"></div>`;
+    paintBuild();
+    app.querySelectorAll("[data-w]").forEach(b => b.onclick = () => {
+      if (answered || b.classList.contains("used")) return;
+      built.push(+b.dataset.w); blip(560,.05); paintBuild();
+      if (built.length === q.w.length) checkOrder();
+    });
+    document.getElementById("undo").onclick = () => { if (!answered && built.length){ built.pop(); paintBuild(); } };
+    document.onkeydown = e => { if (answered && (e.key==="Enter"||e.key===" ")){ e.preventDefault(); nextOrDie(); } };
+    tStart = Date.now();
+    if (timed) startTimer();
+    return;
+  }
+
+  const keys = s.type==="yn" ? ["Y","N"] : ["1","2","3","4"];
+  const cls  = s.type==="pair" ? "pairs" : s.type==="yn" ? "yn" : "";
+  const listen = s.type === "listen";
+  const card = listen ? `
+      <button class="play" id="play" title="Listen">🔊</button>
+      <p class="q">${canSpeak ? "Listen." : "Your teacher reads."} ${s.ask}</p>
+      ${canSpeak ? `<button class="reveal" id="rev">Can't hear it? Show the sentence</button>` : ""}
+      <p class="script ${canSpeak ? "hidden" : ""}" id="scr">“${q.say}”</p>`
+    : `${q.cue ? `<span class="cue">${q.cue}</span>` : ""}
+      <p class="q">${q.q}</p>`;
+  const label = o => Array.isArray(o) ? `<span class="ico">${o[0]}</span>${o[1]}` : o;
+  app.innerHTML = `
+    ${hud(s)}
+    <div class="qcard">${card}</div>
+    <div class="opts ${cls}" id="opts">
+      ${q.o.map((o,i)=>`<button class="opt" data-o="${i}"><span class="k">${keys[i]}</span><span class="${s.type==="pair"?"pw":""}">${label(o)}</span></button>`).join("")}
+    </div>
+    <div id="fb"></div>`;
+  app.querySelectorAll("[data-o]").forEach(b => b.onclick = () => answer(+b.dataset.o));
+  if (listen){
+    const play = () => { speak(q.say); const p = document.getElementById("play"); if (p){ p.classList.add("on"); setTimeout(()=>p.classList.remove("on"), 2200); } };
+    document.getElementById("play").onclick = play;
+    const rv = document.getElementById("rev");
+    if (rv) rv.onclick = () => { document.getElementById("scr").classList.remove("hidden"); rv.remove(); };
+    setTimeout(play, 350);
+  }
+  document.onkeydown = e => {
+    if (answered){ if (e.key==="Enter"||e.key===" "){ e.preventDefault(); nextOrDie(); } return; }
+    if (listen && e.key.toLowerCase()==="r"){ speak(q.say); return; }
+    let idx = -1;
+    if (s.type==="yn"){ const k=e.key.toLowerCase(); if(k==="y")idx=0; if(k==="n")idx=1; }
+    if (idx<0 && /^[1-4]$/.test(e.key)) idx = +e.key-1;
+    if (idx>=0 && idx<q.o.length) answer(idx);
+  };
+  tStart = Date.now();
+  if (timed) startTimer();
+}
+
+function paintBuild(){
+  const q = STAGES[si].qs[qi];
+  const b = document.getElementById("build");
+  b.innerHTML = built.length
+    ? built.map(i=>`<span class="word slot">${q.w[i]}</span>`).join("")
+    : `<span class="ph">${STAGES[si].type==="spell" ? "Tap the letters below to spell the word." : "Tap the words below to build the sentence."}</span>`;
+  document.querySelectorAll("[data-w]").forEach((el,i)=>el.classList.toggle("used", built.includes(i)));
+}
+
+/* -------------------------------------------------------------- timer */
+function startTimer(){
+  tLeft = LIMIT;
+  const bar = document.querySelector("#tb i"), box = document.getElementById("tb");
+  tick = setInterval(()=>{
+    tLeft -= .1;
+    if (bar) bar.style.width = Math.max(0, tLeft/LIMIT*100) + "%";
+    if (box) box.classList.toggle("low", tLeft <= 6);
+    if (tLeft <= 0){ (STAGES[si].type==="order" || STAGES[si].type==="spell") ? timeoutOrder() : answer(-1); }
+  }, 100);
+}
+function stopTimer(){ if (tick){ clearInterval(tick); tick = null; } }
+
+/* -------------------------------------------------------------- grading */
+function grade(right, out, paint){
+  if (answered) return;
+  answered = true; stopTimer();
+  const s = STAGES[si], q = s.qs[qi];
+  const secs = (Date.now()-tStart)/1000;
+  let gain = 0;
+  if (right){
+    const speed = timed ? Math.max(0, Math.round((LIMIT-secs)*3)) : 0;
+    gain = (100 + speed) * mult();
+    combo++; bestCombo = Math.max(bestCombo, combo); R[si].correct++;
+    blip(mult()>2 ? 880 : 700, .1);
+  } else {
+    combo = 0;
+    if (timed) lives--;
+    blip(150, .18, "sawtooth");
+  }
+  xp += gain; R[si].xp += gain;
+  paint();
+
+  document.querySelectorAll(".seg")[qi].className = "seg " + (right ? "hit" : "miss");
+  const cc = document.getElementById("combochip");
+  if (cc){ cc.textContent = "⚡ ×" + mult(); cc.classList.add("popin"); }
+
+  const dead = timed && lives <= 0;
+  const last = qi === s.qs.length - 1;
+  const sayText = s.type==="listen" ? q.say : (s.say && q.word ? q.word : null);
+  const sayWord = sayText && canSpeak;
+  document.getElementById("fb").innerHTML = `
+    <div class="fb ${right?'y':'n'}">
+      <h3>${right ? (mult()>2 ? "On fire!" : "Correct!") : out ? "Time's up." : "Not this one."}
+        ${gain ? `<span class="pop">+${gain}</span>` : ""}</h3>
+      <p>${s.type==="listen" ? `You heard: <i>“${q.say}”</i><br>` : ""}${q.why}</p>
+      ${sayWord ? `<button class="say" id="say">🔊 ${s.type==="listen" ? "Hear it again" : "Hear the word"}</button>` : ""}
+      <button class="big" id="next">${dead ? "Round over" : last ? "Finish round "+s.letter : "Next"}</button>
+    </div>`;
+  const sb = document.getElementById("say");
+  if (sb) sb.onclick = () => speak(sayText);
+  const nb = document.getElementById("next");
+  nb.onclick = () => dead ? dead_screen() : next();
+  nb.focus({preventScroll:true});
+}
+
+function answer(pick){
+  if (answered) return;
+  const s = STAGES[si], q = s.qs[qi], right = pick === q.a;
+  grade(right, pick === -1, () => {
+    app.querySelectorAll("[data-o]").forEach((b,i)=>{
+      b.disabled = true;
+      if (i === q.a) b.classList.add("right");
+      else if (i === pick) b.classList.add("wrong");
+      else b.classList.add("fade");
+    });
+    if (!right){ const o = document.getElementById("opts"); if (o) o.classList.add("shake"); }
+  });
+}
+
+function checkOrder(){
+  const q = STAGES[si].qs[qi];
+  const given = built.map(i=>q.w[i]).join(STAGES[si].type==="spell" ? "" : " ");
+  const right = given === q.a;
+  grade(right, false, () => {
+    const b = document.getElementById("build");
+    b.classList.add(right ? "right" : "wrong");
+    if (!right){
+      b.classList.add("shake");
+      b.innerHTML += `<div style="flex-basis:100%;font-size:14px;font-weight:600;margin-top:6px">✔ ${q.a}</div>`;
+    }
+    document.querySelectorAll("[data-w]").forEach(el => el.disabled = true);
+    const u = document.getElementById("undo"); if (u) u.remove();
+  });
+}
+
+function timeoutOrder(){
+  const q = STAGES[si].qs[qi];
+  grade(false, true, () => {
+    const b = document.getElementById("build");
+    b.classList.add("wrong");
+    b.innerHTML += `<div style="flex-basis:100%;font-size:14px;font-weight:600;margin-top:6px">✔ ${q.a}</div>`;
+    document.querySelectorAll("[data-w]").forEach(el => el.disabled = true);
+    const u = document.getElementById("undo"); if (u) u.remove();
+  });
+}
+
+function nextOrDie(){ (timed && lives <= 0) ? dead_screen() : next(); }
+
+function next(){
+  if (qi < STAGES[si].qs.length - 1){ qi++; render(); return; }
+  R[si].done = true; roundEnd();
+}
+
+function dead_screen(){
+  document.onkeydown = null;
+  const s = STAGES[si];
+  app.innerHTML = `
+    <div class="hero"><span class="blob">💔</span>
+      <div class="kicker">Round ${s.letter} · ${s.name}</div>
+      <h1>No hearts<br>left</h1>
+      <p>You got ${R[si].correct} of ${s.qs.length}. Nothing is lost — the round just starts again.</p>
+    </div>
+    <button class="big hue" id="again">Try round ${s.letter} again</button>
+    <button class="lite" id="calm">Play it in Calm mode</button>
+    <button class="lite" id="map">Back to the rounds</button>`;
+  document.getElementById("again").onclick = () => start(si);
+  document.getElementById("calm").onclick = () => { timed = false; start(si); };
+  document.getElementById("map").onclick = home;
+}
+
+function roundEnd(){
+  document.onkeydown = null; stopTimer();
+  const s = STAGES[si], r = R[si];
+  const perfect = r.correct === r.total, sticker = r.correct >= r.total - 1;
+  const allDone = R.every(x=>x.done), n = R.findIndex(x=>!x.done);
+  app.innerHTML = `
+    <div class="hero"><span class="blob">${s.em}</span>
+      <div class="kicker">Round ${s.letter} finished</div>
+      <h1>${r.correct} / ${r.total}</h1>
+      <p>${perfect ? "Perfect — no mistakes at all!" : sticker ? "One mistake. You still win the sticker." : "You need 4 correct to win the sticker. Try again!"}</p>
+    </div>
+    <div class="block">
+      <div class="label">This round</div>
+      <div class="row"><span>Points</span><b style="margin-left:auto">${r.xp}</b></div>
+      <div class="row"><span>Total points</span><b style="margin-left:auto">${xp}</b></div>
+      <div class="row"><span>Best streak</span><b style="margin-left:auto">${bestCombo}</b></div>
+      ${sticker ? `<div class="row"><span>New sticker</span><span class="st" style="margin-left:auto">${s.sticker}</span></div>` : ""}
+    </div>
+    <button class="big hue" id="on">${allDone ? "See my results" : "Round "+STAGES[n].letter+" · "+STAGES[n].name}</button>
+    <button class="lite" id="again">Play round ${s.letter} again</button>
+    <button class="lite" id="map">Back to the rounds</button>`;
+  document.getElementById("on").onclick = () => allDone ? finish() : start(n);
+  document.getElementById("again").onclick = () => start(si);
+  document.getElementById("map").onclick = home;
+}
+
+function finish(){
+  document.onkeydown = null; stopTimer(); setHue("#8b5cf6", false);
+  const c = R.reduce((a,r)=>a+r.correct,0), t = R.reduce((a,r)=>a+r.total,0);
+  const p = Math.round(c/t*100), rk = RANKS.find(x => p >= x[0]);
+  const weak = R.map((r,i)=>({i, ratio:r.correct/r.total})).sort((a,b)=>a.ratio-b.ratio)[0];
+  app.innerHTML = `
+    <div class="hero"><span class="blob">🏆</span>
+      <div class="kicker">All eight rounds</div>
+      <h1 class="xp">${xp}</h1>
+      <div class="rank" style="color:#fff">${rk[1]}</div>
+      <p>${c} of ${t} correct · ${p}% · best streak ${bestCombo}. ${rk[2]}</p>
+    </div>
+    <div class="block">
+      <div class="label">Round by round</div>
+      ${R.map((r,i)=>`
+        <div class="row">
+          <span class="rl" style="color:${hue(i)}">${STAGES[i].letter}</span>
+          <span>${STAGES[i].name}</span>
+          <span style="margin-left:auto;font-weight:600">${r.correct}/${r.total}</span>
+          <span class="bar"><i style="width:${r.correct/r.total*100}%;background:${hue(i)}"></i></span>
+        </div>`).join("")}
+    </div>
+    <div class="block">
+      <div class="label">Sticker book</div>
+      <div class="stickers">
+        ${STAGES.map((s,i)=>{const g=R[i].correct>=R[i].total-1;return `<span class="st ${g?'':'locked'}">${g?s.sticker:'🔒'}</span>`;}).join("")}
+      </div>
+    </div>
+    ${weak.ratio<1 ? `<button class="big hue" id="weak">Play ${STAGES[weak.i].letter} · ${STAGES[weak.i].name} again</button>` : ""}
+    <button class="lite" id="map">Back to the rounds</button>`;
+  const w = document.getElementById("weak");
+  if (w) w.onclick = () => start(weak.i);
+  document.getElementById("map").onclick = home;
+}
+
+home();
+</script>
+</body>
+</html>
