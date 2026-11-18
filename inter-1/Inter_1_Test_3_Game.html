@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- HUBGEN:leaf start -->
+<script>(function(){try{var k="arschul:theme",v=localStorage.getItem(k);
+if(!v){var o=["hub-theme","theme","gh-theme","adv-theme","reviews-theme","worksheets-theme",
+"vocab-theme","toefl-theme","stc-theme","wheelquest-theme","wba-theme","airtight-theme","efl-reader-theme"];
+for(var i=0;i<o.length;i++){var x=localStorage.getItem(o[i]);if(x==="light"||x==="dark"){v=x;break;}}
+v=v||"dark";localStorage.setItem(k,v);}
+var m=(v==="system")?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):v;
+document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script>
+<script defer src="https://arschul.github.io/assets/leaf.v1.js"></script>
+<!-- HUBGEN:leaf end -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Test 3 Arcade · Intermediate 1 — Phil Young's English School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17151f;
+  --paper:#f0eef6;
+  --tint:#f0eef6;
+  --hue:#2d7df6;
+  --good:#12b76a;
+  --bad:#ff4d3d;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Inter',system-ui,-apple-system,sans-serif;
+  --shadow:5px 5px 0 var(--ink);
+  --shadow-sm:3px 3px 0 var(--ink);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--body);color:var(--ink);font-size:16px;line-height:1.45;
+  background:var(--tint);transition:background .35s ease;
+  min-height:100vh;
+}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 60px}
+h1,h2,h3,.disp{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:1}
+button{font:inherit;color:inherit;cursor:pointer}
+.hidden{display:none!important}
+
+/* ---------- top bar ---------- */
+.top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.mark{
+  font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.02em;
+  background:var(--ink);color:#fff;padding:5px 10px;border-radius:999px;text-transform:uppercase;
+}
+.sub{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b6779}
+.icon-btn{
+  margin-left:auto;background:#fff;border:2.5px solid var(--ink);border-radius:10px;
+  width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:16px;
+  box-shadow:var(--shadow-sm);
+}
+.icon-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{
+  background:var(--hue);border:3px solid var(--ink);border-radius:18px;
+  box-shadow:var(--shadow);padding:22px 18px;margin-bottom:18px;color:#fff;
+  position:relative;overflow:hidden;
+}
+.hero h1{font-size:clamp(34px,11vw,50px);margin:0;text-transform:uppercase;color:#fff}
+.hero .kicker{
+  font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  opacity:.85;margin-bottom:8px;
+}
+.hero p{margin:10px 0 0;font-size:14.5px;max-width:34ch;opacity:.95}
+.hero .blob{
+  position:absolute;right:-30px;top:-30px;font-size:120px;opacity:.22;transform:rotate(14deg);
+  pointer-events:none;user-select:none;
+}
+
+/* ---------- generic blocks ---------- */
+.block{
+  background:#fff;border:3px solid var(--ink);border-radius:16px;
+  box-shadow:var(--shadow);padding:16px;margin-bottom:16px;
+}
+.label{
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:#6b6779;margin-bottom:9px;
+}
+.big{background:var(--ink);color:#fff;border:3px solid var(--ink);border-radius:14px;
+  padding:15px 18px;width:100%;font-family:var(--display);font-weight:800;font-size:18px;
+  text-transform:uppercase;letter-spacing:.01em;box-shadow:var(--shadow);}
+.big:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.big.hue{background:var(--hue)}
+.lite{background:#fff;border:2.5px solid var(--ink);border-radius:12px;padding:11px 14px;
+  width:100%;font-weight:600;font-size:14.5px;box-shadow:var(--shadow-sm);margin-top:9px}
+.lite:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+/* ---------- mode switch ---------- */
+.modes{display:flex;gap:9px}
+.mode{
+  flex:1;background:#fff;border:2.5px solid var(--ink);border-radius:12px;padding:11px 8px;
+  text-align:center;box-shadow:var(--shadow-sm);
+}
+.mode b{display:block;font-family:var(--display);font-weight:800;font-size:15px}
+.mode span{font-size:11.5px;color:#6b6779}
+.mode.on{background:var(--hue);color:#fff}
+.mode.on span{color:rgba(255,255,255,.85)}
+
+/* ---------- round grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{
+  border:3px solid var(--ink);border-radius:14px;padding:10px 8px 9px;text-align:left;
+  box-shadow:var(--shadow-sm);color:#fff;position:relative;min-height:92px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.tile:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.tile .em{font-size:22px;line-height:1}
+.tile .ltr{
+  position:absolute;top:7px;right:9px;font-family:var(--display);font-weight:800;
+  font-size:19px;opacity:.55;
+}
+.tile .nm{font-family:var(--display);font-weight:800;font-size:13.5px;line-height:1.1;margin-top:6px}
+.tile .sc{font-size:11px;font-weight:600;opacity:.85;margin-top:3px}
+.tile.cleared{box-shadow:var(--shadow-sm),inset 0 0 0 3px rgba(255,255,255,.55)}
+
+/* ---------- stickers ---------- */
+.stickers{display:flex;flex-wrap:wrap;gap:7px}
+.st{
+  width:38px;height:38px;border:2.5px solid var(--ink);border-radius:11px;background:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:19px;
+}
+.st.locked{background:#e4e1ec;filter:grayscale(1);opacity:.55;font-size:15px}
+
+/* ---------- HUD ---------- */
+.hud{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.chip{
+  background:#fff;border:2.5px solid var(--ink);border-radius:999px;padding:5px 11px;
+  font-family:var(--display);font-weight:800;font-size:14px;box-shadow:var(--shadow-sm);
+  display:flex;align-items:center;gap:5px;
+}
+.chip.round{background:var(--hue);color:#fff}
+.hearts{margin-left:auto;font-size:15px;letter-spacing:2px}
+.heart.gone{opacity:.25;filter:grayscale(1)}
+.timerbar{height:9px;background:#fff;border:2.5px solid var(--ink);border-radius:999px;overflow:hidden;margin-bottom:14px}
+.timerbar i{display:block;height:100%;background:var(--hue);width:100%}
+.timerbar.low i{background:var(--bad)}
+.segs{display:flex;gap:4px;margin-bottom:14px}
+.seg{height:7px;flex:1;border:2px solid var(--ink);border-radius:4px;background:#fff}
+.seg.hit{background:var(--good)}
+.seg.miss{background:var(--bad)}
+.seg.now{background:var(--hue)}
+
+/* ---------- question ---------- */
+.qcard{
+  background:#fff;border:3px solid var(--ink);border-radius:16px;box-shadow:var(--shadow);
+  padding:16px;margin-bottom:14px;
+}
+.tip{
+  background:var(--hue);color:#fff;border:3px solid var(--ink);border-radius:12px;
+  padding:9px 12px;font-size:13px;font-weight:500;margin-bottom:13px;box-shadow:var(--shadow-sm);
+}
+.q{font-family:var(--display);font-weight:600;font-size:20px;line-height:1.3;margin:0}
+.q .gap{display:inline-block;min-width:52px;border-bottom:3px solid var(--hue)}
+.opt{
+  display:block;width:100%;text-align:left;background:#fff;border:2.5px solid var(--ink);
+  border-radius:13px;padding:13px 14px;margin-bottom:9px;font-weight:600;font-size:16px;
+  box-shadow:var(--shadow-sm);min-height:50px;
+}
+.opt:active:enabled{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.opt .k{
+  display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border:2px solid var(--ink);border-radius:6px;font-size:11px;margin-right:10px;
+  font-family:var(--display);font-weight:800;vertical-align:-4px;
+}
+.opt.right{background:var(--good);color:#fff}
+.opt.wrong{background:var(--bad);color:#fff}
+.opt.fade:disabled{opacity:.4}
+.opt:disabled{cursor:default}
+.opts.pairs .opt,.opts.tf .opt{text-align:center;font-size:17px}
+.opts.tf{display:flex;gap:9px}
+.opts.tf .opt{text-transform:uppercase;font-family:var(--display);font-weight:800}
+.opts.chips{display:flex;flex-wrap:wrap;gap:9px}
+.opts.chips .opt{width:auto;flex:1 1 calc(50% - 5px);text-align:center;font-size:17px;margin:0}
+.pw{font-style:italic}
+
+/* ---------- feedback ---------- */
+.fb{
+  border:3px solid var(--ink);border-radius:14px;padding:13px 14px;box-shadow:var(--shadow);
+  background:#fff;
+}
+.fb.y{background:#e7f8ef}
+.fb.n{background:#ffeeec}
+.fb h3{font-size:18px;margin:0 0 5px;display:flex;align-items:center;gap:7px}
+.fb p{margin:0 0 12px;font-size:14px}
+.pop{
+  font-family:var(--display);font-weight:800;font-size:13px;background:var(--ink);color:#fff;
+  border-radius:999px;padding:2px 9px;margin-left:auto;
+}
+.passage{
+  background:#fff;border:3px solid var(--ink);border-left-width:10px;border-radius:14px;
+  padding:14px 15px;margin-bottom:14px;box-shadow:var(--shadow);
+}
+.passage h3{font-size:19px;text-align:center;margin:0 0 9px}
+.passage p{font-size:15px;line-height:1.55;margin:0 0 8px}
+.passage p:last-child{margin-bottom:0}
+
+/* ---------- results ---------- */
+.xp{font-family:var(--display);font-weight:800;font-size:64px;line-height:1}
+.rank{font-family:var(--display);font-weight:800;font-size:26px;margin:2px 0 4px;text-transform:uppercase}
+.row{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:2px solid #e4e1ec;font-size:14px}
+.row:last-child{border-bottom:none}
+.rl{font-family:var(--display);font-weight:800;width:22px}
+.bar{margin-left:auto;width:70px;height:9px;border:2px solid var(--ink);border-radius:5px;background:#fff;overflow:hidden}
+.bar i{display:block;height:100%}
+footer{margin-top:26px;font-size:11.5px;color:#6b6779;text-align:center}
+footer a{color:#6b6779}
+
+/* ---------- motion ---------- */
+@keyframes shake{10%,90%{transform:translateX(-2px)}30%,70%{transform:translateX(4px)}50%{transform:translateX(-4px)}}
+@keyframes pop{0%{transform:scale(.7)}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+.shake{animation:shake .35s}
+.popin{animation:pop .28s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:360px){.grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="mark">Phil Young's</span>
+    <span class="sub">Inter 1 · Units 5&amp;6</span>
+    <button class="icon-btn" id="snd" title="Sound">🔇</button>
+  </div>
+  <main id="app"></main>
+  <footer>Intermediate 1 · Test 3 · <a href="../index.html">Review Hub</a></footer>
+</div>
+
+<script>
+"use strict";
+
+/* ================================================================= content */
+const HUES = ["#ff4d3d","#2d7df6","#12b76a","#8b5cf6","#ff8a00","#00b8c4","#ff5fa2"];
+
+const STAGES = [
+{ letter:"A", name:"What If?", sub:"Conditionals", em:"🤔", sticker:"🔮", type:"mc",
+  tip:"Zero: if + present → present. First: if + present → <b>will</b>. Second: if + past → <b>would</b>. <b>Unless</b> = if … not.",
+  qs:[
+    {q:"If it <span class='gap'></span> tomorrow, we'll cancel the picnic.", o:["rains","will rain","rained"], a:0,
+     why:"First conditional: <b>if + present</b>, then <i>will</i>. Never <i>will</i> after <i>if</i>."},
+    {q:"If I won the lottery, I <span class='gap'></span> a house by the beach.", o:["will buy","would buy","buy"], a:1,
+     why:"<i>won</i> is past → second conditional → <b>would buy</b>."},
+    {q:"If you mix blue and yellow, you <span class='gap'></span> green.", o:["got","would get","get"], a:2,
+     why:"A general fact → zero conditional: present + present → <b>get</b>."},
+    {q:"Unless we <span class='gap'></span> now, we'll miss the bus.", o:["leave","will leave","left"], a:0,
+     why:"<b>Unless</b> works like <i>if</i>: present simple after it → <b>leave</b>."},
+    {q:"If people <span class='gap'></span> less meat, farms would use less water.", o:["eat","ate","will eat"], a:1,
+     why:"<i>would use</i> → second conditional → <b>if + past</b>: <b>ate</b>."}
+  ]},
+
+{ letter:"B", name:"Stuff Around You", sub:"Everyday objects", em:"🩴", sticker:"🛞", type:"chip",
+  tip:"tire · straw · net · flip-flops · steel · pot",
+  qs:[
+    {q:"My bike has a flat <span class='gap'></span>. I need to pump it up.", o:["tire","pot","net","straw"], a:0,
+     why:"A <b>tire</b> is the rubber ring around a wheel."},
+    {q:"The fisherman pulled a <span class='gap'></span> full of fish onto the boat.", o:["steel","net","tire","pot"], a:1,
+     why:"A <b>net</b> is made of string with holes — for fish, or in sports."},
+    {q:"Most kitchen knives are made of <span class='gap'></span>.", o:["straw","flip-flops","steel","net"], a:2,
+     why:"<b>Steel</b> is a strong metal."},
+    {q:"I drink my milkshake through a paper <span class='gap'></span>.", o:["pot","tire","flip-flops","straw"], a:3,
+     why:"A <b>straw</b> is the thin tube you drink through."},
+    {q:"It's too hot for sneakers, so I'm wearing <span class='gap'></span> to the beach.", o:["flip-flops","steel","straws","pots"], a:0,
+     why:"<b>Flip-flops</b> are open rubber sandals."}
+  ]},
+
+{ letter:"C", name:"Wishful Thinking", sub:"Hope & wish", em:"🌠", sticker:"🍀", type:"mc",
+  tip:"<b>hope</b> + present → something possible. <b>wish</b> + past / could / would → something you'd like to be different.",
+  qs:[
+    {q:"I wish I <span class='gap'></span> taller. I can't reach the top shelf.", o:["am","were","will be"], a:1,
+     why:"<b>wish</b> + past for a present situation → <b>were</b>."},
+    {q:"I hope it <span class='gap'></span> sunny for your wedding on Saturday.", o:["is","were","would be"], a:0,
+     why:"<b>hope</b> + present, even about the future → <b>is</b>."},
+    {q:"I wish my neighbors <span class='gap'></span> playing loud music at night.", o:["stop","will stop","would stop"], a:2,
+     why:"Annoyed by someone's behavior → <b>wish</b> + <b>would</b>."},
+    {q:"I hope you <span class='gap'></span> a great time at the festival!", o:["had","have","would have"], a:1,
+     why:"Good wishes for the future → <b>hope</b> + present: <b>have</b>."},
+    {q:"I wish I <span class='gap'></span> speak Japanese. The menu is a mystery!", o:["could","can","will"], a:0,
+     why:"Ability you don't have → <b>wish</b> + <b>could</b>."}
+  ]},
+
+{ letter:"D", name:"Wild Weather", sub:"Weather & nature", em:"⛈️", sticker:"🌡️", type:"tf",
+  tip:"True or false? Press T or F on a keyboard.",
+  qs:[
+    {q:"Stormy weather usually brings strong winds and heavy rain.", o:["True","False"], a:0,
+     why:"True. A <b>storm</b> has strong wind and rain, often thunder."},
+    {q:"When a river freezes, its water gets warmer.", o:["True","False"], a:1,
+     why:"False. Water <b>freezes</b> when it gets very cold and turns into ice."},
+    {q:"Temperature is measured in degrees.", o:["True","False"], a:0,
+     why:"True. For example, 25 <b>degrees</b> Celsius."},
+    {q:"On a cloudy day, the sky is completely clear and blue.", o:["True","False"], a:1,
+     why:"False. <b>Cloudy</b> means there are a lot of clouds in the sky."},
+    {q:"When ice cream melts, it changes from solid to liquid.", o:["True","False"], a:0,
+     why:"True. To <b>melt</b> = become liquid because of heat."}
+  ]},
+
+{ letter:"E", name:"Missing Link", sub:"Relative pronouns", em:"🔗", sticker:"📌", type:"chip",
+  tip:"<b>who</b> people · <b>which</b> things · <b>where</b> places · <b>when</b> times · <b>whose</b> possession",
+  qs:[
+    {q:"The scientist <span class='gap'></span> discovered penicillin was from Scotland.", o:["who","which","where","whose"], a:0,
+     why:"A person → <b>who</b>."},
+    {q:"This is the village <span class='gap'></span> my grandmother was born.", o:["when","who","where","which"], a:2,
+     why:"A place + a full clause after it → <b>where</b>."},
+    {q:"I have a friend <span class='gap'></span> dad flies planes for a living.", o:["who","whose","which","when"], a:1,
+     why:"<i>his dad</i> → possession → <b>whose</b>."},
+    {q:"2020 was the year <span class='gap'></span> everything changed.", o:["which","where","whose","when"], a:3,
+     why:"A time → <b>when</b>."},
+    {q:"The phone <span class='gap'></span> I bought last week already has a cracked screen.", o:["which","who","where","whose"], a:0,
+     why:"A thing → <b>which</b>."}
+  ]},
+
+{ letter:"F", name:"Mood Swing", sub:"-ed / -ing adjectives", em:"😲", sticker:"🎢", type:"pair",
+  tip:"<b>-ed</b> = how a person feels. <b>-ing</b> = what causes the feeling.",
+  qs:[
+    {q:"I was so … when I saw how big the whale was.", o:["amazed","amazing"], a:0,
+     why:"How <i>I</i> felt → <b>amazed</b>."},
+    {q:"The news about the forest fires is very …", o:["worried","worrying"], a:1,
+     why:"The news causes the feeling → <b>worrying</b>."},
+    {q:"After a long day, a warm bath is so …", o:["relaxing","relaxed"], a:0,
+     why:"The bath causes the feeling → <b>relaxing</b>."},
+    {q:"The kids were … about their trip to the science museum.", o:["exciting","excited"], a:1,
+     why:"How the kids felt → <b>excited</b>."},
+    {q:"The magician's show was really … — nobody looked at their phone.", o:["entertained","entertaining"], a:1,
+     why:"The show causes the feeling → <b>entertaining</b>."}
+  ]},
+
+{ letter:"G", name:"Green Moves", sub:"Environment verbs", em:"♻️", sticker:"🌱", type:"chip",
+  tip:"provide · ban · reduce · pay · allow · create",
+  qs:[
+    {q:"The government wants to <span class='gap'></span> plastic forks, so shops won't be able to sell them.", o:["ban","pay","allow","create"], a:0,
+     why:"<b>ban</b> = make something not allowed."},
+    {q:"Solar panels can help families <span class='gap'></span> their electricity bills.", o:["ban","reduce","create","allow"], a:1,
+     why:"<b>reduce</b> = make smaller."},
+    {q:"Companies that pollute rivers should <span class='gap'></span> a big fine.", o:["reduce","create","pay","allow"], a:2,
+     why:"You <b>pay</b> a fine — money as a punishment."},
+    {q:"Our town doesn't <span class='gap'></span> people to have campfires on the beach.", o:["ban","provide","create","allow"], a:3,
+     why:"<b>allow</b> someone <b>to</b> do something = let them."},
+    {q:"The school will <span class='gap'></span> every student with a reusable water bottle.", o:["provide","create","allow","reduce"], a:0,
+     why:"<b>provide</b> someone <b>with</b> something = give it to them."}
+  ]},
+
+{ letter:"H", name:"Rewind", sub:"Past perfect", em:"⏪", sticker:"🕰️", type:"mc",
+  tip:"<b>had</b> + past participle — the action that happened <i>first</i>, before another past action.",
+  qs:[
+    {q:"When we got to the station, the train <span class='gap'></span>.", o:["has already left","had already left","already leaves"], a:1,
+     why:"The train left first, then we arrived → <b>had already left</b>."},
+    {q:"She <span class='gap'></span> never seen snow before she moved to Canada.", o:["had","has","was"], a:0,
+     why:"Before a past event → <b>had</b> + seen."},
+    {q:"By the time I woke up, my brother <span class='gap'></span> all the cereal.", o:["has eaten","eats","had eaten"], a:2,
+     why:"<b>By the time</b> + past → <b>had eaten</b>."},
+    {q:"I couldn't log in because I <span class='gap'></span> my password.", o:["had forgotten","have forgotten","forget"], a:0,
+     why:"Forgetting came first → <b>had forgotten</b>."},
+    {q:"They <span class='gap'></span> each other before the party, so Jo introduced them.", o:["haven't met","hadn't met","don't meet"], a:1,
+     why:"Negative past perfect → <b>hadn't met</b>."}
+  ]},
+
+{ letter:"I", name:"Suffix Lab", sub:"-able · -ible · -less · -ful", em:"🧪", sticker:"⚗️", type:"mc",
+  tip:"<b>-ful</b> = full of · <b>-less</b> = without · <b>-able / -ible</b> = can be or can do. Which word fits?",
+  qs:[
+    {q:"Don't give up! I'm <span class='gap'></span> that we'll find a solution.", o:["hopeful","hopeless","capable"], a:0,
+     why:"<b>hopeful</b> = expecting something good. <i>Hopeless</i> means the opposite."},
+    {q:"Her first book was so <span class='gap'></span> that it sold a million copies.", o:["thankful","successful","hopeless"], a:1,
+     why:"<b>success</b> + <b>-ful</b> → <b>successful</b>."},
+    {q:"That goal was <span class='gap'></span>! I still can't believe it.", o:["capable","hopeful","incredible"], a:2,
+     why:"<b>incredible</b> = so amazing it's hard to believe. It takes <b>-ible</b>."},
+    {q:"I'm really <span class='gap'></span> for all your help this week.", o:["incredible","capable","thankful"], a:2,
+     why:"<b>thankful for</b> = grateful."},
+    {q:"Some robots are now <span class='gap'></span> of doing surgery.", o:["capable","successful","thankful"], a:0,
+     why:"<b>capable of</b> + -ing = able to do it. It takes <b>-able</b>."}
+  ]},
+
+{ letter:"J", name:"Word Family", sub:"major · particular · enormous · create · improve", em:"🧬", sticker:"🌳", type:"mc",
+  tip:"Same family, different job. Do you need a noun, an adjective or an adverb?",
+  qs:[
+    {q:"The new stadium is <span class='gap'></span>. It holds 90,000 people.", o:["enormous","enormously","creation"], a:0,
+     why:"After <i>is</i> you need an adjective → <b>enormous</b>."},
+    {q:"I love all fruit, but I <span class='gap'></span> like mangoes.", o:["particular","particularly","major"], a:1,
+     why:"An adverb goes before the verb <i>like</i> → <b>particularly</b>."},
+    {q:"Rising sea levels are a <span class='gap'></span> problem for coastal cities.", o:["majorly","creation","major"], a:2,
+     why:"An adjective before the noun <i>problem</i> → <b>major</b>."},
+    {q:"There's been a big <span class='gap'></span> in her English since she moved to London.", o:["improvement","improve","major"], a:0,
+     why:"After <i>a big</i> you need a noun → <b>improvement</b>."},
+    {q:"The <span class='gap'></span> of three new parks has made the city greener.", o:["create","creation","enormous"], a:1,
+     why:"After <i>The</i> and before <i>of</i> → noun: <b>creation</b>."}
+  ]},
+
+{ letter:"K", name:"Boss Level", sub:"Reading", em:"🏙️", sticker:"🏆", type:"tf",
+  tip:"Read the text, then decide: true or false? You can bring the text back at any time.",
+  passage:{
+    title:"Smart Cities: Safer or Watched?",
+    paras:[
+      "Imagine a city where streetlights turn on only when someone walks by, buses arrive exactly on time, and traffic lights change to let ambulances pass. This is the promise of the “smart city.” Many cities around the world already use thousands of sensors to collect information about traffic, noise and air pollution.",
+      "Supporters say this technology makes life easier and safer. When sensors notice that a street is crowded, the city can send more buses. Cameras can help police find a missing child in minutes instead of hours. Some cities have also cut their energy use by switching off lights in empty streets.",
+      "However, not everyone is convinced. Critics point out that the same cameras that find a missing child can also follow ordinary people as they go to work, visit friends or join a protest. Most residents never agreed to have their movements recorded, and many don't even know where the cameras are. Who keeps this information, and for how long? In many countries, the laws have not kept up with the technology.",
+      "Experts suggest a middle path. Cities should tell residents what data they collect, delete it after a short time, and allow independent groups to check how it is used. Technology itself is neither good nor bad — what matters is who controls it."
+    ]
+  },
+  qs:[
+    {q:"Smart cities use sensors to gather information about things like noise and traffic.", o:["True","False"], a:0,
+     why:"Paragraph 1: sensors collect information about <b>traffic, noise and air pollution</b>."},
+    {q:"According to supporters, cameras can only be used to catch criminals.", o:["True","False"], a:1,
+     why:"Paragraph 2: cameras also help <b>find a missing child</b> — so not <i>only</i> criminals."},
+    {q:"Some cities have saved energy by turning off lights where nobody is around.", o:["True","False"], a:0,
+     why:"Paragraph 2: they <b>switch off lights in empty streets</b>."},
+    {q:"All residents of smart cities know exactly where the cameras are.", o:["True","False"], a:1,
+     why:"Paragraph 3: <b>many don't even know</b> where the cameras are."},
+    {q:"The writer thinks who controls the data matters more than the technology itself.", o:["True","False"], a:0,
+     why:"Last line: technology is neither good nor bad — <b>what matters is who controls it</b>."}
+  ]}
+];
+
+const RANKS = [
+  [90,"Eco Genius","You could teach this unit."],
+  [75,"Smart Citizen","Strong run. Check the short bars below."],
+  [60,"Green Thinker","Solid. One more run gets you past 75%."],
+  [40,"Warming Up","Replay the rounds with the shortest bars."],
+  [0,"Meltdown","Read the review sheet again, then come back."]
+];
+
+/* =================================================================== state */
+const app = document.getElementById("app");
+/* ============================================================ replay shuffle */
+// Every time a round starts: new question order, new option order, scrambled tiles.
+// True/False, Yes/No and the article set (a / an / the / —) keep their fixed order.
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const ARTICLES = /^(a|an|the|—)$/i;
+STAGES.forEach(s => { s.bank = s.qs; });
+function deal(i){
+  const s = STAGES[i];
+  s.qs = shuffle(s.bank).map(q => {
+    if (Array.isArray(q.w) && typeof q.a === "string"){
+      const sep = s.type === "spell" ? "" : " ";
+      let w = q.w, n = 0;
+      do { w = shuffle(q.w); } while (w.join(sep) === q.a && ++n < 30);
+      return Object.assign({}, q, {w});
+    }
+    if (Array.isArray(q.o) && typeof q.a === "number"){
+      if (s.type === "tf" || s.type === "yn") return q;
+      if (q.o.every(x => typeof x === "string" && ARTICLES.test(x))) return q;
+      const idx = shuffle(q.o.map((_, k) => k));
+      return Object.assign({}, q, {o: idx.map(k => q.o[k]), a: idx.indexOf(q.a)});
+    }
+    return q;
+  });
+}
+
+const R = STAGES.map(s => ({correct:0, total:s.qs.length, xp:0, done:false}));
+let si=0, qi=0, combo=0, bestCombo=0, xp=0, lives=3, timed=false, sound=false;
+let answered=false, tick=null, tLeft=0, tStart=0;
+const LIMIT = 15;
+
+const hue = i => HUES[i % HUES.length];
+const setHue = (c, tintOn) => {
+  document.documentElement.style.setProperty("--hue", c);
+  document.body.style.setProperty("--tint", tintOn ? c + "1f" : "#f0eef6");
+};
+
+/* --------------------------------------------------------------- sound fx */
+let AC = null;
+function blip(freq, dur, type){
+  if (!sound) return;
+  try{
+    AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+    const o = AC.createOscillator(), g = AC.createGain();
+    o.type = type || "square"; o.frequency.value = freq;
+    g.gain.setValueAtTime(.06, AC.currentTime);
+    g.gain.exponentialRampToValueAtTime(.0001, AC.currentTime + dur);
+    o.connect(g); g.connect(AC.destination); o.start(); o.stop(AC.currentTime + dur);
+  }catch(e){}
+}
+document.getElementById("snd").onclick = e => {
+  sound = !sound;
+  e.currentTarget.textContent = sound ? "🔊" : "🔇";
+  blip(660, .08);
+};
+
+/* ==================================================================== home */
+function home(){
+  document.onkeydown = null; stopTimer(); setHue("#2d7df6", false);
+  const cleared = R.filter(r=>r.done).length;
+  app.innerHTML = `
+    <div class="hero">
+      <span class="blob">🌍</span>
+      <div class="kicker">Test 3 Review · Units 5 &amp; 6</div>
+      <h1>Smart<br>Planet</h1>
+      <p>Eleven rounds. Chain correct answers to build a combo — every third one raises your multiplier.</p>
+    </div>
+
+    <div class="block">
+      <div class="label">Choose how you play</div>
+      <div class="modes">
+        <button class="mode ${timed?'':'on'}" data-m="0"><b>Chill</b><span>No clock, no lives</span></button>
+        <button class="mode ${timed?'on':''}" data-m="1"><b>Timed</b><span>15s · 3 lives</span></button>
+      </div>
+      <button class="big hue" id="go" style="margin-top:13px">
+        ${cleared===STAGES.length ? "See final results" : (cleared ? "Continue" : "Start round A")}
+      </button>
+    </div>
+
+    <div class="block">
+      <div class="label">Rounds · ${cleared} of ${STAGES.length} cleared</div>
+      <div class="grid">
+        ${STAGES.map((s,i)=>`
+          <button class="tile ${R[i].done?'cleared':''}" data-i="${i}" style="background:${hue(i)}">
+            <span class="ltr">${s.letter}</span>
+            <span class="em">${s.em}</span>
+            <span>
+              <span class="nm">${s.name}</span>
+              <span class="sc">${R[i].done ? R[i].correct+"/"+R[i].total : s.qs.length+" questions"}</span>
+            </span>
+          </button>`).join("")}
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="label">Sticker book · ${R.filter((r,i)=>r.done && r.correct>=r.total-1).length} of ${STAGES.length}</div>
+      <div class="stickers">
+        ${STAGES.map((s,i)=>{
+          const got = R[i].done && R[i].correct >= R[i].total - 1;
+          return `<span class="st ${got?'':'locked'}" title="${s.name}">${got?s.sticker:'🔒'}</span>`;
+        }).join("")}
+      </div>
+      <p style="font-size:12.5px;color:#6b6779;margin:10px 0 0">Clear a round with no more than one mistake to unlock its sticker.</p>
+      ${cleared ? `<button class="lite" id="reset">Wipe everything and start over</button>` : ""}
+    </div>
+  `;
+  app.querySelectorAll(".mode").forEach(b => b.onclick = () => { timed = b.dataset.m === "1"; blip(520,.06); home(); });
+  app.querySelectorAll(".tile").forEach(b => b.onclick = () => start(+b.dataset.i));
+  document.getElementById("go").onclick = () => {
+    if (R.every(r=>r.done)) return finish();
+    const n = R.findIndex(r=>!r.done); start(n < 0 ? 0 : n);
+  };
+  const rs = document.getElementById("reset");
+  if (rs) rs.onclick = () => { R.forEach(r=>{r.correct=0;r.xp=0;r.done=false;}); xp=0; bestCombo=0; home(); };
+}
+
+/* ==================================================================== play */
+function start(i){ deal(i); si=i; qi=0; combo=0; lives=3; R[i].correct=0; R[i].xp=0; render(); }
+
+function render(){
+  const s = STAGES[si], q = s.qs[qi];
+  answered = false; setHue(hue(si), true);
+  const keys = s.type==="tf" ? ["T","F"] : ["1","2","3","4"];
+  const cls = s.type==="pair" ? "pairs" : s.type==="chip" ? "chips" : s.type==="tf" ? "tf" : "";
+
+  app.innerHTML = `
+    <div class="hud">
+      <span class="chip round">${s.letter}<span style="font-size:11px;opacity:.9">${qi+1}/${s.qs.length}</span></span>
+      <span class="chip" id="combochip">⚡ ×${mult()}</span>
+      <span class="chip">${xp}</span>
+      ${timed ? `<span class="hearts">${[0,1,2].map(n=>`<span class="heart ${n<lives?'':'gone'}">❤️</span>`).join("")}</span>` : ""}
+    </div>
+    ${timed ? `<div class="timerbar" id="tb"><i></i></div>` : ""}
+    <div class="segs">${s.qs.map((_,i)=>`<span class="seg ${i<qi?'hit':i===qi?'now':''}"></span>`).join("")}</div>
+    ${qi===0 && s.tip ? `<div class="tip">${s.tip}</div>` : ""}
+    ${s.passage && qi===0 ? passage(s.passage) : ""}
+    ${s.passage && qi>0 ? `<button class="lite" id="re" style="margin:0 0 12px">📖 Show the text again</button><div id="reslot"></div>` : ""}
+    <div class="qcard"><p class="q">${q.q}</p></div>
+    <div class="opts ${cls}" id="opts">
+      ${q.o.map((o,i)=>`<button class="opt" data-o="${i}">${s.type==="chip"?"":`<span class="k">${keys[i]}</span>`}<span class="${s.type==="pair"?"pw":""}">${o}</span></button>`).join("")}
+    </div>
+    <div id="fb"></div>
+  `;
+  const re = document.getElementById("re");
+  if (re) re.onclick = () => { document.getElementById("reslot").innerHTML = passage(s.passage); re.remove(); };
+  app.querySelectorAll("[data-o]").forEach(b => b.onclick = () => answer(+b.dataset.o));
+
+  document.onkeydown = e => {
+    if (answered){ if (e.key==="Enter"||e.key===" "){ e.preventDefault(); next(); } return; }
+    let idx = -1;
+    if (s.type==="tf"){ const k=e.key.toLowerCase(); if(k==="t")idx=0; if(k==="f")idx=1; }
+    if (idx<0 && /^[1-4]$/.test(e.key)) idx = +e.key-1;
+    if (idx>=0 && idx<q.o.length) answer(idx);
+  };
+
+  tStart = Date.now();
+  if (timed) startTimer();
+}
+
+function passage(p){ return `<div class="passage"><h3>${p.title}</h3>${p.paras.map(x=>`<p>${x}</p>`).join("")}</div>`; }
+function mult(){ return Math.min(5, 1 + Math.floor(combo/3)); }
+
+function startTimer(){
+  tLeft = LIMIT;
+  const bar = document.querySelector("#tb i"), box = document.getElementById("tb");
+  tick = setInterval(()=>{
+    tLeft -= .1;
+    if (bar) bar.style.width = Math.max(0, tLeft/LIMIT*100) + "%";
+    if (box) box.classList.toggle("low", tLeft <= 5);
+    if (tLeft <= 0) answer(-1);
+  }, 100);
+}
+function stopTimer(){ if (tick){ clearInterval(tick); tick = null; } }
+
+function answer(pick){
+  if (answered) return;
+  answered = true; stopTimer();
+  const s = STAGES[si], q = s.qs[qi], right = pick === q.a, out = pick === -1;
+  const secs = (Date.now()-tStart)/1000;
+  let gain = 0;
+
+  if (right){
+    const speed = timed ? Math.max(0, Math.round((LIMIT-secs)*4)) : 0;
+    gain = (100 + speed) * mult();
+    combo++; bestCombo = Math.max(bestCombo, combo); R[si].correct++;
+    blip(mult()>2 ? 880 : 700, .1);
+  } else {
+    combo = 0;
+    if (timed) lives--;
+    blip(150, .18, "sawtooth");
+  }
+  xp += gain; R[si].xp += gain;
+
+  app.querySelectorAll("[data-o]").forEach((b,i)=>{
+    b.disabled = true;
+    if (i === q.a) b.classList.add("right");
+    else if (i === pick) b.classList.add("wrong");
+    else b.classList.add("fade");
+  });
+  document.querySelectorAll(".seg")[qi].className = "seg " + (right ? "hit" : "miss");
+  const cc = document.getElementById("combochip");
+  if (cc){ cc.textContent = "⚡ ×" + mult(); cc.classList.add("popin"); }
+  if (!right){ const o = document.getElementById("opts"); if (o) o.classList.add("shake"); }
+
+  const dead = timed && lives <= 0;
+  const last = qi === s.qs.length - 1;
+  document.getElementById("fb").innerHTML = `
+    <div class="fb ${right?'y':'n'}">
+      <h3>${right ? (mult()>2 ? "On fire." : "Correct.") : out ? "Out of time." : "Nope."}
+        ${gain ? `<span class="pop">+${gain}</span>` : ""}</h3>
+      <p>${q.why}</p>
+      <button class="big" id="next">${dead ? "Round over" : last ? "Finish round "+s.letter : "Next"}</button>
+    </div>`;
+  const nb = document.getElementById("next");
+  nb.onclick = () => dead ? dead_screen() : next();
+  nb.focus({preventScroll:true});
+}
+
+function next(){
+  if (qi < STAGES[si].qs.length - 1){ qi++; render(); return; }
+  R[si].done = true; roundEnd();
+}
+
+function dead_screen(){
+  document.onkeydown = null;
+  const s = STAGES[si];
+  app.innerHTML = `
+    <div class="hero"><span class="blob">💀</span>
+      <div class="kicker">Round ${s.letter} · ${s.name}</div>
+      <h1>Out of<br>lives</h1>
+      <p>You got ${R[si].correct} of ${s.qs.length} before the hearts ran out. Nothing is lost — the round just restarts.</p>
+    </div>
+    <button class="big hue" id="again">Try round ${s.letter} again</button>
+    <button class="lite" id="chill">Switch to Chill mode and retry</button>
+    <button class="lite" id="map">Back to the rounds</button>`;
+  document.getElementById("again").onclick = () => start(si);
+  document.getElementById("chill").onclick = () => { timed = false; start(si); };
+  document.getElementById("map").onclick = home;
+}
+
+function roundEnd(){
+  document.onkeydown = null; stopTimer();
+  const s = STAGES[si], r = R[si];
+  const perfect = r.correct === r.total, sticker = r.correct >= r.total - 1;
+  const allDone = R.every(x=>x.done), n = R.findIndex(x=>!x.done);
+  app.innerHTML = `
+    <div class="hero"><span class="blob">${s.em}</span>
+      <div class="kicker">Round ${s.letter} cleared</div>
+      <h1>${r.correct} / ${r.total}</h1>
+      <p>${perfect ? "Clean sweep — not one mistake." : sticker ? "One slip. Sticker unlocked anyway." : "Sticker still locked: you need four out of five."}</p>
+    </div>
+    <div class="block">
+      <div class="label">This round</div>
+      <div class="row"><span>Points earned</span><b class="rl" style="margin-left:auto;width:auto">${r.xp}</b></div>
+      <div class="row"><span>Total points</span><b class="rl" style="margin-left:auto;width:auto">${xp}</b></div>
+      <div class="row"><span>Best combo</span><b class="rl" style="margin-left:auto;width:auto">${bestCombo}</b></div>
+      ${sticker ? `<div class="row"><span>Sticker</span><span class="st" style="margin-left:auto">${s.sticker}</span></div>` : ""}
+    </div>
+    <button class="big hue" id="on">${allDone ? "See final results" : "Round "+STAGES[n].letter+" · "+STAGES[n].name}</button>
+    <button class="lite" id="again">Replay round ${s.letter}</button>
+    <button class="lite" id="map">Back to the rounds</button>`;
+  document.getElementById("on").onclick = () => allDone ? finish() : start(n);
+  document.getElementById("again").onclick = () => start(si);
+  document.getElementById("map").onclick = home;
+}
+
+function finish(){
+  document.onkeydown = null; stopTimer(); setHue("#8b5cf6", false);
+  const c = R.reduce((a,r)=>a+r.correct,0), t = R.reduce((a,r)=>a+r.total,0);
+  const p = Math.round(c/t*100), rk = RANKS.find(x => p >= x[0]);
+  const weak = R.map((r,i)=>({i, ratio:r.correct/r.total})).sort((a,b)=>a.ratio-b.ratio)[0];
+  app.innerHTML = `
+    <div class="hero"><span class="blob">🏆</span>
+      <div class="kicker">All eleven rounds</div>
+      <h1 class="xp">${xp}</h1>
+      <div class="rank" style="color:#fff">${rk[1]}</div>
+      <p>${c} of ${t} correct · ${p}% · best combo ${bestCombo}. ${rk[2]}</p>
+    </div>
+    <div class="block">
+      <div class="label">Round by round</div>
+      ${R.map((r,i)=>`
+        <div class="row">
+          <span class="rl" style="color:${hue(i)}">${STAGES[i].letter}</span>
+          <span>${STAGES[i].name}</span>
+          <span style="margin-left:auto;font-weight:600">${r.correct}/${r.total}</span>
+          <span class="bar"><i style="width:${r.correct/r.total*100}%;background:${hue(i)}"></i></span>
+        </div>`).join("")}
+    </div>
+    <div class="block">
+      <div class="label">Sticker book</div>
+      <div class="stickers">
+        ${STAGES.map((s,i)=>{const g=R[i].correct>=R[i].total-1;return `<span class="st ${g?'':'locked'}">${g?s.sticker:'🔒'}</span>`;}).join("")}
+      </div>
+    </div>
+    ${weak.ratio<1 ? `<button class="big hue" id="weak">Replay ${STAGES[weak.i].letter} · ${STAGES[weak.i].name}</button>` : ""}
+    <button class="lite" id="map">Back to the rounds</button>`;
+  const w = document.getElementById("weak");
+  if (w) w.onclick = () => start(weak.i);
+  document.getElementById("map").onclick = home;
+}
+
+home();
+</script>
+</body>
+</html>
