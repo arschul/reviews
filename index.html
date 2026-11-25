@@ -176,6 +176,15 @@
   }
   .game-card .btn-view:hover{background:var(--game-accent);color:#08151a;}
 
+  /* ── review cards: one card per test, one button per document ── */
+  .review-actions{margin-top:auto;display:flex;flex-direction:column;gap:0.45rem;}
+  .btn-row{display:flex;gap:0.4rem;}
+  .btn-row .btn-view{flex:1;text-align:center;}
+  .btn-view.btn-key{background:var(--key-deep);color:var(--key-accent);border-color:rgba(240,199,94,0.25);}
+  .btn-view.btn-key:hover{background:var(--key-accent);color:#1a1815;}
+  .btn-view.btn-game{background:var(--game-deep);color:var(--game-accent);border-color:rgba(56,189,248,0.25);}
+  .btn-view.btn-game:hover{background:var(--game-accent);color:#08151a;}
+
   footer{
     padding:2.5rem 1.5rem;color:var(--muted);font-size:0.78rem;text-align:center;
   }
@@ -226,64 +235,52 @@
     <div class="class-header">
       <span class="class-badge">Basic 4</span>
       <span class="class-title">Basic 4</span>
-      <span class="test-count">6 files</span>
+      <span class="test-count">3 reviews</span>
     </div>
     <div class="cards">
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 1 Review</div>
         <div class="pdf-meta">Units 7 &amp; 8 · Jobs · Present Perfect · Leisure · Reading</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="basic-4/Basic_4_Test_1_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="basic-4/Basic_4_Test_1_Review.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="basic-4/Basic_4_Test_1_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="basic-4/Basic_4_Test_1_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="basic-4/Basic_4_Test_1_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="basic-4/Basic_4_Test_1_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
         </div>
       </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 1 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Jobs · Present Perfect · Leisure</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="basic-4/Basic_4_Test_1_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="basic-4/Basic_4_Test_1_Review_-_Key.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 2 Review</div>
         <div class="pdf-meta">Units 9 &amp; 10 · Housing · Future · Health · Reading</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="basic-4/Basic_4_Test_2_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="basic-4/Basic_4_Test_2_Review.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="basic-4/Basic_4_Test_2_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="basic-4/Basic_4_Test_2_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="basic-4/Basic_4_Test_2_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="basic-4/Basic_4_Test_2_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
         </div>
       </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 2 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Units 9 &amp; 10 · Housing · Future · Health</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="basic-4/Basic_4_Test_2_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="basic-4/Basic_4_Test_2_Review_-_Key.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 3 Review</div>
         <div class="pdf-meta">Units 11 &amp; 12 · Passive · Environment · Reading</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="basic-4/Basic_4_Test_3_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="basic-4/Basic_4_Test_3_Review.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 3 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Units 11 &amp; 12</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="basic-4/Basic_4_Test_3_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="basic-4/Basic_4_Test_3_Review_-_Key.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="basic-4/Basic_4_Test_3_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="basic-4/Basic_4_Test_3_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="basic-4/Basic_4_Test_3_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="basic-4/Basic_4_Test_3_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
         </div>
       </div>
     </div>
@@ -294,110 +291,76 @@
     <div class="class-header">
       <span class="class-badge">Inter 1</span>
       <span class="class-title">Intermediate 1</span>
-      <span class="test-count">11 files</span>
+      <span class="test-count">3 reviews + 1 practice</span>
     </div>
     <div class="cards">
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 1 Review</div>
         <div class="pdf-meta">Ability · Animals · Stative verbs</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-1/Inter_1_Test_1_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-1/Inter_1_Test_1_Review.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="inter-1/Inter_1_Test_1_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="inter-1/Inter_1_Test_1_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="inter-1/Inter_1_Test_1_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="inter-1/Inter_1_Test_1_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-game" href="inter-1/Inter_1_Test_1_Game.html" target="_blank">Play Game</a>
+          </div>
         </div>
       </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 1 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Ability · Animals · Stative verbs</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-1/Inter_1_Test_1_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-1/Inter_1_Test_1_Review_-_Key.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card game-card">
-        <div class="pdf-icon">🎮</div>
-        <div class="pdf-name">Test 1 Review</div>
-        <span class="game-badge">Game</span>
-        <div class="pdf-meta">Interactive &middot; 11 rounds &middot; timed mode, combos, stickers</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-1/Inter_1_Test_1_Game.html" target="_blank">Play</a>
-        </div>
-      </div>
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 2 Review</div>
         <div class="pdf-meta">Units 3 &amp; 4 · Phrasal verbs · Pres. Perf. Prog. · Time clauses</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-1/Inter_1_Test_2_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-1/Inter_1_Test_2_Review.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="inter-1/Inter_1_Test_2_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="inter-1/Inter_1_Test_2_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="inter-1/Inter_1_Test_2_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="inter-1/Inter_1_Test_2_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-game" href="inter-1/Inter_1_Test_2_Game.html" target="_blank">Play Game</a>
+          </div>
         </div>
       </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 2 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Units 3 &amp; 4 · Phrasal verbs · Pres. Perf. Prog. · Time clauses</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-1/Inter_1_Test_2_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-1/Inter_1_Test_2_Review_-_Key.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card game-card">
-        <div class="pdf-icon">🎮</div>
-        <div class="pdf-name">Test 2 Review</div>
-        <span class="game-badge">Game</span>
-        <div class="pdf-meta">Interactive &middot; 11 rounds &middot; timed mode, combos, stickers</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-1/Inter_1_Test_2_Game.html" target="_blank">Play</a>
-        </div>
-      </div>
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 3 Review</div>
         <div class="pdf-meta">Units 5 &amp; 6 · Wish/Hope · Conditionals · Past perfect · Relative clauses · Reading</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-1/Inter_1_Test_3_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-1/Inter_1_Test_3_Review.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="inter-1/Inter_1_Test_3_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="inter-1/Inter_1_Test_3_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="inter-1/Inter_1_Test_3_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="inter-1/Inter_1_Test_3_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-game" href="inter-1/Inter_1_Test_3_Game.html" target="_blank">Play Game</a>
+          </div>
         </div>
       </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 3 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Units 5 &amp; 6</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-1/Inter_1_Test_3_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-1/Inter_1_Test_3_Review_-_Key.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card game-card">
-        <div class="pdf-icon">🎮</div>
-        <div class="pdf-name">Test 3 Review</div>
-        <span class="game-badge">Game</span>
-        <div class="pdf-meta">Interactive &middot; 11 rounds &middot; timed mode, combos, stickers</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-1/Inter_1_Test_3_Game.html" target="_blank">Play</a>
-        </div>
-      </div>
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 3 Extra Practice</div>
         <div class="pdf-meta">Units 5 &amp; 6 · Wish/Hope · Conditionals · Climate · Reading</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-1/Inter_1_Test_3_Extra_Practice.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-1/Inter_1_Test_3_Extra_Practice.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 3 Extra Practice</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Units 5 &amp; 6</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-1/Inter_1_Test_3_Extra_Practice_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-1/Inter_1_Test_3_Extra_Practice_-_Key.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="inter-1/Inter_1_Test_3_Extra_Practice.pdf" target="_blank">Practice</a>
+            <a class="btn btn-dl" href="inter-1/Inter_1_Test_3_Extra_Practice.pdf" download aria-label="Download Practice" title="Download Practice">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="inter-1/Inter_1_Test_3_Extra_Practice_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="inter-1/Inter_1_Test_3_Extra_Practice_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
         </div>
       </div>
     </div>
@@ -408,102 +371,82 @@
     <div class="class-header">
       <span class="class-badge">Inter 4</span>
       <span class="class-title">Intermediate 4</span>
-      <span class="test-count">10 files</span>
+      <span class="test-count">3 reviews + 2 practice</span>
     </div>
     <div class="cards">
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 1 Review</div>
         <div class="pdf-meta">Units 6 &amp; 7 · Conditionals · Past deduction · Verb patterns · Travel &amp; science vocabulary</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-4/Inter_4_Test_1_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-4/Inter_4_Test_1_Review.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="inter-4/Inter_4_Test_1_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="inter-4/Inter_4_Test_1_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="inter-4/Inter_4_Test_1_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="inter-4/Inter_4_Test_1_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
         </div>
       </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 1 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Units 6 &amp; 7</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-4/Inter_4_Test_1_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-4/Inter_4_Test_1_Review_-_Key.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 2 Review</div>
         <div class="pdf-meta">Units 8 &amp; 9 · Passive · Relative pronouns · Wh- clauses · Gerunds · Fashion &amp; language vocabulary</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-4/Inter_4_Test_2_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-4/Inter_4_Test_2_Review.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="inter-4/Inter_4_Test_2_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="inter-4/Inter_4_Test_2_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="inter-4/Inter_4_Test_2_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="inter-4/Inter_4_Test_2_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
         </div>
       </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 2 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Units 8 &amp; 9</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-4/Inter_4_Test_2_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-4/Inter_4_Test_2_Review_-_Key.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 2 Extra Practice</div>
         <div class="pdf-meta">Units 8 &amp; 9 · Make-up practice with grammar boxes · Passive · Relative pronouns · Wh- clauses · Gerunds · Vocabulary</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-4/Inter_4_Test_2_Extra_Practice.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-4/Inter_4_Test_2_Extra_Practice.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="inter-4/Inter_4_Test_2_Extra_Practice.pdf" target="_blank">Practice</a>
+            <a class="btn btn-dl" href="inter-4/Inter_4_Test_2_Extra_Practice.pdf" download aria-label="Download Practice" title="Download Practice">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="inter-4/Inter_4_Test_2_Extra_Practice_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="inter-4/Inter_4_Test_2_Extra_Practice_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
         </div>
       </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 2 Extra Practice</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Units 8 &amp; 9</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-4/Inter_4_Test_2_Extra_Practice_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-4/Inter_4_Test_2_Extra_Practice_-_Key.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 3 Review</div>
         <div class="pdf-meta">Unit 10 · Future progressive · Future in the past · Prefixes · Ambition &amp; work expressions</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-4/Inter_4_Test_3_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-4/Inter_4_Test_3_Review.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="inter-4/Inter_4_Test_3_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="inter-4/Inter_4_Test_3_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="inter-4/Inter_4_Test_3_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="inter-4/Inter_4_Test_3_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
         </div>
       </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 3 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Unit 10</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-4/Inter_4_Test_3_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-4/Inter_4_Test_3_Review_-_Key.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 3 Extra Practice</div>
         <div class="pdf-meta">Unit 10 · Make-up practice with grammar boxes · Future progressive · Future in the past · Prefixes · Vocabulary</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-4/Inter_4_Test_3_Extra_Practice.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-4/Inter_4_Test_3_Extra_Practice.pdf" download>↓</a>
-        </div>
-      </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 3 Extra Practice</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Unit 10</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="inter-4/Inter_4_Test_3_Extra_Practice_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="inter-4/Inter_4_Test_3_Extra_Practice_-_Key.pdf" download>↓</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="inter-4/Inter_4_Test_3_Extra_Practice.pdf" target="_blank">Practice</a>
+            <a class="btn btn-dl" href="inter-4/Inter_4_Test_3_Extra_Practice.pdf" download aria-label="Download Practice" title="Download Practice">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="inter-4/Inter_4_Test_3_Extra_Practice_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="inter-4/Inter_4_Test_3_Extra_Practice_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
         </div>
       </div>
     </div>
@@ -514,91 +457,61 @@
     <div class="class-header">
       <span class="class-badge">PreTeens 1</span>
       <span class="class-title">PreTeens 1</span>
-      <span class="test-count">9 files</span>
+      <span class="test-count">3 reviews</span>
     </div>
     <div class="cards">
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 1 Review</div>
         <div class="pdf-meta">Units 1, 2 &amp; 3 &middot; This/That &middot; Toys &amp; school objects &middot; Animals &amp; adjectives &middot; Months &middot; Reading</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_1_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_1_Review.pdf" download>&darr;</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_1_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_1_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="preteens-1/PreTeens_1_Test_1_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_1_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-game" href="preteens-1/PreTeens_1_Test_1_Game.html" target="_blank">Play Game</a>
+          </div>
         </div>
       </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 1 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Units 1, 2 &amp; 3 &middot; includes listening script</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_1_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_1_Review_-_Key.pdf" download>&darr;</a>
-        </div>
-      </div>
-      <div class="pdf-card game-card">
-        <div class="pdf-icon">🎮</div>
-        <div class="pdf-name">Test 1 Review</div>
-        <span class="game-badge">Game</span>
-        <div class="pdf-meta">Interactive &middot; 8 rounds &middot; 40 questions, word builder, stickers</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_1_Game.html" target="_blank">Play</a>
-        </div>
-      </div>
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 2 Review</div>
         <div class="pdf-meta">Units 4, 5 &amp; 6 &middot; Is there / Are there &middot; Rooms &amp; places &middot; Family &middot; Prepositions &middot; Animals &middot; Reading</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_2_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_2_Review.pdf" download>&darr;</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_2_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_2_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="preteens-1/PreTeens_1_Test_2_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_2_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-game" href="preteens-1/PreTeens_1_Test_2_Game.html" target="_blank">Play Game</a>
+          </div>
         </div>
       </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 2 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Units 4, 5 &amp; 6 &middot; includes listening script</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_2_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_2_Review_-_Key.pdf" download>&darr;</a>
-        </div>
-      </div>
-      <div class="pdf-card game-card">
-        <div class="pdf-icon">🎮</div>
-        <div class="pdf-name">Test 2 Review</div>
-        <span class="game-badge">Game</span>
-        <div class="pdf-meta">Interactive &middot; 8 rounds &middot; 40 questions, listening, spelling, stickers</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_2_Game.html" target="_blank">Play</a>
-        </div>
-      </div>
-      <div class="pdf-card">
+      <div class="pdf-card review-card">
         <div class="pdf-icon">📄</div>
         <div class="pdf-name">Test 3 Review</div>
         <div class="pdf-meta">Units 7, 8 &amp; 9 &middot; Food &amp; like / don't like &middot; Do you like? &middot; Have / has &middot; How many? &middot; Instruments &middot; Can / can't &middot; Reading</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_3_Review.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_3_Review.pdf" download>&darr;</a>
-        </div>
-      </div>
-      <div class="pdf-card key-card">
-        <div class="pdf-icon">🔑</div>
-        <div class="pdf-name">Test 3 Review</div>
-        <span class="key-badge">Answer Key</span>
-        <div class="pdf-meta">Units 7, 8 &amp; 9 &middot; includes listening script</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_3_Review_-_Key.pdf" target="_blank">Open</a>
-          <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_3_Review_-_Key.pdf" download>&darr;</a>
-        </div>
-      </div>
-      <div class="pdf-card game-card">
-        <div class="pdf-icon">🎮</div>
-        <div class="pdf-name">Test 3 Review</div>
-        <span class="game-badge">Game</span>
-        <div class="pdf-meta">Interactive &middot; 8 rounds &middot; 40 questions, listening, spelling, monsters, stickers</div>
-        <div class="pdf-actions">
-          <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_3_Game.html" target="_blank">Play</a>
+        <div class="review-actions">
+          <div class="btn-row">
+            <a class="btn btn-view" href="preteens-1/PreTeens_1_Test_3_Review.pdf" target="_blank">Review</a>
+            <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_3_Review.pdf" download aria-label="Download Review" title="Download Review">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-key" href="preteens-1/PreTeens_1_Test_3_Review_-_Key.pdf" target="_blank">Answer Key</a>
+            <a class="btn btn-dl" href="preteens-1/PreTeens_1_Test_3_Review_-_Key.pdf" download aria-label="Download Answer Key" title="Download Answer Key">↓</a>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-view btn-game" href="preteens-1/PreTeens_1_Test_3_Game.html" target="_blank">Play Game</a>
+          </div>
         </div>
       </div>
     </div>
